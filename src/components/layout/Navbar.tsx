@@ -58,12 +58,15 @@ export const Navbar = () => {
           {/* الشعار */}
           <Link href="/" className="flex items-center">
             <div className="relative w-12 h-12 md:w-16 md:h-16">
+               
               <Image
                 src="/icons/logo.svg"
                 alt="شعار مسار"
                 fill
+                
                 className="object-contain"
               />
+              
             </div>
           </Link>
 

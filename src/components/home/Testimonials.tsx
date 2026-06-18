@@ -39,7 +39,7 @@ export const Testimonials = () => (
               </div>
               <div className="text-right">
                 <h4 className="font-bold text-lg">{t.name}</h4>
-                <p className="text-sm text-gray-400">{t.role}</p>
+                <p className="text-sm text-[#FFB692]">{t.role}</p>
               </div>
             </div>
 
@@ -49,7 +49,7 @@ export const Testimonials = () => (
             </p>
             
             {/* النجوم */}
-            <div className="flex gap-1 justify-start">
+            <div className="flex gap-1 justify-end ">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={18} className="fill-[#f4a261] text-[#f4a261]" />
               ))}

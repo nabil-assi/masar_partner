@@ -11,12 +11,14 @@ export default function AboutPage() {
   return (
     <main className="bg-[#0F172A] w-full overflow-x-hidden ">
       <Hero />
-      <VisionMission />
+      <div className="pt-24 md:pt-32">
+        <VisionMission />
+      </div>
       <CoreValues />
       <TeamSection />
       <PartnersSection />
-      <FinalCTA /> 
-      <Footer />  
+      <FinalCTA />
+      <Footer />
     </main>
   );
 }

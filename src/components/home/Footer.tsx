@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, X } from "lucide-react";
+import { FaFacebook, FaInstagram } from "react-icons/fa"; // استدعاء الأيقونات
 import Image from "next/image";
 
 export const Footer = () => {
@@ -26,10 +27,10 @@ export const Footer = () => {
             </p>
             <div className="flex gap-3 pt-4">
               <div className="w-8 h-8 rounded-full bg-[#162033] flex items-center justify-center hover:bg-orange-600 cursor-pointer">
-                <X size={16} />
+                <FaFacebook size={16} />
               </div>
               <div className="w-8 h-8 rounded-full bg-[#162033] flex items-center justify-center hover:bg-orange-600 cursor-pointer">
-                <X size={16} />
+                <FaInstagram size={16} />
               </div>
               <div className="w-8 h-8 rounded-full bg-[#162033] flex items-center justify-center hover:bg-orange-600 cursor-pointer">
                 <X size={16} />

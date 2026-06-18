@@ -1,14 +1,11 @@
-  
- "use client";
+"use client";
 import { useState, useMemo } from "react";
-import { CourseCard } from "./CourseCard";
 import { Pagination } from "./Pagination";
 import { FiltersBar } from "./FiltersBar";
-
-// ... (بيانات coursesData كما هي)
+import { CourseCard } from "../shared/CourseCard";
 
 const coursesData = [
-   {
+  {
     id: 1,
     image: "/images/Design.png",
     level: "متوسط",
@@ -135,8 +132,7 @@ const coursesData = [
     students: "1200",
     rating: 4.7,
     price: 299,
-  }
-  ,
+  },
   {
     id: 10,
     image: "/images/uxui.png",
@@ -155,7 +151,11 @@ const coursesData = [
 
 export const CoursesSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [filters, setFilters] = useState({ category: "", level: "", price: "" });
+  const [filters, setFilters] = useState({
+    category: "",
+    level: "",
+    price: "",
+  });
   const itemsPerPage = 6; // تم تعديله ليكون متناسباً مع الشاشات المتجاوبة
 
   const filteredCourses = useMemo(() => {
@@ -171,21 +171,20 @@ export const CoursesSection = () => {
   const totalPages = Math.ceil(totalCoursesCount / itemsPerPage);
   const displayedCourses = filteredCourses.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   return (
     <section className="py-16 md:py-24 bg-[#060E20]">
       <div className="container mx-auto px-6" dir="rtl">
-        
         {/* تحسين الـ FiltersBar ليكون متجاوباً في مكونه الخاص */}
-        <FiltersBar 
-          onFilterChange={(f) => { 
-            setFilters(prev => ({ ...prev, ...f })); 
-            setCurrentPage(1); 
-          }} 
+        <FiltersBar
+          onFilterChange={(f) => {
+            setFilters((prev) => ({ ...prev, ...f }));
+            setCurrentPage(1);
+          }}
         />
-        
+
         {/* عنوان ديناميكي متجاوب */}
         <h1 className="text-white text-lg md:text-xl font-bold mb-8 text-right">
           عرض {displayedCourses.length} من أصل {totalCoursesCount} دورة
@@ -209,10 +208,10 @@ export const CoursesSection = () => {
 
         {totalPages > 1 && (
           <div className="mt-12">
-            <Pagination 
-              totalPages={totalPages} 
-              currentPage={currentPage} 
-              onPageChange={setCurrentPage} 
+            <Pagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
             />
           </div>
         )}
