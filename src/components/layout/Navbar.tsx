@@ -6,6 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, User } from "lucide-react";
 
+import { AuthModal } from "../auth/AuthModal";
+import { LoginForm } from "../auth/LoginForm";
 const navLinks = [
   { name: "تواصل معنا", href: "/contact" },
   { name: "عن الأكاديمية", href: "/about" },
@@ -17,9 +19,9 @@ const navLinks = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   return (
-    <nav className="fixed top-4 left-4 right-4 md:top-6 md:left-9 md:right-9 z-50 bg-[#1E293B]/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl px-4 md:px-8">
+    <nav className="fixed top-4 left-4 right-4 md:top-2 md:left-9 md:right-9 z-50 bg-[#1E293B]/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl px-4 md:px-8">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex justify-between items-center h-20">
           {/* الأزرار (تظهر فقط في الشاشات الكبيرة) */}
@@ -58,15 +60,12 @@ export const Navbar = () => {
           {/* الشعار */}
           <Link href="/" className="flex items-center">
             <div className="relative w-12 h-12 md:w-16 md:h-16">
-               
               <Image
                 src="/icons/logo.svg"
                 alt="شعار مسار"
                 fill
-                
                 className="object-contain"
               />
-              
             </div>
           </Link>
 
@@ -96,18 +95,21 @@ export const Navbar = () => {
             </Link>
           ))}
           <div className="flex flex-col gap-3 pt-4 border-t border-white/10">
-            <Link
-              href="/login"
-              className="text-gray-300 flex justify-center items-center gap-2"
-            >
-              <User size={18} /> تسجيل الدخول
-            </Link>
+            <button onClick={() => setIsLoginOpen(true)} className="text-white">
+              تسجيل الدخول
+            </button>
             <Link
               href="/register"
               className="bg-gradient-to-r from-[#FF6D00] to-[#FFB692] py-3 rounded-2xl font-bold text-white"
             >
               أبدا التعلم
             </Link>
+            <AuthModal
+              isOpen={isLoginOpen}
+              onClose={() => setIsLoginOpen(false)}
+            >
+              <LoginForm />
+            </AuthModal>
           </div>
         </div>
       )}

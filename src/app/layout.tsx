@@ -1,25 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from '@/components/layout/Navbar';
 import { Almarai } from "next/font/google";
+// استورد الـ Wrapper الجديد
+import { NavbarWrapper } from '@/components/layout/NavbarWrapper'; 
 
 const almarai = Almarai({
   subsets: ["arabic"],
   weight: ["400", "700"],
-  variable: "--font-almarai", // تعريف متغير للخط
+  variable: "--font-almarai",
 });
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// ... باقي الإعدادات (Geist) تبقى كما هي
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -32,10 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
  return (
-    // أضفنا almarai.variable هنا ليكون متاحاً عالمياً
    <html lang="ar" dir="ltr" className={`${almarai.variable} bg-[#0F172A]`}>
       <body className="bg-[#0F172A] min-h-screen vc-init"> 
-        <Navbar />
+        {/* استخدم الـ Wrapper هنا */}
+        <NavbarWrapper />
          <div> 
           {children}
         </div>

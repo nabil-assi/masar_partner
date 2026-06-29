@@ -14,23 +14,19 @@ import { Footer } from "@/components/home/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-[#0F172A] w-full overflow-x-hidden">
+    <main className="bg-[#0F172A]  w-full overflow-x-hidden">
       <Hero />
       <Features />
       <FeaturedCourses />
       <LearningPaths />
       <LiveEvent />
-
       <Stats />
-
       <WhyUs />
       <Testimonials />
-
       <Partners />
-
       <BlogSection />
       <JoinCTA />
-      
+    
       <Footer />
     </main>
   );
