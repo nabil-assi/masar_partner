@@ -29,21 +29,23 @@ const colorMap: Record<string, string> = {
 
 export const AcademySection = () => {
   return (
-    <section className="py-24 px-6 bg-white" dir="rtl">
+    <section dir="ltr">
       <div className="container mx-auto max-w-7xl">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gradient-to-br from-[#f8fafc] to-[#eef3fb] px-8 py-16 lg:px-16">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gradient-to-br from-[#f8fafc] to-[#eef3fb] px-4 py-8 lg:px-16">
           {/* زخرفة الخلفية */}
           <div
             className="absolute top-6 left-6 w-28 h-28 opacity-80 pointer-events-none"
             style={{
-              backgroundImage: "radial-gradient(#c7d9f0 1.6px, transparent 1.6px)",
+              backgroundImage:
+                "radial-gradient(#c7d9f0 1.6px, transparent 1.6px)",
               backgroundSize: "15px 15px",
             }}
           />
           <div
             className="absolute bottom-6 right-6 w-24 h-24 opacity-70 pointer-events-none"
             style={{
-              backgroundImage: "radial-gradient(#c7d9f0 1.6px, transparent 1.6px)",
+              backgroundImage:
+                "radial-gradient(#c7d9f0 1.6px, transparent 1.6px)",
               backgroundSize: "15px 15px",
             }}
           />
@@ -71,10 +73,31 @@ export const AcademySection = () => {
                   fill="none"
                 >
                   <ellipse cx="40" cy="90" rx="22" ry="8" fill="#dbe6f6" />
-                  <path d="M40 85 C 38 60, 20 55, 15 30" stroke="#7fa8db" strokeWidth="3" />
-                  <path d="M40 85 C 42 60, 60 55, 65 30" stroke="#7fa8db" strokeWidth="3" />
-                  <path d="M40 85 C 40 55, 40 40, 40 20" stroke="#5c8ecf" strokeWidth="3" />
-                  <rect x="26" y="82" width="28" height="18" rx="3" fill="#fff" stroke="#c7d9f0" strokeWidth="2" />
+                  <path
+                    d="M40 85 C 38 60, 20 55, 15 30"
+                    stroke="#7fa8db"
+                    strokeWidth="3"
+                  />
+                  <path
+                    d="M40 85 C 42 60, 60 55, 65 30"
+                    stroke="#7fa8db"
+                    strokeWidth="3"
+                  />
+                  <path
+                    d="M40 85 C 40 55, 40 40, 40 20"
+                    stroke="#5c8ecf"
+                    strokeWidth="3"
+                  />
+                  <rect
+                    x="26"
+                    y="82"
+                    width="28"
+                    height="18"
+                    rx="3"
+                    fill="#fff"
+                    stroke="#c7d9f0"
+                    strokeWidth="2"
+                  />
                 </svg>
 
                 {/* كتب مكدّسة زخرفية */}
@@ -83,15 +106,38 @@ export const AcademySection = () => {
                   viewBox="0 0 110 60"
                   fill="none"
                 >
-                  <rect x="5" y="35" width="100" height="14" rx="3" fill="#0F172A" />
-                  <rect x="10" y="20" width="90" height="14" rx="3" fill="#fff" stroke="#c7d9f0" strokeWidth="2" />
-                  <rect x="15" y="5" width="80" height="14" rx="3" fill="#0F172A" />
+                  <rect
+                    x="5"
+                    y="35"
+                    width="100"
+                    height="14"
+                    rx="3"
+                    fill="#0F172A"
+                  />
+                  <rect
+                    x="10"
+                    y="20"
+                    width="90"
+                    height="14"
+                    rx="3"
+                    fill="#fff"
+                    stroke="#c7d9f0"
+                    strokeWidth="2"
+                  />
+                  <rect
+                    x="15"
+                    y="5"
+                    width="80"
+                    height="14"
+                    rx="3"
+                    fill="#0F172A"
+                  />
                 </svg>
               </div>
             </div>
 
             {/* الجانب الأيمن: المحتوى */}
-            <div className="space-y-7 text-right">
+            <div className="space-y-7 text-center justify-center ">
               <div className="inline-flex items-center gap-2 bg-white border border-blue-100 rounded-full pr-4 pl-1.5 py-1.5 shadow-sm">
                 <span className="font-extrabold text-[#0F172A] text-sm">
                   أكاديمية مسار
@@ -108,13 +154,12 @@ export const AcademySection = () => {
               </h2>
 
               <p className="text-gray-500 text-lg leading-relaxed max-w-lg mr-0 ml-auto">
-                برامج تدريبية عملية في البرمجة، التصميم، التسويق الرقمي،
-                الذكاء الاصطناعي، وتحليل البيانات، عبر منصة تعليمية مستقلة
-                ومرنة.
+                برامج تدريبية عملية في البرمجة، التصميم، التسويق الرقمي، الذكاء
+                الاصطناعي، وتحليل البيانات، عبر منصة تعليمية مستقلة ومرنة.
               </p>
 
               {/* أزرار المهارات */}
-              <div className="flex flex-wrap gap-3 justify-end">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {skills.map((skill, index) => (
                   <div
                     key={index}
@@ -135,7 +180,7 @@ export const AcademySection = () => {
                 <ArrowUpRight size={20} />
               </button>
 
-              <p className="text-xs text-gray-400 flex items-center gap-1.5 justify-end">
+              <p className="text-xs  text-gray-400 flex  gap-1.5 justify-center">
                 منصة تعليمية مستقلة
                 <Lock size={13} />
               </p>

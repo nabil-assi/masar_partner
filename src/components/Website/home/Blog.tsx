@@ -29,7 +29,7 @@ const posts = [
 
 export const Blog = () => {
   return (
-    <section className="relative py-24 px-6 bg-white overflow-hidden" dir="rtl">
+    <section className="relative overflow-hidden" dir="ltr">
       {/* زخرفة الخلفية */}
       <div
         className="absolute top-10 right-10 w-28 h-28 opacity-70 pointer-events-none"
@@ -47,12 +47,39 @@ export const Blog = () => {
         viewBox="0 0 300 260"
         fill="none"
       >
-        <path d="M150 60 C 120 40, 60 35, 20 45 L 20 200 C 60 190, 120 195, 150 215 Z" stroke="#94b4de" strokeWidth="2.5" />
-        <path d="M150 60 C 180 40, 240 35, 280 45 L 280 200 C 240 190, 180 195, 150 215 Z" stroke="#94b4de" strokeWidth="2.5" />
-        <line x1="150" y1="60" x2="150" y2="215" stroke="#94b4de" strokeWidth="2" />
-        <rect x="50" y="70" width="60" height="45" rx="6" stroke="#94b4de" strokeWidth="2" />
+        <path
+          d="M150 60 C 120 40, 60 35, 20 45 L 20 200 C 60 190, 120 195, 150 215 Z"
+          stroke="#94b4de"
+          strokeWidth="2.5"
+        />
+        <path
+          d="M150 60 C 180 40, 240 35, 280 45 L 280 200 C 240 190, 180 195, 150 215 Z"
+          stroke="#94b4de"
+          strokeWidth="2.5"
+        />
+        <line
+          x1="150"
+          y1="60"
+          x2="150"
+          y2="215"
+          stroke="#94b4de"
+          strokeWidth="2"
+        />
+        <rect
+          x="50"
+          y="70"
+          width="60"
+          height="45"
+          rx="6"
+          stroke="#94b4de"
+          strokeWidth="2"
+        />
         <circle cx="66" cy="86" r="6" fill="#c9dbf3" />
-        <path d="M52 108 L72 92 L88 104 L108 82" stroke="#94b4de" strokeWidth="2" />
+        <path
+          d="M52 108 L72 92 L88 104 L108 82"
+          stroke="#94b4de"
+          strokeWidth="2"
+        />
       </svg>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -71,7 +98,8 @@ export const Blog = () => {
             <span className="block text-[#0047AB]">على اتخاذ قرارات أفضل</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            مقالات عملية ونصائح من خبرائنا حول التقنية، إدارة الأعمال والنمو الرقمي.
+            مقالات عملية ونصائح من خبرائنا حول التقنية، إدارة الأعمال والنمو
+            الرقمي.
           </p>
         </div>
 
@@ -83,7 +111,12 @@ export const Blog = () => {
               className="bg-white rounded-[1.75rem] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden hover:shadow-2xl transition-all duration-300"
             >
               <div className="h-[190px] w-full relative bg-gradient-to-br from-slate-50 to-blue-50">
-                <Image src={post.image} alt={post.title} fill className="object-cover" />
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-7 text-right">
                 <span className="inline-block text-xs font-bold text-[#0047AB] bg-blue-50 px-3.5 py-1.5 rounded-full mb-4">
@@ -106,13 +139,12 @@ export const Blog = () => {
           ))}
         </div>
 
-      <div className="text-center mt-16">
-  <button className="inline-flex items-center gap-3 px-10 py-3.5 bg-[#0A1A4A] text-white rounded-full font-medium hover:bg-[#0F2566] transition-all shadow-md shadow-blue-900/20">
-    استكشف المدونة
-        <FileText size={20} />
-
-  </button>
-</div>
+        <div className="text-center mt-16">
+          <button className="inline-flex items-center gap-3 px-10 py-3.5 bg-[#0A1A4A] text-white rounded-full font-medium hover:bg-[#0F2566] transition-all shadow-md shadow-blue-900/20">
+            استكشف المدونة
+            <FileText size={20} />
+          </button>
+        </div>
       </div>
     </section>
   );

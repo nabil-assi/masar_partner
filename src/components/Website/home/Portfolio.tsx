@@ -31,7 +31,7 @@ export const Portfolio = () => {
   const MainIcon = projects[0].icon;
 
   return (
-    <section className="relative py-24 px-6 bg-white overflow-hidden" dir="rtl">
+    <section className="relative overflow-hidden" dir="rtl">
       {/* زخرفة خلفية */}
       <div
         className="absolute top-6 left-6 w-28 h-28 opacity-60 pointer-events-none"
@@ -42,15 +42,14 @@ export const Portfolio = () => {
       />
       <div className="absolute -top-16 -right-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
       <div className="absolute -bottom-24 -left-20 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         {/* العنوان */}
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#0047AB] px-4 py-1.5 rounded-full text-sm font-extrabold mb-4">
-            <Star size={14} className="fill-[#0047AB] text-[#0047AB]" />
+            <Star size={18} className=" text-[#0047AB]" />
             مشاريع مختارة
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0F172A] mb-4">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#00116e] mb-4">
             أعمالنا ومشاريعنا
           </h2>
           <p className="text-gray-500 text-lg">
@@ -70,10 +69,10 @@ export const Portfolio = () => {
                   className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.05)] flex gap-4 items-start flex-1"
                 >
                   <div className="flex-1 text-right">
-                    <h3 className="text-xl font-bold text-[#0F172A] mb-1">
+                    <h3 className="text-xl font-bold text-[#0F172A] mb-7">
                       {p.title}
                     </h3>
-                    <p className="text-[#0047AB] text-sm font-bold mb-2">
+                    <p className="text-[#0047AB] text-sm font-bold mb-7">
                       {p.category}
                     </p>
                     <p className="text-gray-500 text-sm mb-4">{p.desc}</p>

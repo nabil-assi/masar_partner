@@ -37,7 +37,7 @@ const centerNodes = [
 ];
 export const WhyUs = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden" dir="rtl">
+    <section className="  relative overflow-hidden" dir="ltr">
       {/* زخرفة الخلفية */}
       <div
         className="absolute top-10 right-10 w-28 h-28 opacity-60 pointer-events-none hidden sm:block"
@@ -60,32 +60,32 @@ export const WhyUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-x-0 items-center">
           {" "}
           {/* الكروت اليمنى (لأن RTL، أول عنصر بالمصفوفة يظهر يمين) */}
-          <div className="space-y-8 lg:ml-[-50px] z-20">
-  {features.slice(0, 2).map((f, i) => (
-    <div
-      key={i}
-      className="p-8 bg-white rounded-[2rem] border border-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.04)] flex flex-col items-center text-center hover:shadow-xl transition-all"
-    >
-      {/* الأيقونة في دائرة */}
-      <div className="mb-4 p-4 bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center">
-        <f.icon className="text-[#0047AB]" size={32} />
-      </div>
-      
-      {/* العنوان */}
-      <h3 className="text-xl font-bold text-[#0F172A] mb-2">
-        {f.title}
-      </h3>
-      
-      {/* الخط الفاصل */}
-      <div className="w-10 h-[2px] bg-[#0047AB] mb-4"></div>
-      
-      {/* الوصف */}
-      <p className="text-gray-500 text-sm leading-relaxed">
-        {f.desc}
-      </p>
-    </div>
-  ))}
-</div>
+          <div className="space-y-32   lg:ml-[-50px] z-20">
+            {features.slice(0, 2).map((f, i) => (
+              <div
+                key={i}
+                className="p-8  bg-white rounded-[2rem] border border-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.04)] flex flex-col items-center text-center hover:shadow-xl transition-all"
+              >
+                {/* الأيقونة في دائرة */}
+                <div className="mb-4 p-4 bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center">
+                  <f.icon className="text-[#0047AB]" size={32} />
+                </div>
+
+                {/* العنوان */}
+                <h3 className="text-xl font-bold text-[#0F172A] mb-2">
+                  {f.title}
+                </h3>
+
+                {/* الخط الفاصل */}
+                <div className="w-10 h-[2px] bg-[#0047AB] mb-4"></div>
+
+                {/* الوصف */}
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
           <div className="hidden lg:flex relative w-full items-center justify-center">
             {/* هنا جعلنا الدائرة الخارجية تشغل مساحة أكبر */}
             <div className="relative w-[500px] h-[500px] rounded-full    flex items-center justify-center">
@@ -100,36 +100,36 @@ export const WhyUs = () => {
               </div>
             </div>
           </div>
-        <div className="space-y-8 lg:mr-[-50px] z-20">
-  {features.slice(2, 4).map((f, i) => (
-    <div
-      key={i}
-      className="p-8 bg-white rounded-[2rem] border border-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.04)] flex flex-col items-center text-center hover:shadow-xl transition-all"
-    >
-      {/* الأيقونة في دائرة */}
-      <div className="mb-4 p-4 bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center">
-        <f.icon className="text-[#0047AB]" size={32} />
-      </div>
-      
-      {/* العنوان */}
-      <h3 className="text-xl font-bold text-[#0F172A] mb-2">
-        {f.title}
-      </h3>
-      
-      {/* الخط الفاصل */}
-      <div className="w-10 h-[2px] bg-[#0047AB] mb-4"></div>
-      
-      {/* الوصف */}
-      <p className="text-gray-500 text-sm leading-relaxed">
-        {f.desc}
-      </p>
-    </div>
-  ))}
-</div>
+          <div className="space-y-32 lg:mr-[-50px] z-20">
+            {features.slice(2, 4).map((f, i) => (
+              <div
+                key={i}
+                className="p-8 bg-white rounded-[2rem] border border-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.04)] flex flex-col items-center text-center hover:shadow-xl transition-all"
+              >
+                {/* الأيقونة في دائرة */}
+                <div className="mb-4 p-4 bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center">
+                  <f.icon className="text-[#0047AB]" size={32} />
+                </div>
+
+                {/* العنوان */}
+                <h3 className="text-xl font-bold text-[#0F172A] mb-2">
+                  {f.title}
+                </h3>
+
+                {/* الخط الفاصل */}
+                <div className="w-10 h-[2px] bg-[#0047AB] mb-4"></div>
+
+                {/* الوصف */}
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <button className="mt-20 px-8 py-4 border border-[#0047AB] text-[#0047AB] rounded-xl font-bold hover:bg-[#0047AB] hover:text-white transition-all flex items-center gap-2 mx-auto">
-          اكتشف كيف نعمل ←
+          ← اكتشف كيف نعمل
         </button>
       </div>
     </section>

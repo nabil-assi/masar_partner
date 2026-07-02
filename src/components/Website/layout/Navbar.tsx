@@ -93,9 +93,9 @@ export const Navbar = () => {
               </Link>
             );
           })}
-          <button className="mt-2 bg-[#0047AB] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#003580] transition-all shadow-lg shadow-blue-900/20 w-full">
-            احجز استشارة مجانية
-          </button>
+         <button className="mt-2 bg-gradient-to-b from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:from-blue-700 hover:to-blue-900 transition-all w-full">
+  احجز استشارة مجانية
+</button>
         </div>
       )}
     </nav>

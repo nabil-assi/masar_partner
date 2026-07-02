@@ -27,9 +27,9 @@ const stats = [
   },
 ];
 
-export const Stats = () => {
+export const  Stats = () => {
   return (
-    <section className="relative py-24 px-6 bg-white overflow-hidden" dir="rtl">
+    <section className="relative    overflow-hidden" dir="ltr">
       {/* زخرفة الخلفية */}
       <div
         className="absolute top-8 right-8 w-28 h-28 opacity-60 pointer-events-none hidden sm:block"
@@ -51,7 +51,7 @@ export const Stats = () => {
           <span className="w-2 h-2 rounded-full bg-[#0047AB]"></span>
         </div>
 
-        <h2 className="text-4xl lg:text-5xl font-bold text-[#00116e] mb-4">
+        <h2 className="text-4xl lg:text-5xl pb-5 font-bold text-[#00116e] mb-4">
           نحو تأثير رقمي متجدد
         </h2>
         <p className="text-gray-500 mb-16 max-w-xl mx-auto leading-relaxed">
