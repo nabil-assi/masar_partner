@@ -1,0 +1,1 @@
+export type ValueColor = "orange" | "emerald" | "violet" | "blue";

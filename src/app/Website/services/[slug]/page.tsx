@@ -1,6 +1,13 @@
 import { notFound } from "next/navigation";
 import { getServiceBySlug, services } from "@/lib/services-data";
 import { Hero } from "@/components/Website/services/service/Hero";
+import { About } from "@/components/Website/services/service/About";
+import { WhatItIncludes } from "@/components/Website/services/service/WhatItIncludes";
+import { WhoIsItFor } from "@/components/Website/services/service/WhoIsItFor";
+import { ValueYouGet } from "@/components/Website/services/service/ValueYouGet";
+import { PortfolioExamples } from "@/components/Website/services/service/PortfolioExamples";
+import { HowWeWork } from "@/components/Website/services/HowWeWork";
+import { CTA } from "@/components/Website/home/CTA";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -17,7 +24,7 @@ export default async function ServicePage({
   if (!service) return notFound();
 
   return (
-    <main>
+    <main className="relative min-h-screen w-full overflow-x-hidden">
       <Hero
         breadcrumbLabel={service.title}
         heroTitle={service.heroTitle}
@@ -25,7 +32,46 @@ export default async function ServicePage({
         stats={service.stats}
       />
 
-     
+      <About
+        label={service.aboutSection.label}
+        title={service.aboutSection.title}
+        description={service.aboutSection.description}
+      />
+
+      <WhatItIncludes
+        badge={service.whatItIncludes.badge}
+        title={service.whatItIncludes.title}
+        description={service.whatItIncludes.description}
+        items={service.whatItIncludes.items}
+      />
+
+      <WhoIsItFor
+        badge={service.whoIsItFor.badge}
+        title={service.whoIsItFor.title}
+        description={service.whoIsItFor.description}
+        ctaLabel={service.whoIsItFor.ctaLabel}
+        items={service.whoIsItFor.items}
+      />
+
+      <ValueYouGet
+        badge={service.valueYouGet.badge}
+        title={service.valueYouGet.title}
+        description={service.valueYouGet.description}
+        items={service.valueYouGet.items}
+      />
+      <div className="px-20 space-y-30 bg-white">
+        <HowWeWork />
+      </div>
+
+      <PortfolioExamples
+        badge={service.portfolioExamples.badge}
+        title={service.portfolioExamples.title}
+        description={service.portfolioExamples.description}
+        items={service.portfolioExamples.items}
+      />
+      <div className="px-20 space-y-30 bg-white">
+        <CTA />
+      </div>
     </main>
   );
 }

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#5b21b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <!-- sidebar -->
+  <rect x="0" y="0" width="130" height="400" fill="white" opacity="0.08"/>
+  <rect x="30" y="40" width="70" height="14" rx="7" fill="white" opacity="0.3"/>
+  <rect x="30" y="90" width="70" height="10" rx="5" fill="white" opacity="0.2"/>
+  <rect x="30" y="116" width="70" height="10" rx="5" fill="white" opacity="0.35"/>
+  <rect x="30" y="142" width="70" height="10" rx="5" fill="white" opacity="0.2"/>
+  <rect x="30" y="168" width="70" height="10" rx="5" fill="white" opacity="0.2"/>
+  <!-- top stat cards -->
+  <rect x="150" y="30" width="140" height="70" rx="10" fill="white" opacity="0.16"/>
+  <rect x="300" y="30" width="140" height="70" rx="10" fill="white" opacity="0.16"/>
+  <rect x="450" y="30" width="150" height="70" rx="10" fill="white" opacity="0.16"/>
+  <!-- chart area -->
+  <rect x="150" y="120" width="450" height="150" rx="10" fill="white" opacity="0.1"/>
+  <polyline points="170,240 220,200 270,220 320,160 370,190 420,140 470,170 520,120 570,150"
+            fill="none" stroke="white" stroke-opacity="0.6" stroke-width="3"/>
+  <!-- bottom small blocks -->
+  <rect x="150" y="290" width="215" height="70" rx="10" fill="white" opacity="0.12"/>
+  <rect x="380" y="290" width="220" height="70" rx="10" fill="white" opacity="0.12"/>
+  <text x="375" y="386" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        fill="white" fill-opacity="0.85" text-anchor="middle">Strategy</text>
+</svg>
