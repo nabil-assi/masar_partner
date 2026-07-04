@@ -10,8 +10,8 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "الرئيسية", href: "/Website" },
-    { name: "حلولنا", href: "/solutions" },
+    { name: "الرئيسية", href: "/" },
+    { name: "حلولنا", href: "/services" },
     { name: "أعمالنا", href: "/portfolio" },
     { name: "المدونة", href: "/blog" },
     { name: "من نحن", href: "/about" },

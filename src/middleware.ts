@@ -1,34 +1,24 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const url = request.nextUrl;
-  const hostname = request.headers.get('host');
+  const hostname = request.headers.get("host") || "";
+  const { pathname } = request.nextUrl;
 
-  // 1. تحديد الدومين الأساسي (استبدل masar.com بدومينك الحقيقي)
-  const rootDomain = 'masar.com'; 
+  // نشيل البورت إذا موجود (متل :3000)
+  const hostWithoutPort = hostname.split(":")[0];
 
-  // 2. استخراج الدومين الفرعي
-  // نحذف الدومين الأساسي و localhost إذا كنا في مرحلة التطوير
-  const currentHost = hostname?.replace(`.${rootDomain}`, '').replace(':3000', '');
+  // ناخد أول جزء من الدومين (الـ subdomain)
+  const subdomain = hostWithoutPort.split(".")[0];
 
-  // 3. المنطق الديناميكي
-  // إذا كان الرابط academy.masar.com أو academy.localhost
-  if (currentHost === 'academy') {
-    return NextResponse.rewrite(new URL(`/Academy${url.pathname}`, request.url));
+  console.log("hostname:", hostname, "| subdomain:", subdomain); // للتشخيص المؤقت
+
+  if (subdomain === "academy") {
+    return NextResponse.rewrite(new URL(`/Academy${pathname}`, request.url));
   }
 
-  // إذا كان الرابط website.masar.com أو الرابط الرئيسي
-  if (currentHost === 'website' || currentHost === 'www' || currentHost === rootDomain || !currentHost) {
-    return NextResponse.rewrite(new URL(`/Website${url.pathname}`, request.url));
-  }
-
-  return NextResponse.next();
+  return NextResponse.rewrite(new URL(`/Website${pathname}`, request.url));
 }
 
 export const config = {
-  // استثناء الملفات الثابتة والصور ومسارات الـ API من الميدل وير
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$).*)',
-  ],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
