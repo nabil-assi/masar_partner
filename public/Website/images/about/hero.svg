@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="shapeGradTall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EAF2FF"/>
+      <stop offset="100%" stop-color="#B9D3FF"/>
+    </linearGradient>
+    <linearGradient id="shapeGradShort" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F9FF"/>
+      <stop offset="100%" stop-color="#CFE0FF"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#E6EEFC"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#BFD8FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#BFD8FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#2952A3" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- توهج خلفي -->
+  <circle cx="250" cy="230" r="220" fill="url(#glow)"/>
+
+  <!-- دوائر زخرفية خفيفة -->
+  <circle cx="90" cy="90" r="3" fill="#9FC1F7" opacity="0.6"/>
+  <circle cx="430" cy="120" r="4" fill="#9FC1F7" opacity="0.5"/>
+  <circle cx="410" cy="360" r="3" fill="#9FC1F7" opacity="0.6"/>
+  <circle cx="60" cy="380" r="4" fill="#9FC1F7" opacity="0.5"/>
+
+  <!-- الشكل الطويل (يشبه علم مطوي) -->
+  <g filter="url(#softShadow)">
+    <path d="M150 60
+             L230 100
+             L230 340
+             L150 300
+             Z"
+          fill="url(#shapeGradTall)" />
+    <path d="M150 60 L150 300 L110 320 L110 80 Z"
+          fill="url(#shapeGradTall)" opacity="0.85"/>
+  </g>
+
+  <!-- الشكل القصير (خلف الطويل، أصغر) -->
+  <g filter="url(#softShadow)">
+    <path d="M255 150
+             L320 180
+             L320 360
+             L255 330
+             Z"
+          fill="url(#shapeGradShort)" />
+    <path d="M255 150 L255 330 L225 345 L225 165 Z"
+          fill="url(#shapeGradShort)" opacity="0.85"/>
+  </g>
+
+  <!-- الطريق المتعرج -->
+  <path d="M195 430
+           C 175 380, 245 360, 225 310
+           C 205 260, 275 240, 255 190
+           C 240 155, 265 130, 250 95"
+        fill="none"
+        stroke="url(#roadGrad)"
+        stroke-width="26"
+        stroke-linecap="round"/>
+  <path d="M195 430
+           C 175 380, 245 360, 225 310
+           C 205 260, 275 240, 255 190
+           C 240 155, 265 130, 250 95"
+        fill="none"
+        stroke="#DCE8FB"
+        stroke-width="26"
+        stroke-linecap="round"
+        stroke-dasharray="2 14"
+        opacity="0.7"/>
+
+  <!-- ظل أرضي خفيف -->
+  <ellipse cx="230" cy="440" rx="140" ry="18" fill="#2952A3" opacity="0.06"/>
+</svg>

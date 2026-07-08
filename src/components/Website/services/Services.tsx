@@ -13,7 +13,7 @@ import { services } from "@/lib/services-data";
 
 export const Services = () => {
   return (
-    <section className="relative px-6 py-20 md:px-12 lg:px-24 bg-gray-50/30">
+    <section className="relative px-6 py-10 md:px-12 lg:px-24 bg-gray-50/30">
       <div className="max-w-6xl mx-auto relative z-10" dir="rtl">
         <div className="text-center mb-14">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-[#011856] mb-4">

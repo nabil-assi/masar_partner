@@ -24,7 +24,7 @@ export default function Home() {
       </div>
 
       {/* المحتوى */}
-      <div className="px-20 space-y-30">
+      <div className="px-10 space-y-30">
         <Hero />
         <Services />
  

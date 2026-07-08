@@ -207,25 +207,66 @@ export const services = [
       description: "مشاريع تصميم حقيقية صنعت فارقًا ملموسًا لعملائنا.",
       items: [
         {
+          slug: "luxury-brand-identity",
           image: "/Website/images/public_portfolio/brand1.svg",
           tag: "هوية بصرية",
           title: "هوية علامة مستلزمات فاخرة",
+          description:
+            "هوية بصرية متكاملة تعكس فخامة المنتجات وتميّزها عن المنافسين.",
+          tags: ["شعار", "ألوان", "خطوط"],
           link: "https://example.com/design-1",
+          client: "Lumière Home",
+          year: "2025",
+          duration: "6 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/brand1.svg",
+            "/Website/images/public_portfolio/brand2.svg",
+          ],
+          overview:
+            "عملنا مع Lumière Home لبناء هوية بصرية تعكس فخامة منتجاتها المنزلية. بدأنا بدراسة السوق والمنافسين، ثم صممنا شعارًا وباليت ألوان ونظام خطوط يعكس الطابع الراقي للعلامة، وانتهينا بدليل استخدام شامل يضمن اتساق الهوية على كل القنوات.",
+          highlights: ["هوية متكاملة", "دليل استخدام شامل", "تصميم يعكس الفخامة"],
         },
         {
+          slug: "consulting-brand-identity",
           image: "/Website/images/public_portfolio/brand2.svg",
           tag: "شعار وهوية",
           title: "هوية شركة استشارات رقمية",
+          description: "شعار وهوية بصرية احترافية لشركة استشارات رقمية ناشئة.",
+          tags: ["Branding", "UI", "Social Media"],
           link: "https://example.com/design-2",
+          client: "Nexa Consulting",
+          year: "2024",
+          duration: "4 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/brand2.svg",
+            "/Website/images/public_portfolio/brand3.svg",
+          ],
+          overview:
+            "صممنا هوية بصرية كاملة لشركة Nexa Consulting الناشئة في مجال الاستشارات الرقمية، تضمنت شعارًا عصريًا وهوية بصرية موحّدة استخدمت لاحقًا في الموقع الإلكتروني والمواد التسويقية على السوشيال ميديا.",
+          highlights: ["شعار عصري", "هوية موحّدة", "جاهزة للسوشيال ميديا"],
         },
         {
+          slug: "booking-app-ui",
           image: "/Website/images/public_portfolio/brand3.svg",
           tag: "تصميم UI",
           title: "واجهة تطبيق حجوزات",
+          description: "تصميم واجهة استخدام سلسة وجذابة لتطبيق حجوزات متكامل.",
+          tags: ["UI", "UX", "Prototype"],
           link: "https://example.com/design-3",
+          client: "BookEasy",
+          year: "2025",
+          duration: "5 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/brand3.svg",
+            "/Website/images/public_portfolio/app2.svg",
+          ],
+          overview:
+            "صممنا واجهة استخدام كاملة لتطبيق BookEasy للحجوزات، ركزنا على تبسيط رحلة المستخدم من البحث إلى تأكيد الحجز، مع نماذج أولية (Prototypes) اختُبرت مع مستخدمين حقيقيين قبل التسليم النهائي.",
+          highlights: ["تجربة مستخدم مبسطة", "نماذج أولية مختبرة", "تصميم جذاب"],
         },
       ],
     },
+    category: "تصميم وتجربة",
   },
   {
     slug: "mobile-apps",
@@ -382,25 +423,65 @@ export const services = [
       description: "تطبيقات حقيقية صنعنا فيها فارقًا ملموسًا لعملائنا.",
       items: [
         {
+          slug: "restaurant-delivery-app",
           image: "/Website/images/public_portfolio/app1.svg",
           tag: "تطبيق توصيل",
           title: "تطبيق طلب وتوصيل مطاعم",
+          description: "تطبيق جوال سريع لطلب الطعام ومتابعة التوصيل لحظيًا.",
+          tags: ["iOS", "Android", "Real-time"],
           link: "https://example.com/mobile-1",
+          client: "QuickBite",
+          year: "2025",
+          duration: "10 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/app1.svg",
+            "/Website/images/public_portfolio/app2.svg",
+          ],
+          overview:
+            "طوّرنا تطبيق QuickBite لطلب وتوصيل الطعام، بواجهة سلسة لاختيار الوجبات، نظام تتبع لحظي للطلبات، وتكامل مع بوابات دفع متعددة، على منصتي iOS و Android بكود واحد.",
+          highlights: ["تتبع لحظي للطلبات", "دفع متعدد البوابات", "أداء سريع"],
         },
         {
+          slug: "clinic-booking-app",
           image: "/Website/images/public_portfolio/app2.svg",
           tag: "تطبيق حجوزات",
           title: "تطبيق حجز مواعيد عيادات",
+          description: "تطبيق جوال سلس لحجز وإدارة مواعيد المرضى.",
+          tags: ["API", "UX/UI", "Mobile App"],
           link: "https://example.com/mobile-2",
+          client: "MediCare Clinics",
+          year: "2024",
+          duration: "8 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/app2.svg",
+            "/Website/images/public_portfolio/app3.svg",
+          ],
+          overview:
+            "بنينا تطبيق حجز مواعيد لسلسلة عيادات MediCare، يتيح للمرضى حجز موعدهم واختيار الطبيب المناسب، مع ربط عبر API بنظام إدارة العيادة الداخلي لتفادي أي تعارض بالمواعيد.",
+          highlights: ["ربط مباشر بالـ API", "منع تعارض المواعيد", "واجهة سهلة"],
         },
         {
+          slug: "interactive-learning-platform",
           image: "/Website/images/public_portfolio/app3.svg",
           tag: "تطبيق تعليمي",
           title: "منصة تعليمية تفاعلية",
+          description: "منصة تعليمية تفاعلية للطلاب بمحتوى وتمارين متجددة.",
+          tags: ["Education", "iOS", "Android"],
           link: "https://example.com/mobile-3",
+          client: "LearnSpace",
+          year: "2025",
+          duration: "12 أسبوعًا",
+          gallery: [
+            "/Website/images/public_portfolio/app3.svg",
+            "/Website/images/public_portfolio/app1.svg",
+          ],
+          overview:
+            "طوّرنا منصة LearnSpace التعليمية التفاعلية، تتضمن دروسًا وتمارين وتتبع تقدم لكل طالب، بتصميم يشجع على الاستمرارية عبر نظام نقاط وإنجازات.",
+          highlights: ["نظام نقاط وإنجازات", "تتبع تقدم الطالب", "محتوى تفاعلي"],
         },
       ],
     },
+    category: "منصات رقمية",
   },
   {
     slug: "websites",
@@ -548,7 +629,8 @@ export const services = [
           icon: Users,
           color: "blue" as ValueColor,
           title: "تجربة واضحة",
-          description: "واجهات سهلة تساعد الزائر على الوصول لما يحتاجه بلا احتكاك.",
+          description:
+            "واجهات سهلة تساعد الزائر على الوصول لما يحتاجه بلا احتكاك.",
         },
       ],
     },
@@ -558,25 +640,67 @@ export const services = [
       description: "مشاريع حقيقية صنعناها فيها فارقًا ملموسًا لعملائنا.",
       items: [
         {
+          slug: "luxury-supplies-store",
           image: "/Website/images/public_portfolio/store.svg",
           tag: "متجر إلكتروني",
           title: "متجر المستلزمات الفاخرة",
+          description:
+            "متجر إلكتروني متكامل بتجربة تسوّق سلسة وإدارة كاملة للمنتجات.",
+          tags: ["Shopify", "UI/UX", "Payments"],
           link: "https://example.com/websites-1",
+          client: "Lumière Home",
+          year: "2025",
+          duration: "8 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/store.svg",
+            "/Website/images/public_portfolio/finpay.svg",
+          ],
+          overview:
+            "بنينا متجرًا إلكترونيًا متكاملًا لعلامة Lumière Home، بتجربة تسوّق سلسة، صفحات منتجات غنية بالتفاصيل، وربط مع بوابات دفع وشحن متعددة لضمان تجربة شراء بلا احتكاك.",
+          highlights: ["دفع وشحن متكامل", "صفحات منتجات غنية", "تجربة شراء سلسة"],
         },
         {
+          slug: "digital-services-corporate",
           image: "/Website/images/public_portfolio/finpay.svg",
           tag: "موقع مؤسسي",
           title: "موقع شركة خدمات رقمية",
+          description: "موقع احترافي يعكس هوية الشركة ويقدم خدماتها بوضوح.",
+          tags: ["Next.js", "SEO", "CMS"],
           link: "https://example.com/websites-2",
+          client: "Nexa Consulting",
+          year: "2024",
+          duration: "6 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/finpay.svg",
+            "/Website/images/public_portfolio/dashboard.svg",
+          ],
+          overview:
+            "صممنا وطوّرنا موقعًا مؤسسيًا لشركة Nexa Consulting باستخدام Next.js، مع تحسين لمحركات البحث ونظام إدارة محتوى مرن يتيح للفريق تحديث المحتوى بدون خبرة تقنية.",
+          highlights: ["محسّن لمحركات البحث", "إدارة محتوى مرنة", "أداء سريع"],
         },
         {
+          slug: "tech-store-dashboard",
           image: "/Website/images/public_portfolio/dashboard.svg",
           tag: "لوحة تحكم",
           title: "لوحة تحكم متجر التقنية",
+          description:
+            "نظام يساعد الفريق على متابعة الطلبات والمنتجات من مكان واحد.",
+          tags: ["UI/UX", "Dashboard", "Web Platform"],
           link: "https://example.com/websites-3",
+          client: "TechHub Store",
+          year: "2025",
+          duration: "9 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/dashboard.svg",
+            "/Website/images/public_portfolio/store.svg",
+          ],
+          overview:
+            "طوّرنا لوحة تحكم داخلية لمتجر TechHub، تتيح للفريق متابعة الطلبات والمخزون والتقارير المالية من واجهة واحدة سهلة الاستخدام، ما قلل وقت الإدارة اليومية بشكل ملحوظ.",
+          highlights: ["متابعة موحّدة للطلبات", "تقارير مالية فورية", "واجهة سهلة"],
         },
       ],
     },
+    category: "منصات رقمية",
   },
   {
     slug: "consulting",
@@ -733,25 +857,68 @@ export const services = [
       description: "مشاريع استشارية حقيقية غيّرت مسار أعمال عملائنا.",
       items: [
         {
+          slug: "distribution-roadmap",
           image: "/Website/images/public_portfolio/consulting1.svg",
           tag: "خارطة طريق",
           title: "خطة تحول رقمي لشركة توزيع",
+          description:
+            "خارطة طريق رقمية واضحة ساعدت الشركة على التحول نحو الأتمتة.",
+          tags: ["Strategy", "Digital", "Roadmap"],
           link: "https://example.com/consulting-1",
+          client: "Wafra Distribution",
+          year: "2024",
+          duration: "4 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/consulting1.svg",
+            "/Website/images/public_portfolio/automation1.svg",
+          ],
+          overview:
+            "حللنا العمليات الحالية لشركة Wafra Distribution ووضعنا خارطة طريق تنفيذية بمراحل زمنية واضحة، ركزت على أتمتة العمليات اليدوية وربط الأقسام ببعضها.",
+          highlights: ["خارطة طريق واضحة", "مراحل زمنية محددة", "توصيات عملية"],
         },
         {
+          slug: "ecommerce-conversion-boost",
           image: "/Website/images/public_portfolio/consulting2.svg",
           tag: "تحسين تحويل",
           title: "رفع مبيعات متجر إلكتروني",
+          description:
+            "استشارة رفعت معدلات التحويل ومبيعات المتجر بشكل ملموس.",
+          tags: ["CRO", "Analytics", "Growth"],
           link: "https://example.com/consulting-2",
+          client: "ShopWave",
+          year: "2025",
+          duration: "5 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/consulting2.svg",
+            "/Website/images/public_portfolio/marketing1.svg",
+          ],
+          overview:
+            "قدّمنا لـ ShopWave تحليلًا دقيقًا لسلوك المستخدمين على متجرهم، واقترحنا تحسينات على رحلة الشراء أدت لرفع معدل التحويل بشكل ملموس خلال أسابيع من التنفيذ.",
+          highlights: ["تحليل دقيق للسلوك", "رفع معدل التحويل", "نتائج سريعة"],
         },
         {
+          slug: "startup-tech-stack",
           image: "/Website/images/public_portfolio/consulting3.svg",
           tag: "استشارة تقنية",
           title: "اختيار بنية تقنية لمنصة ناشئة",
+          description:
+            "توصيات تقنية دقيقة ساعدت المنصة تبني بنية قابلة للتوسع.",
+          tags: ["Tech Stack", "Scalability", "Consulting"],
           link: "https://example.com/consulting-3",
+          client: "Nextly",
+          year: "2025",
+          duration: "3 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/consulting3.svg",
+            "/Website/images/public_portfolio/dashboard.svg",
+          ],
+          overview:
+            "ساعدنا فريق Nextly الناشئ على اختيار البنية التقنية المناسبة لمنتجهم الرقمي، مع الأخذ بعين الاعتبار قابلية التوسع المستقبلية وميزانية الفريق المحدودة.",
+          highlights: ["بنية قابلة للتوسع", "توصيات مدروسة", "مناسبة للميزانية"],
         },
       ],
     },
+    category: "أنظمة أعمال",
   },
   {
     slug: "automation-systems",
@@ -909,25 +1076,66 @@ export const services = [
       description: "أنظمة أتمتة حقيقية وفّرت وقتًا وجهدًا كبيرين لعملائنا.",
       items: [
         {
+          slug: "distribution-erp",
           image: "/Website/images/public_portfolio/automation1.svg",
           tag: "نظام ERP",
           title: "نظام إدارة مخزون لشركة توزيع",
+          description: "نظام ERP متكامل لإدارة المخزون والمبيعات والفوترة.",
+          tags: ["Automation", "ERP", "Inventory"],
           link: "https://example.com/automation-1",
+          client: "Wafra Distribution",
+          year: "2025",
+          duration: "14 أسبوعًا",
+          gallery: [
+            "/Website/images/public_portfolio/automation1.svg",
+            "/Website/images/public_portfolio/dashboard.svg",
+          ],
+          overview:
+            "طوّرنا نظام ERP متكامل لشركة Wafra Distribution، يربط المخزون بالمبيعات والفوترة بمنصة واحدة، ما قلل الأخطاء اليدوية ووفّر وقتًا كبيرًا على الفريق التشغيلي.",
+          highlights: ["ربط المخزون بالمبيعات", "تقليل الأخطاء اليدوية", "توفير وقت كبير"],
         },
         {
+          slug: "services-crm",
           image: "/Website/images/public_portfolio/automation2.svg",
           tag: "نظام CRM",
           title: "منصة إدارة عملاء لشركة خدمات",
+          description: "نظام CRM محترف لإدارة المتابعة والمبيعات والتقارير.",
+          tags: ["Automation", "CRM", "ERPNext"],
           link: "https://example.com/automation-2",
+          client: "CareLine Services",
+          year: "2024",
+          duration: "10 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/automation2.svg",
+            "/Website/images/public_portfolio/consulting1.svg",
+          ],
+          overview:
+            "بنينا نظام CRM على منصة ERPNext لشركة CareLine، لمتابعة رحلة العميل من أول تواصل حتى إتمام الصفقة، مع تقارير دورية تدعم فريق المبيعات باتخاذ قرارات أدق.",
+          highlights: ["متابعة رحلة العميل كاملة", "تقارير دورية دقيقة", "مبني على ERPNext"],
         },
         {
+          slug: "store-billing-automation",
           image: "/Website/images/public_portfolio/automation3.svg",
           tag: "أتمتة عمليات",
           title: "أتمتة الفوترة لمتجر إلكتروني",
+          description:
+            "ربط تلقائي بين الطلبات وأنظمة الفوترة وتقارير المتابعة.",
+          tags: ["CRM", "WhatsApp", "n8n"],
           link: "https://example.com/automation-3",
+          client: "ShopWave",
+          year: "2025",
+          duration: "6 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/automation3.svg",
+            "/Website/images/public_portfolio/store.svg",
+          ],
+          overview:
+            "أتمتنا عملية الفوترة لمتجر ShopWave الإلكتروني باستخدام n8n، مع ربط تلقائي لإشعارات الطلبات عبر WhatsApp، ما ألغى الحاجة لمتابعة يدوية لكل طلب.",
+          highlights: ["إشعارات WhatsApp تلقائية", "فوترة بدون تدخل يدوي", "مبني على n8n"],
         },
       ],
     },
+    category: "أنظمة أعمال",
   },
   {
     slug: "marketing",
@@ -1084,25 +1292,66 @@ export const services = [
       description: "حملات تسويقية حقيقية حققت نموًا ملموسًا لعملائنا.",
       items: [
         {
+          slug: "fashion-launch-campaign",
           image: "/Website/images/public_portfolio/marketing1.svg",
           tag: "حملة إعلانية",
           title: "حملة إطلاق منتج لمتجر أزياء",
+          description:
+            "حملة إعلانية مستهدفة رفعت وعي الجمهور ومبيعات المتجر.",
+          tags: ["Ads", "Social Media", "Branding"],
           link: "https://example.com/marketing-1",
+          client: "Aura Fashion",
+          year: "2025",
+          duration: "6 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/marketing1.svg",
+            "/Website/images/public_portfolio/marketing2.svg",
+          ],
+          overview:
+            "خططنا وأدرنا حملة إعلانية متكاملة لإطلاق مجموعة جديدة من متجر Aura Fashion، استهدفت الجمهور المناسب عبر منصات متعددة وحققت زيادة ملموسة بالمبيعات خلال فترة الإطلاق.",
+          highlights: ["استهداف متعدد المنصات", "زيادة ملموسة بالمبيعات", "حملة متكاملة"],
         },
         {
+          slug: "food-brand-social-growth",
           image: "/Website/images/public_portfolio/marketing2.svg",
           tag: "إدارة سوشيال ميديا",
           title: "نمو حساب علامة غذائية",
+          description: "محتوى وإدارة يومية ساهمت بنمو التفاعل والمتابعين.",
+          tags: ["Social Media", "Content", "Growth"],
           link: "https://example.com/marketing-2",
+          client: "Nature Bites",
+          year: "2024",
+          duration: "12 أسبوعًا",
+          gallery: [
+            "/Website/images/public_portfolio/marketing2.svg",
+            "/Website/images/public_portfolio/marketing3.svg",
+          ],
+          overview:
+            "أدرنا حسابات السوشيال ميديا لعلامة Nature Bites الغذائية، بمحتوى يومي مدروس ساهم بزيادة ملحوظة في التفاعل وعدد المتابعين خلال ثلاثة أشهر من العمل المستمر.",
+          highlights: ["محتوى يومي مدروس", "نمو ملحوظ بالمتابعين", "تفاعل مستمر"],
         },
         {
+          slug: "service-seo-improvement",
           image: "/Website/images/public_portfolio/marketing3.svg",
           tag: "SEO",
           title: "تحسين ترتيب موقع خدمي",
+          description: "تحسين محركات بحث رفع ظهور الموقع لعملاء جدد.",
+          tags: ["SEO", "Content", "Analytics"],
           link: "https://example.com/marketing-3",
+          client: "FixIt Home Services",
+          year: "2025",
+          duration: "8 أسابيع",
+          gallery: [
+            "/Website/images/public_portfolio/marketing3.svg",
+            "/Website/images/public_portfolio/consulting2.svg",
+          ],
+          overview:
+            "حسّنا ترتيب موقع FixIt على محركات البحث عبر استراتيجية محتوى وكلمات مفتاحية مدروسة، ما رفع ظهور الموقع أمام عملاء جدد يبحثون عن خدمات الصيانة المنزلية.",
+          highlights: ["استراتيجية كلمات مفتاحية", "ظهور أعلى بالبحث", "عملاء جدد مستهدفون"],
         },
       ],
     },
+    category: "منصات رقمية",
   },
 ];
 
@@ -1110,3 +1359,30 @@ export type Service = (typeof services)[number];
 
 export const getServiceBySlug = (slug: string) =>
   services.find((s) => s.slug === slug);
+
+// تجميع كل المشاريع من كل الخدمات بمصفوفة واحدة مسطّحة
+export const getAllPortfolioItems = () => {
+  return services.flatMap((service) =>
+    service.portfolioExamples.items.map((item) => ({
+      ...item,
+      highlights: item.highlights ?? [],
+      category: service.category,
+      serviceSlug: service.slug,
+      serviceTitle: service.title,
+    }))
+  );
+};
+
+export const getPortfolioItemBySlug = (slug: string) => {
+  const allItems = getAllPortfolioItems();
+  return allItems.find((item) => item.slug === slug);
+};
+
+// ألوان الـ Tag حسب فئة الخدمة (تُستخدم بمكوّن عرض المشاريع)
+export const categoryColors: Record<string, { bg: string; text: string }> = {
+  "منصات رقمية": { bg: "bg-blue-50", text: "text-blue-600" },
+  "أنظمة أعمال": { bg: "bg-amber-50", text: "text-amber-600" },
+  "تصميم وتجربة": { bg: "bg-violet-50", text: "text-violet-600" },
+  استشارات: { bg: "bg-sky-50", text: "text-sky-600" },
+  تسويق: { bg: "bg-pink-50", text: "text-pink-600" },
+};

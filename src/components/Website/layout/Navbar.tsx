@@ -18,6 +18,15 @@ export const Navbar = () => {
     { name: "تواصل معنا", href: "/contact" },
   ];
 
+  const isLinkActive = (href: string) => {
+    // الرئيسية لازم تكون مطابقة تامة فقط، وإلا رح تصير مفعّلة دايماً
+    if (href === "/") {
+      return pathname === "/";
+    }
+    // باقي الروابط: مفعّلة لو المسار الحالي بيبلش بنفس الرابط
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <nav
       className="fixed top-4 left-15 right-15 z-50 bg-white backdrop-blur-md rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] px-6 sm:px-10 lg:px-14 py-3 flex items-center justify-between border border-gray-100"
@@ -42,7 +51,7 @@ export const Navbar = () => {
       {/* الروابط - سطح المكتب */}
       <div className="hidden lg:flex items-center gap-2 xl:gap-3 text-gray-700">
         {navLinks.map((link) => {
-          const isActive = pathname === link.href;
+          const isActive = isLinkActive(link.href);
           return (
             <Link
               key={link.name}
@@ -77,7 +86,7 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden absolute top-full mt-3 left-0 right-0 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100 p-4 flex flex-col gap-1">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = isLinkActive(link.href);
             return (
               <Link
                 key={link.name}
@@ -93,9 +102,9 @@ export const Navbar = () => {
               </Link>
             );
           })}
-         <button className="mt-2 bg-gradient-to-b from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:from-blue-700 hover:to-blue-900 transition-all w-full">
-  احجز استشارة مجانية
-</button>
+          <button className="mt-2 bg-gradient-to-b from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:from-blue-700 hover:to-blue-900 transition-all w-full">
+            احجز استشارة مجانية
+          </button>
         </div>
       )}
     </nav>

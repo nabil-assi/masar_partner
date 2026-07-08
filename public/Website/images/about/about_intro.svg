@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" width="700" height="560">
+  <defs>
+    <linearGradient id="baseImg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A5568"/>
+      <stop offset="100%" stop-color="#2D3748"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="65%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="handTone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8C9A8"/>
+      <stop offset="100%" stop-color="#D4A987"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="560" fill="url(#baseImg)"/>
+
+  <rect width="700" height="560" fill="url(#glowBlue)"/>
+
+  <g opacity="0.9">
+    <ellipse cx="350" cy="470" rx="260" ry="70" fill="#3A2E22" opacity="0.5"/>
+    <path d="M120 470 C 220 420, 480 420, 580 470 L 580 560 L 120 560 Z" fill="url(#handTone)" opacity="0.9"/>
+    <path d="M270 420 C 300 390, 400 390, 430 420 L 430 470 L 270 470 Z" fill="url(#handTone)"/>
+  </g>
+
+  <g stroke="#9FC1F7" stroke-width="1.4" opacity="0.55">
+    <line x1="230" y1="120" x2="120" y2="180"/>
+    <line x1="230" y1="120" x2="330" y2="150"/>
+    <line x1="330" y1="150" x2="420" y2="110"/>
+    <line x1="330" y1="150" x2="380" y2="220"/>
+    <line x1="120" y1="180" x2="150" y2="260"/>
+    <line x1="150" y1="260" x2="260" y2="230"/>
+    <line x1="260" y1="230" x2="380" y2="220"/>
+    <line x1="380" y1="220" x2="470" y2="180"/>
+    <line x1="470" y1="180" x2="560" y2="140"/>
+    <line x1="470" y1="180" x2="540" y2="230"/>
+    <line x1="540" y1="230" x2="600" y2="190"/>
+  </g>
+
+  <g fill="#E2E8F0" opacity="0.9">
+    <circle cx="230" cy="120" r="17"/>
+    <circle cx="120" cy="180" r="14"/>
+    <circle cx="330" cy="150" r="20"/>
+    <circle cx="420" cy="110" r="13"/>
+    <circle cx="150" cy="260" r="15"/>
+    <circle cx="260" cy="230" r="12"/>
+    <circle cx="380" cy="220" r="22"/>
+    <circle cx="470" cy="180" r="16"/>
+    <circle cx="560" cy="140" r="13"/>
+    <circle cx="540" cy="230" r="14"/>
+    <circle cx="600" cy="190" r="18"/>
+  </g>
+
+  <g fill="#94A3B8">
+    <path d="M215 137 q15 -25 30 0 q-15 12 -30 0" opacity="0.9"/>
+    <path d="M330 172 q18 -28 36 0 q-18 14 -36 0" opacity="0.9"/>
+    <path d="M380 244 q20 -30 40 0 q-20 15 -40 0" opacity="0.9"/>
+    <path d="M600 210 q17 -26 34 0 q-17 13 -34 0" opacity="0.9"/>
+  </g>
+</svg>

@@ -9,11 +9,11 @@ import { Menu, X, User } from "lucide-react";
 import { AuthModal } from "../auth/AuthModal";
 import { LoginForm } from "../auth/LoginForm";
 const navLinks = [
-  { name: "الرئيسية", href: "/Academy" },
-  { name: "الأقسام التعليمية", href: "/Academy/departments" },
-  { name: "المقالات", href: "/Academy/blog" },
-  { name: "عن الأكاديمية", href: "/Academy/about" },
-  { name: "تواصل معنا", href: "/Academy/contact" },
+  { name: "الرئيسية", href: "/" },
+  { name: "الأقسام التعليمية", href: "/departments" },
+  { name: "المقالات", href: "/blog" },
+  { name: "عن الأكاديمية", href: "/about" },
+  { name: "تواصل معنا", href: "/contact" },
 ];
 
 export const Navbar = () => {

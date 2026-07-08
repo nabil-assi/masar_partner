@@ -39,10 +39,13 @@ export const Hero = () => {
             </button>
 
             {/* الزر الثاني: إطار أزرق فاتح */}
-            <button className="flex items-center gap-3 border-1 border-[#0047AB] px-8 py-4 rounded-xl text-[#0047AB] font-bold hover:bg-blue-50 transition-all hover:shadow-lg cursor-pointer hover:-translate-y-1">
+            <a
+              href="/portfolio"
+              className="flex items-center gap-3 border-1 border-[#0047AB] px-8 py-4 rounded-xl text-[#0047AB] font-bold hover:bg-blue-50 transition-all hover:shadow-lg cursor-pointer hover:-translate-y-1"
+            >
               استعرض أعمالنا
               <Calendar className="w-5 h-5" />
-            </button>
+            </a>
           </div>
 
           {/* النقاط الثلاث - أكبر وموزعة بشكل أوضح */}

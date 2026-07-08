@@ -24,10 +24,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section
-      className="relative md:px-12 lg:px-24   overflow-hidden"
-      dir="ltr"
-    >
+    <section className="relative md:px-12 lg:px-24   overflow-hidden" dir="ltr">
       {/* زخرفة الخلفية */}
       <div
         className="absolute top-10 left-8 w-28 h-28 opacity-60 pointer-events-none hidden sm:block"
@@ -52,7 +49,10 @@ export const Services = () => {
         </div>
 
         {/* الشبكة */}
-        <div dir="rtl" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          dir="rtl"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {services.map((service, index) => (
             <Link
               key={index}
@@ -80,12 +80,15 @@ export const Services = () => {
 
         {/* الزر */}
         <div className="mt-16 flex justify-center group">
-          <button className="px-8 py-4 border-2 border-[#0047AB] text-[#0047AB] rounded-xl font-bold hover:bg-[#0047AB] hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-lg">
+          <a
+            href="/services"
+            className="px-8 py-4 border-2 border-[#0047AB] text-[#0047AB] rounded-xl font-bold hover:bg-[#0047AB] hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-lg"
+          >
             <span>استكشف جميع الخدمات</span>
             <span className="transition-transform duration-300 group-hover:-translate-x-1">
               ←
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

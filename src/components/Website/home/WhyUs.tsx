@@ -38,17 +38,6 @@ const centerNodes = [
 export const WhyUs = () => {
   return (
     <section className="  relative overflow-hidden" dir="ltr">
-      {/* زخرفة الخلفية */}
-      <div
-        className="absolute top-10 right-10 w-28 h-28 opacity-60 pointer-events-none hidden sm:block"
-        style={{
-          backgroundImage: "radial-gradient(#c7d9f0 1.6px, transparent 1.6px)",
-          backgroundSize: "15px 15px",
-        }}
-      />
-      <div className="absolute -top-24 -left-24 w-[340px] h-[340px] bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
-      <div className="absolute -bottom-28 -right-20 w-[300px] h-[300px] bg-slate-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
-
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <h2 className="text-4xl lg:text-5xl font-bold text-[#0F172A] mb-4">
           لماذا مسار؟
