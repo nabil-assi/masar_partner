@@ -34,7 +34,7 @@ export const Navbar = () => {
     >
       {/* الشعار */}
       <Link
-        href="/Website"
+        href="/"
         className="flex items-center w-[140px] h-[48px] sm:w-[160px] sm:h-[54px] lg:w-[185px] lg:h-[63px] relative shrink-0"
         onClick={() => setIsOpen(false)}
       >

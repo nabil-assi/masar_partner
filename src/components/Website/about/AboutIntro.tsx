@@ -11,7 +11,7 @@ const checklistItems = [
 
 export const AboutIntro = () => {
   return (
-    <section className="py-16 lg:py-20 px-6 bg-white" dir="rtl">
+    <section className="py-16 lg:py-20 px-6  " dir="rtl">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           {/* المحتوى النصي */}

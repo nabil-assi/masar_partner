@@ -32,7 +32,7 @@ export const HowWeWork = () => {
   const inset = columnWidthPercent / 2;
 
   return (
-    <section dir="rtl" className="py-5 px-6 bg-gray-50/50">
+    <section dir="rtl" className="py-5 px-6  ">
       <div className="max-w-6xl mx-auto">
         {/* العنوان */}
         <div className="text-center mb-20">

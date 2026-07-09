@@ -1,8 +1,7 @@
-import { Hero } from "@/components/Website/services/Hero";
-import { Services } from "@/components/Website/services/Services";
-import { HowWeWork } from "@/components/Website/services/HowWeWork";
-import { CTA } from "@/components/Website/home/CTA";
+import { Hero } from "@/components/Website/blog/Hero";
+ 
 import Image from "next/image";
+ import { Blog } from "@/components/Website/blog/Blog";
 
 export default function Home() {
   return (
@@ -18,12 +17,9 @@ export default function Home() {
         />
       </div>
       <Hero />
-      {/* المحتوى */}
-      <div className="px-20 space-y-30">
-        <Services />
-        <HowWeWork />
-        <CTA />
-      </div>
+ 
+        <Blog />
+ 
     </main>
   );
 }

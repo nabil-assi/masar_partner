@@ -50,7 +50,7 @@ const itemVariants = {
 
 export const ContactInfo = () => {
   return (
-    <section className="py-16 lg:py-20 px-6 bg-white" dir="rtl">
+    <section className="py-16 lg:py-20 px-6  " dir="rtl">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           variants={containerVariants}

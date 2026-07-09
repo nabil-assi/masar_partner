@@ -27,10 +27,7 @@ export default function Home() {
       <div className="px-10 space-y-30">
         <Hero />
         <Services />
- 
-
         <WhyUs />
- 
         <Stats />
         <Portfolio />
         <Testimonials />

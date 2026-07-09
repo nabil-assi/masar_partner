@@ -43,6 +43,7 @@ export const Hero = () => {
     <path
       d="M0,90 L0,90 C480,-10 960,-10 1440,90 L1440,90 Z"
       fill="white"
+      
     />
   </svg>
 </div>

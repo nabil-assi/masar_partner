@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${almarai.variable}`}>
       <body className="bg-[#0F172A] text-white min-h-screen vc-init">
-        {/* المحتوى يأتي من الصفحات أو الـ Layouts الفرعية */}
-        {children}
+         {children}
       </body>
     </html>
   );
