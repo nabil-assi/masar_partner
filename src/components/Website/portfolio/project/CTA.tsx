@@ -9,7 +9,7 @@ interface ProjectCTAProps {
 export const ProjectCTA = ({ serviceTitle, serviceSlug }: ProjectCTAProps) => {
   return (
     <section className="py-12 px-4 bg-white" dir="rtl">
-      <div className="max-w-4xl mx-auto bg-[#0B1F63] rounded-2xl p-8 lg:p-12 border border-white/10 shadow-xl overflow-hidden relative">
+      <div className="mx-auto w-full max-w-4xl bg-[#0B1F63] rounded-2xl p-8 lg:p-12 border border-white/10 shadow-xl overflow-hidden relative">
         
         {/* محتوى مركزي ومُحكم */}
         <div className="relative z-10 text-center text-white">

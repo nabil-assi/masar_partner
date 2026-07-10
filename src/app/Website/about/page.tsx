@@ -16,6 +16,7 @@ export default function Home() {
           src="/Website/images/background.png"
           alt="Background"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -26,12 +27,12 @@ export default function Home() {
       <AboutIntro />
 
       <WhyMasar />
-      <div className="   py-16 lg:py-20 px-6">
+      <div className="py-16 sm:py-20 lg:py-24">
         <HowWeWork />
       </div>
 
       <TeamSection />
-      <div className="   py-16 lg:py-20 px-6">
+      <div className="py-16 sm:py-20 lg:py-24">
         <CTA />
       </div>
     </main>

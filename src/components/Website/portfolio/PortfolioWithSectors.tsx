@@ -21,7 +21,7 @@ export const PortfolioWithSectors = () => {
     <>
       {/* قسم القطاعات */}
       <section className="py-16 px-6 " dir="rtl">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="website-container-narrow text-center">
           <div className="flex justify-center mb-4">
             <span className="inline-flex items-center gap-2 bg-blue-50 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0047AB]" />

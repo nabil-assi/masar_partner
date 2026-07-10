@@ -45,7 +45,7 @@ export const ValueYouGet = ({
 }: ValueYouGetProps) => {
   return (
     <section className="py-20 px-6 bg-white" dir="rtl">
-      <div className="container mx-auto max-w-6xl text-center">
+      <div className="website-container-narrow text-center">
         <span className="inline-flex items-center gap-2 bg-blue-50 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#0047AB]" />
           {badge}

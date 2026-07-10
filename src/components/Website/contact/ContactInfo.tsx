@@ -51,7 +51,7 @@ const itemVariants = {
 export const ContactInfo = () => {
   return (
     <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="container mx-auto max-w-6xl">
+      <div className="website-container-narrow">
         <motion.div
           variants={containerVariants}
           initial="hidden"

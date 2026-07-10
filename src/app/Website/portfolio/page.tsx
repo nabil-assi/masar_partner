@@ -15,6 +15,7 @@ export default function Home() {
           src="/Website/images/background.png"
           alt="Background"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -22,7 +23,7 @@ export default function Home() {
          <Hero />
  
       {/* المحتوى */}
-      <div className="px-20 space-y-30">
+      <div className="website-section-stack">
         <Services />
          <OutcomesSection />
       <PortfolioWithSectors />

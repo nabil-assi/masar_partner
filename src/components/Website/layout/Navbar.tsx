@@ -29,7 +29,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-4 left-15 right-15 z-50 bg-white backdrop-blur-md rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] px-6 sm:px-10 lg:px-14 py-3 flex items-center justify-between border border-gray-100"
+      className="fixed inset-x-4 top-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-gray-100 bg-white/95 px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md sm:inset-x-6 sm:px-6 lg:inset-x-8 lg:px-8"
       dir="rtl"
     >
       {/* الشعار */}
@@ -43,6 +43,7 @@ export const Navbar = () => {
           alt="مسار للحلول الرقمية"
           width={185}
           height={63}
+          sizes="(min-width: 1024px) 185px, 160px"
           className="object-contain"
           priority
         />

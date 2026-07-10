@@ -110,7 +110,7 @@ export const Blog = () => {
         />
       </svg>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="website-container relative z-10">
         {/* البادج العلوي */}
         <div className="flex justify-center mb-5">
           <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#0047AB] px-4 py-2 rounded-full text-sm font-extrabold">
@@ -191,6 +191,7 @@ export const Blog = () => {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

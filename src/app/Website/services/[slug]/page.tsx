@@ -59,7 +59,7 @@ export default async function ServicePage({
         description={service.valueYouGet.description}
         items={service.valueYouGet.items}
       />
-      <div className="px-20 space-y-30 bg-white">
+      <div className="website-section-stack bg-white">
         <HowWeWork />
       </div>
 
@@ -69,7 +69,7 @@ export default async function ServicePage({
         description={service.portfolioExamples.description}
         items={service.portfolioExamples.items}
       />
-      <div className="px-20 space-y-30 bg-white">
+      <div className="website-section-stack bg-white">
         <CTA />
       </div>
     </main>

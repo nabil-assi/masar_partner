@@ -33,7 +33,7 @@ export const HowWeWork = () => {
 
   return (
     <section dir="rtl" className="py-5 px-6  ">
-      <div className="max-w-6xl mx-auto">
+      <div className="website-container-narrow">
         {/* العنوان */}
         <div className="text-center mb-20">
           <span className="inline-flex items-center gap-2 bg-blue-100 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold mb-4">

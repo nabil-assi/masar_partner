@@ -29,6 +29,7 @@ export default async function BlogPostPage({
                 src="/Website/images/background.png"
                 alt="Background"
                 fill
+                sizes="100vw"
                 className="object-cover"
                 priority
               />
@@ -43,12 +44,13 @@ export default async function BlogPostPage({
 
       {/* المحتوى */}
       <section className="py-16 px-6 bg-white" dir="rtl">
-        <div className="container mx-auto max-w-3xl">
+        <div className="mx-auto w-full max-w-3xl px-0">
           <div className="relative w-full h-64 lg:h-96 rounded-2xl overflow-hidden bg-gray-100 mb-10">
             <Image
               src={post.image}
               alt={post.title}
               fill
+              sizes="(min-width: 1024px) 768px, calc(100vw - 48px)"
               className="object-cover"
             />
           </div>
@@ -72,7 +74,7 @@ export default async function BlogPostPage({
 
           <div className="mt-10 pt-8 border-t border-gray-100">
             <Link
-              href="/Website/blog"
+              href="/blog"
               className="inline-flex items-center gap-2 text-sm font-bold text-[#0047AB] hover:text-[#003580] transition-colors"
             >
               ← الرجوع لكل المقالات

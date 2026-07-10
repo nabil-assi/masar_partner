@@ -34,7 +34,7 @@ const outcomes = [
 export const OutcomesSection = () => {
   return (
     <section className="py-20 px-6  " dir="rtl">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="website-container-narrow text-center">
         {/* Badge */}
         <div className="flex justify-center mb-4">
           <span className="inline-flex items-center gap-2 bg-white border border-blue-100 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold">

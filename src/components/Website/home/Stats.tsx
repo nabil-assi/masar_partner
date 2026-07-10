@@ -41,7 +41,7 @@ export const  Stats = () => {
       <div className="absolute -top-24 -left-20 w-[360px] h-[360px] bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
       <div className="absolute -bottom-28 -right-16 w-[320px] h-[320px] bg-slate-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto text-center relative z-10">
+      <div className="website-container text-center relative z-10">
         {/* العنوان العلوي */}
         <div className="flex justify-center items-center gap-2 mb-6 text-[#00116e] font-bold">
           <span className="w-2 h-2 rounded-full bg-[#0047AB]"></span>

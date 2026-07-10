@@ -17,7 +17,7 @@ export const About = ({
 }: AboutServiceProps) => {
   return (
     <section className="py-20 px-6 bg-white" dir="rtl">
-      <div className="container mx-auto max-w-3xl text-center">
+      <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
         {/* الليبل الصغير */}
         <span className="text-xs font-bold text-blue-500 tracking-wide mb-4 block">
           {label}

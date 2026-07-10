@@ -120,7 +120,7 @@ export const Footer = () => {
   return (
     <>
       <footer className="bg-[#0A1330] pt-16 mt-20 pb-8 px-6" dir="rtl">
-        <div className="container mx-auto max-w-6xl">
+        <div className="website-container-narrow">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6 pb-12">
             {/* الشعار والوصف والسوشيال */}
             <div>
@@ -129,6 +129,7 @@ export const Footer = () => {
                   src="/icons/logo-web.png"
                   alt="مسار"
                   fill
+                  sizes="128px"
                   className="object-contain object-right"
                 />
               </div>

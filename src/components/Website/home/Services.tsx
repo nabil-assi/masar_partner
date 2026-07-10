@@ -24,7 +24,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="relative md:px-12 lg:px-24   overflow-hidden" dir="ltr">
+    <section className="relative overflow-hidden" dir="ltr">
       {/* زخرفة الخلفية */}
       <div
         className="absolute top-10 left-8 w-28 h-28 opacity-60 pointer-events-none hidden sm:block"
@@ -36,7 +36,7 @@ export const Services = () => {
       <div className="absolute -top-20 -right-24 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
       <div className="absolute -bottom-24 -left-20 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="website-container relative z-10">
         {/* العنوان */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-[#011856] mb-6">
@@ -65,6 +65,7 @@ export const Services = () => {
                   alt={service.title}
                   width={80}
                   height={80}
+                  sizes="80px"
                   className="object-contain transition-all   "
                 />
               </div>

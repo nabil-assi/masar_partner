@@ -13,7 +13,7 @@ export const Overview = ({
 }: OverviewProps) => {
   return (
     <section className="py-8 px-6 bg-white" dir="rtl">
-      <div className="container mx-auto max-w-5xl">
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl lg:text-3xl font-extrabold text-black mb-5">
           نبذة عن المشروع
         </h2>

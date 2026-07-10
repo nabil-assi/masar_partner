@@ -91,7 +91,7 @@ export const ContactForm = () => {
 
   return (
     <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="container mx-auto max-w-6xl">
+      <div className="website-container-narrow">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           {/* الفورم - يمين بالـ RTL */}
           <motion.div

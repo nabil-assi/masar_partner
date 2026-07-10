@@ -42,7 +42,7 @@ export const Portfolio = () => {
       />
       <div className="absolute -top-16 -right-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
       <div className="absolute -bottom-24 -left-20 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="website-container relative z-10">
         {/* العنوان */}
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#0047AB] px-4 py-1.5 rounded-full text-sm font-extrabold mb-4">
@@ -85,6 +85,7 @@ export const Portfolio = () => {
                       src={p.image}
                       alt={p.title}
                       fill
+                      sizes="(min-width: 640px) 200px, 150px"
                       className="object-cover"
                     />
                   </div>
@@ -100,6 +101,7 @@ export const Portfolio = () => {
                 src={projects[0].image}
                 alt={projects[0].title}
                 fill
+                sizes="(min-width: 1024px) 58vw, calc(100vw - 32px)"
                 className="object-cover"
               />
             </div>

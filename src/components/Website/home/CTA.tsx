@@ -12,7 +12,8 @@ import {
 export const CTA = () => {
   return (
     <section className="" dir="rtl">
-      <div className="container mx-auto bg-[#0A1633] rounded-[3rem] p-8   lg:p-16 flex flex-col lg:flex-row-reverse items-center gap-12 relative overflow-hidden">
+      <div className="website-container">
+        <div className="bg-[#0A1633] rounded-[2rem] p-6 sm:p-8 lg:p-14 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-12 relative overflow-hidden">
         {/* تأثير الإضاءة الخلفية */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]"></div>
@@ -37,6 +38,7 @@ export const CTA = () => {
             alt="لوحة تحكم استراتيجية"
             width={600}
             height={400}
+            sizes="(min-width: 1024px) 560px, calc(100vw - 64px)"
             className="w-full h-auto"
           />
         </div>
@@ -118,7 +120,7 @@ export const CTA = () => {
           </div>
         </div>
 
-       
+        </div>
       </div>
     </section>
   );

@@ -11,8 +11,8 @@ const checklistItems = [
 
 export const AboutIntro = () => {
   return (
-    <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="container mx-auto max-w-6xl">
+    <section className="py-16 lg:py-20" dir="rtl">
+      <div className="website-container-narrow">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           {/* المحتوى النصي */}
           <div className="order-2 text-right pb-8 lg:pb-0">
@@ -66,6 +66,7 @@ export const AboutIntro = () => {
                 src="/Website/images/about/about_intro.svg"
                 alt="شبكة تعاون مسار"
                 fill
+                sizes="(min-width: 1024px) 50vw, calc(100vw - 32px)"
                 className="object-cover"
               />
             </div>
@@ -80,7 +81,7 @@ export const AboutIntro = () => {
             >
               <Quote className="w-4 h-4 text-blue-300 mb-2 rotate-180" />
               <p className="text-white text-sm font-bold leading-relaxed mb-3">
-                "كل فكرة تستحق الفرصة لتكبر دون خوف أو قلق."
+                كل فكرة تستحق الفرصة لتكبر دون خوف أو قلق.
               </p>
               <span className="text-blue-300 text-xs font-bold">فلسفتنا</span>
             </motion.div>

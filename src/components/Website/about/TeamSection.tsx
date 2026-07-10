@@ -61,7 +61,7 @@ const cardVariants: Variants = {
 export const TeamSection = () => {
   return (
     <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="container mx-auto max-w-6xl text-center">
+      <div className="website-container-narrow text-center">
         {/* Badge */}
         <motion.span
           initial={{ opacity: 0, y: -10 }}
@@ -119,6 +119,7 @@ export const TeamSection = () => {
                     src={member.avatar}
                     alt={member.name}
                     fill
+                    sizes="(min-width: 1024px) 128px, 112px"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>

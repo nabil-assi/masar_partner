@@ -68,7 +68,7 @@ export const ProjectInfo = ({
 
   return (
     <section className="py-16 px-6 bg-white" dir="rtl">
-      <div className="container mx-auto max-w-6xl relative">
+      <div className="website-container-narrow relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
        
           {/* معرض الصور - كاروسيل */}
@@ -79,6 +79,7 @@ export const ProjectInfo = ({
                 src={slides[activeSlide]}
                 alt={`${client} - عرض ${activeSlide + 1}`}
                 fill
+                sizes="(min-width: 1024px) 1024px, calc(100vw - 32px)"
                 className="object-cover transition-opacity duration-500"
               />
 

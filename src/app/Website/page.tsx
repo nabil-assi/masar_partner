@@ -18,14 +18,16 @@ export default function Home() {
           src="/Website/images/background.png"
           alt="Background"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
       </div>
 
+      <Hero />
+
       {/* المحتوى */}
-      <div className="px-10 space-y-30">
-        <Hero />
+      <div className="website-section-stack">
         <Services />
         <WhyUs />
         <Stats />

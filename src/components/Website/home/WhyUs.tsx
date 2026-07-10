@@ -35,7 +35,7 @@ const centerNodes = [
 export const WhyUs = () => {
   return (
     <section className="  relative overflow-hidden" dir="ltr">
-      <div className="max-w-6xl mx-auto text-center relative z-10">
+      <div className="website-container-narrow text-center relative z-10">
         <h2 className="text-4xl lg:text-5xl font-bold text-[#0F172A] mb-4">
           لماذا مسار؟
         </h2>
@@ -81,6 +81,7 @@ export const WhyUs = () => {
                   src="/Website/images/why-us-image.png"
                   alt="مسار"
                   fill
+                  sizes="450px"
                   className="object-cover" // استخدم object-cover إذا كنت تريد ملء الدائرة بالكامل
                 />
               </div>

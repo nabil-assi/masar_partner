@@ -6,7 +6,7 @@ import { MessageCircle, CalendarDays, Sparkles } from "lucide-react";
 export const CTA = () => {
   return (
     <section className="py-16 px-6" dir="rtl">
-      <div className="container mx-auto max-w-6xl">
+      <div className="website-container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

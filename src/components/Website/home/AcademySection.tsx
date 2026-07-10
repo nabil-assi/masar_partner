@@ -30,7 +30,7 @@ const colorMap: Record<string, string> = {
 export const AcademySection = () => {
   return (
     <section dir="ltr">
-      <div className="container mx-auto max-w-7xl">
+      <div className="website-container">
         <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gradient-to-br from-[#f8fafc] to-[#eef3fb] px-4 py-8 lg:px-16">
           {/* زخرفة الخلفية */}
           <div
@@ -63,6 +63,7 @@ export const AcademySection = () => {
                   alt="منصة أكاديمية مسار"
                   width={700}
                   height={500}
+                  sizes="(min-width: 1024px) 480px, calc(100vw - 32px)"
                   className="w-full h-auto drop-shadow-2xl relative z-10"
                 />
 

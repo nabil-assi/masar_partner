@@ -24,7 +24,7 @@ export const PortfolioExamples = ({
 }: PortfolioExamplesProps) => {
   return (
     <section className="py-20 px-6 bg-white" dir="rtl">
-      <div className="container mx-auto max-w-6xl text-center">
+      <div className="website-container-narrow text-center">
         <span className="inline-flex items-center gap-2 bg-blue-50 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#0047AB]" />
           {badge}
@@ -49,6 +49,7 @@ export const PortfolioExamples = ({
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, calc(100vw - 32px)"
                   className="object-cover"
                 />
               </div>

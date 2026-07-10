@@ -37,7 +37,7 @@ export const Testimonials = () => {
         }}
       />
       <div className="absolute -top-20 -right-24 w-[360px] h-[360px] bg-blue-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
-       <div className="container mx-auto text-center relative z-10">
+       <div className="website-container text-center relative z-10">
         {/* العنوان */}
         <div className="inline-flex items-center gap-2 px-6 py-2 mb-5 bg-[#f0f4ff] text-[#3b5998] rounded-full text-sm font-bold border border-[#e0e7ff]">
           <span>آراء العملاء</span>
@@ -77,15 +77,15 @@ export const Testimonials = () => {
               >
                 ❝
               </div>
-              <p className="text-1xl  leading-relaxed mb-10">{t.text}</p>
+              <p className="text-lg leading-relaxed mb-10">{t.text}</p>
 
               {/* الخط بطريقة مباشرة وأسهل */}
               <div
                 className={`w-1/5 mx-auto mb-6 border-t p-2 
               ${
                 t.isFeatured
-                  ? "border-[#002D72]-100  "
-                  : "border-[#ffffff]-100 "
+                  ? "border-white/25"
+                  : "border-[#002D72]/15"
               }`}
               ></div>
               <div className="flex items-center justify-center p-2 gap-4">
@@ -105,6 +105,7 @@ export const Testimonials = () => {
                     alt={t.name}
                     width={100}
                     height={100}
+                    sizes="64px"
                     className="object-cover"
                   />
                 </div>

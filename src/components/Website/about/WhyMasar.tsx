@@ -49,7 +49,7 @@ const features = [
 export const WhyMasar = () => {
   return (
     <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="container mx-auto max-w-6xl text-center">
+      <div className="website-container-narrow text-center">
         {/* Badge */}
         <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold mb-5">
           <span className="w-1.5 h-1.5 rounded-full bg-[#0047AB]" />
