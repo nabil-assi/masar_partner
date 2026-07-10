@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"; // استدعاء الأيقونة
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -13,6 +14,8 @@ export const Navbar = () => {
     { name: "الرئيسية", href: "/" },
     { name: "حلولنا", href: "/services" },
     { name: "أعمالنا", href: "/portfolio" },
+    { name: "عملائنا", href: "/clients" },
+
     { name: "المدونة", href: "/blog" },
     { name: "من نحن", href: "/about" },
     { name: "تواصل معنا", href: "/contact" },
@@ -29,7 +32,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="fixed inset-x-4 top-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-gray-100 bg-white/95 px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md sm:inset-x-6 sm:px-6 lg:inset-x-8 lg:px-8"
+      className="fixed inset-x-4 top-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-gray-100 bg-white/95 px-4 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md sm:inset-x-6 sm:px-6 lg:inset-x-8 lg:px-8"
       dir="rtl"
     >
       {/* الشعار */}
@@ -44,7 +47,7 @@ export const Navbar = () => {
           width={185}
           height={63}
           sizes="(min-width: 1024px) 185px, 160px"
-          className="object-contain"
+          className="object-contain p-3 mb-2"
           priority
         />
       </Link>
@@ -70,9 +73,15 @@ export const Navbar = () => {
       </div>
 
       {/* زر الحجز - سطح المكتب */}
-      <button className="hidden lg:inline-flex bg-[#0047AB] text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#003580] transition-all shadow-lg shadow-blue-900/20 shrink-0">
-        احجز استشارة مجانية
-      </button>
+      <a
+        href="https://wa.me/970567465929"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden lg:inline-flex items-center gap-2 bg-[#0047AB] text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#003580] transition-all shadow-lg shadow-blue-900/20 shrink-0"
+      >
+        <FaWhatsapp size={20} />
+        استشارة مجانية
+      </a>
 
       {/* زر القائمة - الجوال والتابلت */}
       <button

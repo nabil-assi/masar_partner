@@ -40,3 +40,16 @@ body {
     @apply space-y-16 py-16 sm:space-y-20 sm:py-20 lg:space-y-24 lg:py-24;
   }
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}

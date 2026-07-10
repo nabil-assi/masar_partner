@@ -41,46 +41,7 @@ export const Blog = () => {
       <div className="absolute -top-24 -left-28 w-[420px] h-[420px] bg-blue-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
       <div className="absolute -bottom-32 -right-24 w-[380px] h-[380px] bg-slate-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
 
-      {/* رسمة الكتاب المفتوح (زخرفة تقريبية) */}
-      <svg
-        className="absolute bottom-10 left-0 w-[280px] opacity-50 pointer-events-none hidden lg:block"
-        viewBox="0 0 300 260"
-        fill="none"
-      >
-        <path
-          d="M150 60 C 120 40, 60 35, 20 45 L 20 200 C 60 190, 120 195, 150 215 Z"
-          stroke="#94b4de"
-          strokeWidth="2.5"
-        />
-        <path
-          d="M150 60 C 180 40, 240 35, 280 45 L 280 200 C 240 190, 180 195, 150 215 Z"
-          stroke="#94b4de"
-          strokeWidth="2.5"
-        />
-        <line
-          x1="150"
-          y1="60"
-          x2="150"
-          y2="215"
-          stroke="#94b4de"
-          strokeWidth="2"
-        />
-        <rect
-          x="50"
-          y="70"
-          width="60"
-          height="45"
-          rx="6"
-          stroke="#94b4de"
-          strokeWidth="2"
-        />
-        <circle cx="66" cy="86" r="6" fill="#c9dbf3" />
-        <path
-          d="M52 108 L72 92 L88 104 L108 82"
-          stroke="#94b4de"
-          strokeWidth="2"
-        />
-      </svg>
+      
 
       <div className="website-container relative z-10">
         {/* البادج العلوي */}
@@ -104,11 +65,11 @@ export const Blog = () => {
         </div>
 
         {/* الكروت */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-8">
           {posts.map((post, i) => (
             <div
               key={i}
-              className="bg-white rounded-[1.75rem] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-[1.75rem] border border-gray-100   overflow-hidden   transition-all duration-300"
             >
               <div className="h-[190px] w-full relative bg-gradient-to-br from-slate-50 to-blue-50">
                 <Image
@@ -128,12 +89,15 @@ export const Blog = () => {
                 </h3>
                 <p className="text-gray-500 text-sm mb-6">{post.desc}</p>
                 <div className="flex justify-between items-center text-gray-400 text-sm border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-1.5">
+                 
+                 <button className="w-30 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#0047AB] hover:bg-[#0047AB] hover:text-white transition-all">
+                    <ArrowLeft size={16} />
+                    عرض المزيد
+                  </button>
+                  <div className="flex items-center gap-1.5" dir="rtl">
                     <Clock size={15} /> {post.readTime}
                   </div>
-                  <button className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#0047AB] hover:bg-[#0047AB] hover:text-white transition-all">
-                    <ArrowLeft size={16} />
-                  </button>
+                  
                 </div>
               </div>
             </div>

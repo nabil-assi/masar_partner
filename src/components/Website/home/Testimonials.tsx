@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -14,7 +16,7 @@ const testimonials = [
     company: "منصة آفاق التعليمية",
     text: "منصة متكاملة غيرت عملنا بالكامل. التكامل بين الجوانب التقنية والتصميم كانت تجربة سلسة وناجحة بكل المقاييس.",
     image: "/Website/avatars/sara.png",
-    isFeatured: true, // لتحديد البطاقة الوسطى المميزة
+    isFeatured: true,
   },
   {
     name: "محمد الزهراني",
@@ -27,19 +29,9 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="relative  pb-10 overflow-hidden" dir="ltr">
-      {/* زخرفة الخلفية */}
-      <div
-        className="absolute top-10 left-10 w-28 h-28 opacity-60 pointer-events-none hidden sm:block"
-        style={{
-          backgroundImage: "radial-gradient(#c7d9f0 1.6px, transparent 1.6px)",
-          backgroundSize: "15px 15px",
-        }}
-      />
-      <div className="absolute -top-20 -right-24 w-[360px] h-[360px] bg-blue-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
-       <div className="website-container text-center relative z-10">
-        {/* العنوان */}
-        <div className="inline-flex items-center gap-2 px-6 py-2 mb-5 bg-[#f0f4ff] text-[#3b5998] rounded-full text-sm font-bold border border-[#e0e7ff]">
+    <section className="relative  overflow-hidden  ">
+      <div className="website-container text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-6 py-2 mb-5 bg-[#f0f4ff] text-[#3b5998] rounded-full text-sm font-bold border border-[#e0e7ff]">
           <span>آراء العملاء</span>
           <svg
             className="w-5 h-5"
@@ -59,36 +51,43 @@ export const Testimonials = () => {
           ثقة عملائنا تصنع فرقاً
         </h2>
 
-        {/* الشبكة */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
+        >
+          
           {testimonials.map((t, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`p-5 rounded-3xl  p-10 transition-all duration-300 ${
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: index * 0.2, duration: 0.5 },
+                },
+              }}
+              whileHover={{ y: -10 }}
+              className={`p-10 rounded-3xl transition-shadow duration-300 ${
                 t.isFeatured
-                  ? "bg-[#002D72] text-white shadow-2xl scale-105"
-                  : "bg-white text-gray-800 border-gray-100 shadow-lg hover:shadow-xl"
+                  ? "bg-[#002D72] text-white shadow-2xl md:scale-110 z-10"
+                  : "bg-white text-gray-800 shadow-lg hover:shadow-xl"
               }`}
             >
+              
               <div
-                className={`text-4xl  mb-8 ${
-                  t.isFeatured ? "text-[#ffffff]  " : "text-[#002D72] "
-                }`}
+                className={`text-4xl mb-8 ${t.isFeatured ? "text-blue-300" : "text-[#002D72]"}`}
               >
                 ❝
               </div>
               <p className="text-lg leading-relaxed mb-10">{t.text}</p>
-
-              {/* الخط بطريقة مباشرة وأسهل */}
               <div
-                className={`w-1/5 mx-auto mb-6 border-t p-2 
-              ${
-                t.isFeatured
-                  ? "border-white/25"
-                  : "border-[#002D72]/15"
-              }`}
+                className={`w-1/5 mx-auto mb-6 border-t ${t.isFeatured ? "border-white/25" : "border-gray-200"}`}
               ></div>
-              <div className="flex items-center justify-center p-2 gap-4">
+
+              <div className="flex items-center justify-center gap-4">
                 <div className="text-right">
                   <h4 className="font-bold">{t.name}</h4>
                   <p
@@ -96,23 +95,21 @@ export const Testimonials = () => {
                   >
                     {t.role}
                   </p>
-                  {t.company}
+                  <p className="text-xs opacity-70">{t.company}</p>
                 </div>
-
-                <div className="w-16 h-16 rounded-full overflow-hidden">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10">
                   <Image
                     src={t.image}
                     alt={t.name}
-                    width={100}
-                    height={100}
-                    sizes="64px"
+                    width={64}
+                    height={64}
                     className="object-cover"
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
