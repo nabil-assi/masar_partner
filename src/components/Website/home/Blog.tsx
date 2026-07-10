@@ -64,7 +64,8 @@ export const Blog = () => {
           </p>
         </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-3  gap-8">
+        {/* الكروت */}
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-8">
           {posts.map((post, i) => (
             <div
               key={i}
