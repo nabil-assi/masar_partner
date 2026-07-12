@@ -7,10 +7,13 @@ export const Hero = () => {
       breadcrumbs={[{ label: "تواصل معنا" }]}
       title={
         <>
-          تواصل <span className="text-[#6BB7FF]">معنا</span>
+          تواصل <span className="text-[#075dc7]">معنا</span>
         </>
       }
-      description="جاهز لتحويل أفكارك إلى واقع؟ دعنا نناقش مشروعك ونقترح المسار التقني الأنسب."
+      description="شاركنا فكرتك أو التحدي الذي تواجهه، وسنساعدك في تحديد الحل الرقمي والخطوة الأولى بوضوح."
+      actions={[
+        { label: "تحدث عبر واتساب", href: "https://wa.me/970567465929" },
+      ]}
     />
   );
 };

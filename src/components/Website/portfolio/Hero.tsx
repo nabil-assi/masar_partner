@@ -7,7 +7,7 @@ export const Hero = () => {
       breadcrumbs={[{ label: "أعمالنا" }]}
       title={
         <>
-          أعمالنا <span className="text-[#6BB7FF]">ومشاريعنا</span>
+          أعمالنا <span className="text-[#075dc7]">ومشاريعنا</span>
         </>
       }
       description="نماذج من حلول رقمية صممناها لتدعم أعمالًا أكثر كفاءة ونموًا."

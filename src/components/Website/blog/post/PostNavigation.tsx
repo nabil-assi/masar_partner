@@ -23,7 +23,7 @@ export const PostNavigation = ({ prev, next }: PostNavigationProps) => {
       {prev ? (
         <Link
           href={`/blog/${prev.slug}`}
-          className="group flex flex-col rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-[#0047AB]/20 transition-all duration-300 p-5"
+          className="group flex flex-col rounded-2xl border border-slate-200/70 bg-slate-50/60 p-5 transition-all duration-300 hover:border-blue-200 hover:bg-blue-50/50"
         >
           <span className="flex items-center gap-2 text-xs font-bold text-gray-400 mb-2">
             <ArrowRight
@@ -44,7 +44,7 @@ export const PostNavigation = ({ prev, next }: PostNavigationProps) => {
       {next ? (
         <Link
           href={`/blog/${next.slug}`}
-          className="group flex flex-col items-end text-right rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-[#0047AB]/20 transition-all duration-300 p-5"
+          className="group flex flex-col items-end rounded-2xl border border-slate-200/70 bg-slate-50/60 p-5 text-right transition-all duration-300 hover:border-blue-200 hover:bg-blue-50/50"
         >
           <span className="flex items-center gap-2 text-xs font-bold text-gray-400 mb-2">
             التالي

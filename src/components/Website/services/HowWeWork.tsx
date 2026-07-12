@@ -32,27 +32,27 @@ export const HowWeWork = () => {
   const inset = columnWidthPercent / 2;
 
   return (
-    <section dir="rtl" className="py-5 px-6  ">
-      <div className="website-container-narrow">
+    <section dir="rtl" className="px-4 py-5 sm:px-6">
+      <div className="website-container">
         {/* العنوان */}
-        <div className="text-center mb-20">
-          <span className="inline-flex items-center gap-2 bg-blue-100 text-[#0047AB] px-4 py-1.5 rounded-full text-xs font-bold mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0047AB]" />
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <span className="masar-eyebrow mb-5 gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#075dc7]" />
             كيف نعمل
           </span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#011856] mb-4">
-            من الفكرة إلى الإطلاق
+          <h2 className="text-3xl font-extrabold text-[#071b4e] sm:text-4xl">
+            مسار واضح من الفكرة إلى الإطلاق
           </h2>
-          <p className="text-gray-500 text-sm lg:text-base">
+          <p className="mt-5 text-sm leading-7 text-slate-500 lg:text-base">
             منهجية واضحة تجعل كل مرحلة مفهومة وقابلة للمتابعة.
           </p>
         </div>
 
         {/* مسار العمل */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* الخط الأفقي - يمتد بين مراكز أول وآخر أيقونة فقط */}
           <div
-            className="hidden lg:block absolute top-10 h-[1px] bg-blue-200 -z-0"
+            className="absolute top-10 -z-0 hidden h-px bg-blue-200 lg:block"
             style={{
               right: `${inset}%`,
               left: `${inset}%`,
@@ -62,21 +62,21 @@ export const HowWeWork = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center text-center group"
+              className="group relative flex flex-col items-center rounded-3xl border border-slate-200/70 bg-white p-6 text-center shadow-[0_10px_32px_rgba(17,65,124,0.05)]"
             >
               {/* أيقونة المرحلة */}
-              <div className="w-20 h-20 bg-white rounded-3xl border border-blue-100 flex items-center justify-center shadow-sm mb-6 z-10 relative">
-                <step.icon className="w-8 h-8 text-[#0047AB]" />
-                <span className="absolute -bottom-3 text-[10px] font-bold text-gray-400 bg-gray-50 px-2 rounded-full">
+              <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 shadow-sm transition group-hover:bg-[#075dc7]">
+                <step.icon className="h-6 w-6 text-[#075dc7] transition group-hover:text-white" />
+                <span className="absolute -bottom-2 rounded-full bg-white px-2 text-[10px] font-bold text-slate-400 shadow-sm">
                   {step.id}
                 </span>
               </div>
 
               {/* النص */}
-              <h3 className="text-lg font-bold text-[#011856] mb-2">
+              <h3 className="mb-2 text-lg font-extrabold text-[#071b4e]">
                 {step.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">
+              <p className="max-w-[220px] text-sm leading-7 text-slate-500">
                 {step.desc}
               </p>
             </div>

@@ -32,13 +32,13 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="fixed inset-x-4 top-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-gray-100 bg-white/95 px-4 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md sm:inset-x-6 sm:px-6 lg:inset-x-8 lg:px-8"
+      className="fixed inset-x-3 top-3 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/90 bg-white/90 px-4 py-2 shadow-[0_12px_38px_rgba(21,54,96,0.10)] backdrop-blur-xl sm:inset-x-6 sm:top-4 sm:px-6 lg:inset-x-8 lg:px-7"
       dir="rtl"
     >
       {/* الشعار */}
       <Link
         href="/"
-        className="flex items-center w-[140px] h-[48px] sm:w-[160px] sm:h-[54px] lg:w-[185px] lg:h-[63px] relative shrink-0"
+        className="relative flex h-[48px] w-[135px] shrink-0 items-center sm:h-[54px] sm:w-[155px] lg:h-[58px] lg:w-[170px]"
         onClick={() => setIsOpen(false)}
       >
         <Image
@@ -47,20 +47,20 @@ export const Navbar = () => {
           width={185}
           height={63}
           sizes="(min-width: 1024px) 185px, 160px"
-          className="object-contain p-3 mb-2"
+          className="object-contain p-2"
           priority
         />
       </Link>
 
       {/* الروابط - سطح المكتب */}
-      <div className="hidden lg:flex items-center gap-2 xl:gap-3 text-gray-700">
+      <div className="hidden items-center gap-1 text-gray-700 lg:flex xl:gap-2">
         {navLinks.map((link) => {
           const isActive = isLinkActive(link.href);
           return (
             <Link
               key={link.name}
               href={link.href}
-              className={`relative px-4 py-2 rounded-xl font-almarai font-bold text-[15px] transition-all ${
+              className={`relative rounded-xl px-3.5 py-2 font-almarai text-[14px] font-bold transition-all xl:px-4 ${
                 isActive
                   ? "bg-blue-50 text-[#0047AB]"
                   : "text-gray-600 hover:text-[#0047AB] hover:bg-gray-50"
@@ -77,7 +77,7 @@ export const Navbar = () => {
         href="https://wa.me/970567465929"
         target="_blank"
         rel="noopener noreferrer"
-        className="hidden lg:inline-flex items-center gap-2 bg-[#0047AB] text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#003580] transition-all shadow-lg shadow-blue-900/20 shrink-0"
+        className="hidden shrink-0 items-center gap-2 rounded-xl bg-[#075dc7] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-0.5 hover:bg-[#064fa8] lg:inline-flex"
       >
         <FaWhatsapp size={20} />
         استشارة مجانية
@@ -112,9 +112,16 @@ export const Navbar = () => {
               </Link>
             );
           })}
-          <button className="mt-2 bg-gradient-to-b from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:from-blue-700 hover:to-blue-900 transition-all w-full">
+          <a
+            href="https://wa.me/970567465929"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#075dc7] px-6 py-3 font-bold text-white shadow-md transition-all hover:bg-[#064fa8]"
+          >
+            <FaWhatsapp size={19} />
             احجز استشارة مجانية
-          </button>
+          </a>
         </div>
       )}
     </nav>

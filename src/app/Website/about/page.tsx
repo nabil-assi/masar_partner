@@ -5,36 +5,25 @@ import { WhyMasar } from "@/components/Website/about/WhyMasar";
 import { CTA } from "@/components/Website/about/CTA";
 import { HowWeWork } from "@/components/Website/services/HowWeWork";
 import { Stats } from "@/components/Website/about/Stats";
-import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "من نحن",
+  description: "تعرف على مسار ورؤيتنا في بناء حلول رقمية واضحة وقابلة للنمو.",
+};
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden">
-      {/* الخلفية */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/Website/images/background.png"
-          alt="Background"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
+    <main className="website-subpage relative min-h-screen w-full overflow-x-hidden">
       <Hero />
       <Stats />
-
       <AboutIntro />
-
       <WhyMasar />
-      <div className="py-16 sm:py-20 lg:py-24">
+      <div className="py-20 sm:py-24 lg:py-28">
         <HowWeWork />
       </div>
-
       <TeamSection />
-      <div className="py-16 sm:py-20 lg:py-24">
-        <CTA />
-      </div>
+      <CTA />
     </main>
   );
 }

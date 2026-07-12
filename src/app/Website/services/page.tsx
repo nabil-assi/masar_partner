@@ -2,25 +2,19 @@ import { Hero } from "@/components/Website/services/Hero";
 import { Services } from "@/components/Website/services/Services";
 import { HowWeWork } from "@/components/Website/services/HowWeWork";
 import { CTA } from "@/components/Website/home/CTA";
-import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "حلولنا الرقمية",
+  description: "تطوير المنصات وتطبيقات الجوال وأنظمة الأتمتة والتصميم الرقمي للشركات.",
+};
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden">
-      {/* الخلفية */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/Website/images/background.png"
-          alt="Background"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
+    <main className="website-subpage relative min-h-screen w-full overflow-x-hidden">
       <Hero />
       {/* المحتوى */}
-      <div className="website-section-stack">
+      <div className="website-section-stack pt-12 sm:pt-16">
         <Services />
         <HowWeWork />
         <CTA />

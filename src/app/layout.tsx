@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 import "./globals.css";
 import { Almarai } from "next/font/google";
+import type { Metadata } from "next";
 
 const almarai = Almarai({
   subsets: ["arabic"],
@@ -8,9 +9,37 @@ const almarai = Almarai({
   variable: "--font-almarai",
 });
 
-export const metadata = {
-  title: "منصة مسار التعليمية",
-  description: "بوابتك نحو الاحتراف التقني",
+export const metadata: Metadata = {
+  title: {
+    default: "مسار للحلول الرقمية | منصات وأتمتة وتطوير برمجيات",
+    template: "%s | مسار للحلول الرقمية",
+  },
+  description:
+    "نبني المنصات الرقمية وتطبيقات الأعمال وأنظمة الأتمتة للشركات، من الاستراتيجية والتصميم إلى التطوير والدعم المستمر.",
+  keywords: [
+    "مسار للحلول الرقمية",
+    "تطوير برمجيات",
+    "تطوير منصات",
+    "أتمتة الأعمال",
+    "ERPNext",
+    "تصميم UI UX",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "ar_AR",
+    siteName: "مسار للحلول الرقمية",
+    title: "مسار للحلول الرقمية",
+    description: "حلول رقمية متكاملة تساعد الشركات على العمل والنمو بوضوح.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "مسار للحلول الرقمية",
+    description: "منصات وأتمتة وتطبيقات أعمال مصممة للنمو.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -20,19 +49,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl" className={`${almarai.variable}`}>
-      <body className="bg-[#0F172A] text-white min-h-screen vc-init">
-        <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-white via-[#F4F8FF] to-white" />
-        <div
-          className="absolute inset-0 -z-10 opacity-60"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(0,71,171,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,71,171,0.08) 1px, transparent 1px)",
-            backgroundSize: "46px 46px",
-          }}
-        />
-      </div>
-         {children}
+      <body className="min-h-screen bg-white text-slate-950 vc-init">
+        {children}
       </body>
     </html>
   );

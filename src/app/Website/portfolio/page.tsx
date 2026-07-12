@@ -3,27 +3,21 @@ import { Services } from "@/components/Website/portfolio/Services";
 import { OutcomesSection } from "@/components/Website/portfolio/OutcomesSection";
 import { PortfolioWithSectors } from "@/components/Website/portfolio/PortfolioWithSectors";
 
- import Image from "next/image";
 import { CTA } from "@/components/Website/home/CTA";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "أعمالنا ومشاريعنا",
+  description: "نماذج من المنصات والأنظمة والتجارب الرقمية التي تطورها مسار.",
+};
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden">
-      {/* الخلفية */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/Website/images/background.png"
-          alt="Background"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
+    <main className="website-subpage relative min-h-screen w-full overflow-x-hidden">
          <Hero />
  
       {/* المحتوى */}
-      <div className="website-section-stack">
+      <div className="website-section-stack pt-12 sm:pt-16">
         <Services />
          <OutcomesSection />
       <PortfolioWithSectors />

@@ -1,90 +1,57 @@
-"use client";
 import Image from "next/image";
-import { CheckCircle2, Quote } from "lucide-react";
-import { motion } from "framer-motion";
+import { Check, Quote, Sparkles } from "lucide-react";
 
 const checklistItems = [
-  "حلول رقمية مبتكرة",
-  "فريق محترف وذو خبرة",
-  "تركيزنا على العميل",
+  "نفهم أهداف العمل قبل اختيار التقنية",
+  "نجمع التصميم والتطوير في تجربة واحدة",
+  "نبني حلولاً قابلة للتطوير والتحسين",
 ];
 
 export const AboutIntro = () => {
   return (
-    <section className="py-16 lg:py-20" dir="rtl">
-      <div className="website-container-narrow">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
-          {/* المحتوى النصي */}
-          <div className="order-2 text-right pb-8 lg:pb-0">
-            {/* Badge */}
-            <span className="text-xs font-bold text-blue-600 block mb-3">
-              من نحن
-            </span>
-
-            {/* العنوان */}
-            <h2 className="text-2xl lg:text-4xl font-extrabold leading-[1.5] mb-6">
-              <span className="text-gray-900">عن </span>
-              <span className="text-blue-600">مسار</span>
-            </h2>
-
-            {/* الفقرات */}
-            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-5">
-              مسار هي شركة حلول رقمية وتسويقية ذات رؤية مستقبلية، مبنية على
-              إيمان بسيط: كل فكرة تستحق الفرصة لتكبر.
-            </p>
-
-            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-8">
-              نجمع بين الخبرة والإبداع لنحقق نتائج استثنائية، سواء كان تصميم
-              هوية جديدة، تطبيق ويب متطور، أو حملة تسويقية. نحن شركاء نجاحك.
-            </p>
-
-            {/* قائمة التشيك مارك */}
-            <div className="space-y-4">
-              {checklistItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 max-w-[260px]" // أضفنا gap-3 للمسافة
-                >
-                  {/* الأيقونة أصبحت هنا في البداية (جهة اليمين في rtl) */}
-                  <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  </div>
-
-                  {/* النص أصبح هنا بعد الأيقونة */}
-                  <span className="text-gray-800 text-sm font-medium">
-                    {item}
-                  </span>
-                </div>
-              ))}
+    <section className="py-20 sm:py-24 lg:py-28" dir="rtl">
+      <div className="website-container grid items-center gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-20">
+        <div className="relative order-2 lg:order-1">
+          <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-blue-100/50 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white bg-[#0b234f] p-2.5 shadow-[0_28px_75px_rgba(15,55,108,0.18)] sm:p-3.5">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[1.45rem]">
+              <Image
+                src="/images/about/about-hero.png"
+                alt="فريق يعمل على تطوير حلول رقمية"
+                fill
+                sizes="(min-width: 1024px) 48vw, 92vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071b4e]/45 via-transparent to-transparent" />
             </div>
           </div>
 
-          {/* الصورة + بطاقة الاقتباس */}
-          <div className="order-1 relative">
-            <div className="relative w-full h-72 sm:h-96 lg:h-[420px] rounded-3xl overflow-hidden bg-gray-100">
-              <Image
-                src="/Website/images/about/about_intro.svg"
-                alt="شبكة تعاون مسار"
-                fill
-                sizes="(min-width: 1024px) 50vw, calc(100vw - 32px)"
-                className="object-cover"
-              />
-            </div>
+          <div className="absolute -bottom-6 right-4 max-w-[280px] rounded-2xl border border-white/20 bg-[#071b4e]/95 p-5 text-white shadow-2xl backdrop-blur sm:right-8 sm:max-w-[310px]">
+            <Quote className="h-5 w-5 rotate-180 text-cyan-300" />
+            <p className="mt-3 text-sm font-bold leading-7">كل فكرة جيدة تستحق مساراً واضحاً يحولها إلى قيمة حقيقية.</p>
+            <span className="mt-3 block text-xs font-bold text-blue-200">فلسفة مسار</span>
+          </div>
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="absolute -bottom-8 right-4 sm:right-8 max-w-[260px] sm:max-w-[280px] 
-             bg-[#0A1A5C]/80 backdrop-blur-md border border-white/20 
-             rounded-2xl p-5 shadow-2xl"
-            >
-              <Quote className="w-4 h-4 text-blue-300 mb-2 rotate-180" />
-              <p className="text-white text-sm font-bold leading-relaxed mb-3">
-                كل فكرة تستحق الفرصة لتكبر دون خوف أو قلق.
-              </p>
-              <span className="text-blue-300 text-xs font-bold">فلسفتنا</span>
-            </motion.div>
+        <div className="order-1 lg:order-2">
+          <span className="masar-eyebrow gap-2"><Sparkles className="h-4 w-4" /> قصتنا</span>
+          <h2 className="mt-6 text-3xl font-extrabold leading-[1.45] tracking-[-0.02em] text-[#071b4e] sm:text-4xl lg:text-[2.7rem]">
+            نبني التقنية حول <span className="text-[#075dc7]">الإنسان والعمل</span>
+          </h2>
+          <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+            مسار شركة حلول رقمية تجمع بين الفهم التجاري والتصميم والتطوير. نساعد الشركات على تحويل الأفكار والعمليات المعقدة إلى تجارب واضحة وسهلة الاستخدام.
+          </p>
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            لا نبدأ بالكود، بل بالسؤال الصحيح: ما المشكلة التي نحلها؟ ثم نبني مع العميل حلاً عملياً يمكن إطلاقه وتطويره بثقة.
+          </p>
+
+          <div className="mt-8 space-y-3">
+            {checklistItems.map((item) => (
+              <div key={item} className="flex items-center gap-3 rounded-xl border border-slate-100 bg-white px-4 py-3 shadow-sm">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#075dc7]"><Check className="h-4 w-4" strokeWidth={3} /></span>
+                <span className="text-sm font-bold text-slate-700">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

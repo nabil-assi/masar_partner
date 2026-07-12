@@ -8,10 +8,14 @@ export const Hero = () => {
       title={
         <>
           شركاء النجاح الذين
-          <span className="text-[#6BB7FF]">  يثقون بنا </span>
+          <span className="text-[#075dc7]"> يثقون بنا</span>
         </>
       }
-      description="نفخر بشراكاتنا الممتدة مع نخبة من الشركات والأنشطة السعودية، نبني معهم حلولاً تكبر بمرور الوقت."
+      description="نبني علاقات عمل طويلة المدى مع الشركات والمؤسسات، ونطوّر معها حلولاً تستمر في التحسن والنمو بمرور الوقت."
+      actions={[
+        { label: "ناقش مشروعك معنا", href: "/contact" },
+        { label: "استكشف أعمالنا", href: "/portfolio", variant: "secondary" },
+      ]}
     />
   );
 };

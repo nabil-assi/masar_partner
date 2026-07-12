@@ -1,98 +1,26 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { Clock3, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const contactItems = [
-  {
-    icon: MessageCircle,
-    title: "واتساب",
-    value: "+201505294544",
-    href: "https://wa.me/201505294544",
-  },
-  {
-    icon: Mail,
-    title: "راسلنا",
-    value: "info@masar.com",
-    href: "mailto:info@masar.com",
-  },
-  {
-    icon: Phone,
-    title: "اتصل بنا",
-    value: "01505294544",
-    href: "tel:01505294544",
-  },
-  {
-    icon: MapPin,
-    title: "العنوان",
-    value: "طنطا، مصر",
-    href: "#",
-  },
+  { icon: MessageCircle, title: "واتساب", value: "+970 56 746 5929", hint: "للتواصل المباشر", href: "https://wa.me/970567465929" },
+  { icon: Mail, title: "البريد الإلكتروني", value: "info@masar.com", hint: "للعروض والمرفقات", href: "mailto:info@masar.com" },
+  { icon: Clock3, title: "وقت الرد", value: "خلال يوم عمل", hint: "نراجع كل طلب بعناية", href: "#project-form" },
+  { icon: MapPin, title: "نطاق العمل", value: "إقليمياً ودولياً", hint: "نعمل بكفاءة عن بُعد", href: "/about" },
 ];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
 
 export const ContactInfo = () => {
   return (
-    <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="website-container-narrow">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"
-        >
-          {contactItems.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <motion.a
-                key={i}
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  item.href.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-                variants={itemVariants}
-                whileHover={{ y: -6 }}
-                className="flex flex-col items-center text-center rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg transition-shadow duration-300 p-6 lg:p-8"
-              >
-                <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-5">
-                  <Icon className="w-6 h-6 text-[#0047AB]" />
-                </div>
-
-                <h3 className="text-sm lg:text-base font-bold text-[#011856] mb-2">
-                  {item.title}
-                </h3>
-
-                <p
-                  className="text-gray-500 text-xs lg:text-sm break-all"
-                  dir="ltr"
-                >
-                  {item.value}
-                </p>
-              </motion.a>
-            );
-          })}
-        </motion.div>
+    <section className="relative -mt-8 px-4 pb-12 sm:-mt-10 sm:px-6 lg:pb-16" dir="rtl">
+      <div className="website-container">
+        <div className="grid grid-cols-2 gap-3 rounded-[1.75rem] border border-slate-200/70 bg-white p-3 shadow-[0_18px_55px_rgba(17,65,124,0.08)] lg:grid-cols-4 lg:gap-0 lg:p-5">
+          {contactItems.map((item, index) => (
+            <a key={item.title} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className={`group flex flex-col items-center rounded-2xl px-3 py-5 text-center transition hover:bg-blue-50/60 sm:px-5 ${index > 0 ? "lg:border-r lg:border-slate-100" : ""}`}>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-[#075dc7] transition group-hover:bg-[#075dc7] group-hover:text-white"><item.icon className="h-5 w-5" /></span>
+              <h2 className="mt-4 text-sm font-extrabold text-[#071b4e] sm:text-base">{item.title}</h2>
+              <p className="mt-1.5 break-all text-xs font-bold text-slate-600 sm:text-sm" dir={item.title === "نطاق العمل" || item.title === "وقت الرد" ? "rtl" : "ltr"}>{item.value}</p>
+              <span className="mt-1 text-[11px] leading-5 text-slate-400 sm:text-xs">{item.hint}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --masar-blue: #075dc7;
+  --masar-navy: #071b4e;
 }
 
 @theme inline {
@@ -13,19 +15,23 @@
   --font-almarai: "Almarai", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   @apply font-almarai bg-background text-foreground;
   font-family: var(--font-almarai), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
  }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+::selection {
+  background: #cfe6ff;
+  color: #071b4e;
+}
 
 @layer components {
   .website-container {
@@ -38,6 +44,97 @@ body {
 
   .website-section-stack {
     @apply space-y-16 py-16 sm:space-y-20 sm:py-20 lg:space-y-24 lg:py-24;
+  }
+
+  .website-subpage {
+    background:
+      radial-gradient(circle at 8% 28%, rgba(219, 234, 254, 0.45), transparent 24rem),
+      linear-gradient(to bottom, #ffffff, #fbfdff 55%, #ffffff);
+  }
+
+  .masar-button-primary {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border-radius: 0.75rem;
+    background: #075dc7;
+    padding: 0.75rem 1.75rem;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 800;
+    box-shadow: 0 14px 30px rgba(7, 93, 199, 0.22);
+    transition: 300ms ease;
+  }
+
+  .masar-button-secondary {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: 1px solid #dbe3ee;
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 0.75rem 1.75rem;
+    color: #0756b7;
+    font-size: 0.875rem;
+    font-weight: 800;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    transition: 300ms ease;
+  }
+
+  .masar-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    background: #eff6ff;
+    padding: 0.5rem 1rem;
+    color: #075dc7;
+    font-size: 0.875rem;
+    font-weight: 800;
+  }
+}
+
+.masar-button-primary:hover,
+.masar-button-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.masar-button-primary:hover {
+  background: #064fa8;
+  box-shadow: 0 18px 38px rgba(7, 93, 199, 0.28);
+}
+
+.masar-button-secondary:hover {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.masar-button-primary:focus-visible,
+.masar-button-secondary:focus-visible {
+  outline: 3px solid #bfdbfe;
+  outline-offset: 3px;
+}
+
+.masar-grid {
+  background-image:
+    linear-gradient(rgba(32, 100, 177, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 100, 177, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

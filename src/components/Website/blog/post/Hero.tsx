@@ -19,17 +19,17 @@ export const Hero = ({ category, title, author, date, readTime }: HeroProps) => 
       ]}
       title={title}
     >
-      <div className="space-y-4 text-sm font-bold text-blue-50/75">
+      <div className="space-y-3 text-sm font-bold text-slate-600">
         <div className="flex items-center gap-2">
-          <User size={16} />
+          <User size={16} className="text-[#075dc7]" />
           {author}
         </div>
         <div className="flex items-center gap-2">
-          <Calendar size={16} />
+          <Calendar size={16} className="text-[#075dc7]" />
           {date}
         </div>
         <div className="flex items-center gap-2">
-          <Clock size={16} />
+          <Clock size={16} className="text-[#075dc7]" />
           {readTime}
         </div>
       </div>

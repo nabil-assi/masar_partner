@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import type { ReactNode } from "react";
+import { ArrowLeft, Check, MessageCircle, Send, ShieldCheck, Sparkles } from "lucide-react";
 
 const services = [
-  { value: "design", label: "العناية البصرية والتصميم" },
-  { value: "mobile-apps", label: "تطبيقات الجوال" },
   { value: "websites", label: "تطوير المواقع والمنصات" },
-  { value: "consulting", label: "استشارات الرقمية" },
-  { value: "automation-systems", label: "الأنظمة والأتمتة" },
+  { value: "automation-systems", label: "الأنظمة وأتمتة الأعمال" },
+  { value: "mobile-apps", label: "تطبيقات الجوال" },
+  { value: "design", label: "الهوية والتصميم الرقمي" },
+  { value: "consulting", label: "الاستشارات الرقمية" },
   { value: "marketing", label: "التسويق الرقمي" },
 ];
 
@@ -17,270 +17,194 @@ interface FormData {
   fullName: string;
   email: string;
   phone: string;
+  company: string;
   service: string;
+  budget: string;
+  timeline: string;
   message: string;
 }
 
-export const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
-    fullName: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-  const [isNotRobot, setIsNotRobot] = useState(false);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>(
-    {}
-  );
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+const initialFormData: FormData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  company: "",
+  service: "",
+  budget: "",
+  timeline: "",
+  message: "",
+};
 
-  const handleChange = (
-    field: keyof FormData,
-    value: string
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-    if (errors[field]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }));
-    }
+export const ContactForm = () => {
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+  const [status, setStatus] = useState<"idle" | "opened">("idle");
+
+  const handleChange = (field: keyof FormData, value: string) => {
+    setFormData((previous) => ({ ...previous, [field]: value }));
+    if (errors[field]) setErrors((previous) => ({ ...previous, [field]: undefined }));
+    if (status === "opened") setStatus("idle");
   };
 
   const validate = () => {
-    const newErrors: Partial<Record<keyof FormData, string>> = {};
-
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = "الاسم الكامل مطلوب";
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = "رقم الهاتف مطلوب";
-    }
-    if (!formData.service) {
-      newErrors.service = "الرجاء اختيار خدمة";
-    }
-    if (
-      formData.email.trim() &&
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
-    ) {
-      newErrors.email = "البريد الإلكتروني غير صحيح";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    const nextErrors: Partial<Record<keyof FormData, string>> = {};
+    if (!formData.fullName.trim()) nextErrors.fullName = "اكتب اسمك الكامل";
+    if (!formData.phone.trim()) nextErrors.phone = "أضف رقم التواصل";
+    if (!formData.service) nextErrors.service = "اختر الخدمة الأقرب لاحتياجك";
+    if (!formData.message.trim()) nextErrors.message = "اكتب نبذة قصيرة عن المشروع";
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) nextErrors.email = "تحقق من البريد الإلكتروني";
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!validate()) return;
 
-    if (!validate() || !isNotRobot) return;
+    const serviceLabel = services.find((service) => service.value === formData.service)?.label;
+    const whatsappMessage = [
+      "مرحباً فريق مسار، أرغب في مناقشة مشروع جديد.",
+      `الاسم: ${formData.fullName}`,
+      formData.company ? `الشركة: ${formData.company}` : "",
+      `رقم التواصل: ${formData.phone}`,
+      formData.email ? `البريد: ${formData.email}` : "",
+      `الخدمة: ${serviceLabel ?? formData.service}`,
+      formData.budget ? `الميزانية المتوقعة: ${formData.budget}` : "",
+      formData.timeline ? `موعد البدء: ${formData.timeline}` : "",
+      `نبذة المشروع: ${formData.message}`,
+    ].filter(Boolean).join("\n");
 
-    // هون مكان استدعاء الـ API الفعلي لإرسال الفورم
-    console.log("Form submitted:", formData);
-
-    setStatus("success");
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
-    setIsNotRobot(false);
-
-    setTimeout(() => setStatus("idle"), 4000);
+    window.open(`https://wa.me/970567465929?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener,noreferrer");
+    setStatus("opened");
   };
 
   return (
-    <section className="py-16 lg:py-20 px-6  " dir="rtl">
-      <div className="website-container-narrow">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-          {/* الفورم - يمين بالـ RTL */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="order-1 rounded-3xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-6 lg:p-8"
-          >
-            <h2 className="text-xl lg:text-2xl font-extrabold text-[#011856] mb-6">
-              أرسل لنا رسالة
-            </h2>
+    <section id="project-form" className="scroll-mt-28 px-4 py-20 sm:px-6 sm:py-24 lg:py-28" dir="rtl">
+      <div className="website-container">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <span className="masar-eyebrow gap-2"><Sparkles className="h-4 w-4" /> أخبرنا عن مشروعك</span>
+          <h2 className="mt-5 text-3xl font-extrabold leading-[1.45] text-[#071b4e] sm:text-4xl">لنحدد معاً الخطوة الأولى</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600">املأ المعلومات الأساسية، وسنجهزها لك في رسالة واتساب منظمة لتبدأ المحادثة مباشرة مع الفريق.</p>
+        </div>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* الاسم الكامل */}
+        <div className="grid items-stretch gap-6 lg:grid-cols-[1.12fr_.88fr] lg:gap-8">
+          <div className="rounded-[2rem] border border-slate-200/70 bg-white p-5 shadow-[0_18px_55px_rgba(17,65,124,0.07)] sm:p-8 lg:p-10">
+            <div className="flex items-center justify-between gap-4 border-b border-slate-100 pb-6">
               <div>
-                <label className="block text-sm font-bold text-[#011856] mb-2">
-                  الاسم الكامل <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.fullName}
-                  onChange={(e) => handleChange("fullName", e.target.value)}
-                  placeholder="أدخل اسمك الكامل"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#011856] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0047AB]/20 transition-all ${
-                    errors.fullName
-                      ? "border-red-300"
-                      : "border-gray-200 focus:border-[#0047AB]"
-                  }`}
-                />
-                {errors.fullName && (
-                  <p className="text-red-500 text-xs mt-1.5">
-                    {errors.fullName}
-                  </p>
-                )}
+                <h3 className="text-xl font-extrabold text-[#071b4e] sm:text-2xl">بيانات المشروع</h3>
+                <p className="mt-2 text-sm text-slate-500">الحقول المعلّمة مطلوبة لبدء المحادثة.</p>
+              </div>
+              <span className="hidden h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#075dc7] sm:flex"><Send className="h-5 w-5" /></span>
+            </div>
+
+            <form onSubmit={handleSubmit} noValidate className="mt-7 space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <Field label="الاسم الكامل" required error={errors.fullName}>
+                  <input type="text" autoComplete="name" value={formData.fullName} onChange={(event) => handleChange("fullName", event.target.value)} placeholder="مثال: محمد أحمد" className={fieldClass(Boolean(errors.fullName))} aria-invalid={Boolean(errors.fullName)} />
+                </Field>
+                <Field label="اسم الشركة" error={errors.company}>
+                  <input type="text" autoComplete="organization" value={formData.company} onChange={(event) => handleChange("company", event.target.value)} placeholder="اختياري" className={fieldClass(false)} />
+                </Field>
               </div>
 
-              {/* البريد الإلكتروني */}
-              <div>
-                <label className="block text-sm font-bold text-[#011856] mb-2">
-                  البريد الإلكتروني
-                </label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleChange("email", e.target.value)}
-                  placeholder="أدخل بريدك الإلكتروني"
-                  dir="ltr"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#011856] placeholder:text-gray-400 text-right focus:outline-none focus:ring-2 focus:ring-[#0047AB]/20 transition-all ${
-                    errors.email
-                      ? "border-red-300"
-                      : "border-gray-200 focus:border-[#0047AB]"
-                  }`}
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-xs mt-1.5">
-                    {errors.email}
-                  </p>
-                )}
+              <div className="grid gap-5 sm:grid-cols-2">
+                <Field label="رقم التواصل" required error={errors.phone}>
+                  <input type="tel" autoComplete="tel" value={formData.phone} onChange={(event) => handleChange("phone", event.target.value)} placeholder="+970 ..." dir="ltr" className={`${fieldClass(Boolean(errors.phone))} text-right`} aria-invalid={Boolean(errors.phone)} />
+                </Field>
+                <Field label="البريد الإلكتروني" error={errors.email}>
+                  <input type="email" autoComplete="email" value={formData.email} onChange={(event) => handleChange("email", event.target.value)} placeholder="name@company.com" dir="ltr" className={`${fieldClass(Boolean(errors.email))} text-right`} aria-invalid={Boolean(errors.email)} />
+                </Field>
               </div>
 
-              {/* رقم الهاتف */}
-              <div>
-                <label className="block text-sm font-bold text-[#011856] mb-2">
-                  رقم الهاتف <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => handleChange("phone", e.target.value)}
-                  placeholder="أدخل رقم هاتفك"
-                  dir="ltr"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#011856] placeholder:text-gray-400 text-right focus:outline-none focus:ring-2 focus:ring-[#0047AB]/20 transition-all ${
-                    errors.phone
-                      ? "border-red-300"
-                      : "border-gray-200 focus:border-[#0047AB]"
-                  }`}
-                />
-                {errors.phone && (
-                  <p className="text-red-500 text-xs mt-1.5">
-                    {errors.phone}
-                  </p>
-                )}
-              </div>
-
-              {/* الخدمة المطلوبة */}
-              <div>
-                <label className="block text-sm font-bold text-[#011856] mb-2">
-                  الخدمة المطلوبة <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.service}
-                  onChange={(e) => handleChange("service", e.target.value)}
-                  className={`w-full px-4 py-3 rounded-xl border text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#0047AB]/20 transition-all ${
-                    formData.service ? "text-[#011856]" : "text-gray-400"
-                  } ${
-                    errors.service
-                      ? "border-red-300"
-                      : "border-gray-200 focus:border-[#0047AB]"
-                  }`}
-                >
-                  <option value="" disabled>
-                    اختر خدمة
-                  </option>
-                  {services.map((service) => (
-                    <option key={service.value} value={service.value}>
-                      {service.label}
-                    </option>
-                  ))}
+              <Field label="الخدمة المطلوبة" required error={errors.service}>
+                <select value={formData.service} onChange={(event) => handleChange("service", event.target.value)} className={`${fieldClass(Boolean(errors.service))} bg-white ${formData.service ? "text-[#071b4e]" : "text-slate-400"}`} aria-invalid={Boolean(errors.service)}>
+                  <option value="" disabled>اختر الخدمة الأقرب للمشروع</option>
+                  {services.map((service) => <option key={service.value} value={service.value}>{service.label}</option>)}
                 </select>
-                {errors.service && (
-                  <p className="text-red-500 text-xs mt-1.5">
-                    {errors.service}
-                  </p>
-                )}
+              </Field>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <Field label="الميزانية المتوقعة" error={errors.budget}>
+                  <select value={formData.budget} onChange={(event) => handleChange("budget", event.target.value)} className={`${fieldClass(false)} bg-white ${formData.budget ? "text-[#071b4e]" : "text-slate-400"}`}>
+                    <option value="">اختر نطاقاً تقريبياً</option>
+                    <option value="أقل من 3,000 دولار">أقل من 3,000 دولار</option>
+                    <option value="من 3,000 إلى 10,000 دولار">من 3,000 إلى 10,000 دولار</option>
+                    <option value="أكثر من 10,000 دولار">أكثر من 10,000 دولار</option>
+                    <option value="أحتاج مساعدة في التقدير">أحتاج مساعدة في التقدير</option>
+                  </select>
+                </Field>
+                <Field label="الوقت المتوقع للبدء" error={errors.timeline}>
+                  <select value={formData.timeline} onChange={(event) => handleChange("timeline", event.target.value)} className={`${fieldClass(false)} bg-white ${formData.timeline ? "text-[#071b4e]" : "text-slate-400"}`}>
+                    <option value="">اختر الوقت المناسب</option>
+                    <option value="بأسرع وقت">بأسرع وقت</option>
+                    <option value="خلال شهر">خلال شهر</option>
+                    <option value="خلال 3 أشهر">خلال 3 أشهر</option>
+                    <option value="ما زلنا ندرس الفكرة">ما زلنا ندرس الفكرة</option>
+                  </select>
+                </Field>
               </div>
 
-              {/* الرسالة */}
-              <div>
-                <label className="block text-sm font-bold text-[#011856] mb-2">
-                  رسالتك
-                </label>
-                <textarea
-                  value={formData.message}
-                  onChange={(e) => handleChange("message", e.target.value)}
-                  placeholder="اكتب رسالتك هنا..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-[#011856] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0047AB]/20 focus:border-[#0047AB] transition-all resize-none"
-                />
-              </div>
+              <Field label="نبذة عن المشروع أو التحدي" required error={errors.message}>
+                <textarea value={formData.message} onChange={(event) => handleChange("message", event.target.value)} placeholder="ما الذي تريد بناءه؟ وما المشكلة التي ترغب في حلها؟" rows={5} className={`${fieldClass(Boolean(errors.message))} min-h-32 resize-y py-3.5`} aria-invalid={Boolean(errors.message)} />
+              </Field>
 
-              {/* أنا لست روبوت */}
-              <label className="flex items-center justify-between gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer">
-                <span className="text-sm text-gray-500">
-                  أنا لست برنامج روبوت
-                </span>
-                <input
-                  type="checkbox"
-                  checked={isNotRobot}
-                  onChange={(e) => setIsNotRobot(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-[#0047AB] focus:ring-[#0047AB]/30"
-                />
-              </label>
+              <button type="submit" className="flex min-h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-[#075dc7] px-6 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(7,93,199,0.22)] transition hover:-translate-y-0.5 hover:bg-[#064fa8]">
+                متابعة الطلب عبر واتساب <MessageCircle className="h-5 w-5" />
+              </button>
 
-              {/* زر الإرسال */}
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.98 }}
-                disabled={!isNotRobot}
-                className="w-full flex items-center justify-center gap-2 bg-[#0047AB] hover:bg-[#003580] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-xl transition-colors"
-              >
-                <Send size={16} />
-                <span>إرسال الرسالة</span>
-              </motion.button>
+              {status === "opened" ? (
+                <p role="status" className="flex items-center justify-center gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-center text-sm font-bold text-emerald-700"><Check className="h-4 w-4" /> تم تجهيز الطلب وفتح واتساب لإرساله.</p>
+              ) : null}
 
-              {status === "success" && (
-                <motion.p
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-center text-sm font-bold text-green-600 bg-green-50 rounded-xl py-3"
-                >
-                  تم إرسال رسالتك بنجاح، سنتواصل معك قريبًا.
-                </motion.p>
-              )}
+              <p className="flex items-center justify-center gap-2 text-center text-xs leading-6 text-slate-400"><ShieldCheck className="h-4 w-4 text-slate-300" /> لن يتم حفظ بياناتك في الموقع؛ تنتقل فقط إلى رسالة واتساب.</p>
             </form>
-          </motion.div>
+          </div>
 
-          {/* الخريطة - شمال بالـ RTL */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="order-2 rounded-3xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] min-h-[400px] lg:min-h-full"
-          >
-            <iframe
-              src="https://www.google.com/maps?q=Tanta,Egypt&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: "400px" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="موقعنا على الخريطة"
-            />
-          </motion.div>
+          <aside className="relative overflow-hidden rounded-[2rem] bg-[#071b4e] p-6 text-white shadow-[0_22px_65px_rgba(7,27,78,0.16)] sm:p-8 lg:p-10">
+            <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-blue-500/20 blur-[85px]" />
+            <div className="absolute -bottom-24 right-10 h-64 w-64 rounded-full bg-cyan-400/10 blur-[85px]" />
+            <div className="relative flex h-full flex-col">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-cyan-300"><MessageCircle className="h-5 w-5" /></span>
+              <h3 className="mt-7 text-2xl font-extrabold sm:text-3xl">ماذا يحدث بعد إرسال الطلب؟</h3>
+              <p className="mt-4 text-sm leading-7 text-blue-100/70">نريد أن تكون البداية واضحة وبسيطة، لذلك تمر المحادثة بثلاث خطوات عملية.</p>
+
+              <div className="mt-8 space-y-3">
+                {[
+                  ["01", "نراجع الاحتياج", "نفهم الهدف والتحدي ونحدد الأسئلة الأساسية."],
+                  ["02", "جلسة اكتشاف قصيرة", "نناقش النطاق والأولوية والنتيجة المتوقعة."],
+                  ["03", "تصور للخطوة التالية", "نقترح المسار الأنسب ونوضح طريقة التنفيذ."],
+                ].map(([number, title, description]) => (
+                  <div key={number} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-300/15 text-xs font-extrabold text-cyan-200">{number}</span>
+                      <strong className="text-sm">{title}</strong>
+                    </div>
+                    <p className="mt-2 pr-11 text-xs leading-6 text-blue-100/60">{description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-8">
+                <a href="https://wa.me/970567465929" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-extrabold text-cyan-200 transition hover:text-white">تفضّل محادثة مباشرة؟ افتح واتساب <ArrowLeft className="h-4 w-4" /></a>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   );
 };
+
+function Field({ children, error, label, required = false }: { children: ReactNode; error?: string; label: string; required?: boolean }) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-sm font-bold text-[#071b4e]">{label} {required ? <span className="text-rose-500">*</span> : <span className="text-xs font-normal text-slate-400">(اختياري)</span>}</span>
+      {children}
+      {error ? <span className="mt-1.5 block text-xs font-bold text-rose-600">{error}</span> : null}
+    </label>
+  );
+}
+
+function fieldClass(hasError: boolean) {
+  return `min-h-[50px] w-full rounded-xl border px-4 text-sm text-[#071b4e] outline-none transition placeholder:text-slate-400 focus:ring-4 ${hasError ? "border-rose-300 bg-rose-50/30 focus:border-rose-400 focus:ring-rose-100" : "border-slate-200 bg-slate-50/50 focus:border-blue-300 focus:bg-white focus:ring-blue-100/70"}`;
+}

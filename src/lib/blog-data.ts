@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     title: "متى تحتاج شركتك إلى نظام ERP بدل ملفات Excel؟",
     desc: "دليلك لاتخاذ القرار الصحيح في الوقت المناسب.",
     readTime: "4 دقائق قراءة",
-    image: "/Website/images/project-1.png",
+    image: "/images/data.png",
     date: "2025-06-12",
     author: "فريق مسار",
     content: [
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     title: "كيف تختار بين موقع تعريفي ومنصة رقمية مخصصة؟",
     desc: "أهم الفروقات لمساعدتك في اختيار الأنسب.",
     readTime: "6 دقائق قراءة",
-    image: "/Website/images/project-2.png",
+    image: "/images/Programming.png",
     date: "2025-05-28",
     author: "فريق مسار",
     content: [
@@ -62,7 +62,7 @@ export const blogPosts: BlogPost[] = [
     title: "لماذا الهوية البصرية أهم من مجرد شعار جميل؟",
     desc: "كيف تبني هوية تعكس قيمة علامتك التجارية فعليًا.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/project-1.png",
+    image: "/images/Design.png",
     date: "2025-05-20",
     author: "فريق مسار",
     content: [
@@ -76,7 +76,7 @@ export const blogPosts: BlogPost[] = [
     title: "دليلك لاختيار نظام CRM المناسب لفريق المبيعات",
     desc: "أهم المعايير قبل اتخاذ قرار الاستثمار بنظام إدارة العملاء.",
     readTime: "7 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/images/data.png",
     date: "2025-05-14",
     author: "فريق مسار",
     content: [
@@ -90,7 +90,7 @@ export const blogPosts: BlogPost[] = [
     title: "خطوات تطوير تطبيق جوال ناجح من الفكرة للإطلاق",
     desc: "المراحل الأساسية التي يمر بها أي تطبيق احترافي.",
     readTime: "6 دقائق قراءة",
-    image: "/Website/images/project-2.png",
+    image: "/images/uxui.png",
     date: "2025-05-07",
     author: "فريق مسار",
     content: [
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     title: "الفرق بين ERPNext والأنظمة التقليدية المغلقة",
     desc: "لماذا تتجه الشركات الحديثة نحو الأنظمة مفتوحة المصدر؟",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/project-1.png",
+    image: "/images/react.png",
     date: "2025-04-30",
     author: "فريق مسار",
     content: [
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     title: "5 أخطاء شائعة في تصميم واجهات المستخدم",
     desc: "تجنّبها لتحصل على تجربة استخدام سلسة وفعالة.",
     readTime: "4 دقائق قراءة",
-    image: "/Website/images/project-2.png",
+    image: "/images/uxui.png",
     date: "2025-04-22",
     author: "فريق مسار",
     content: [
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
     title: "كيف تربط أنظمة شركتك ببعضها البعض بذكاء؟",
     desc: "التكامل بين الأدوات يوفر وقتًا ويقلل الأخطاء اليدوية.",
     readTime: "6 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/images/AI.png",
     date: "2025-04-15",
     author: "فريق مسار",
     content: [
@@ -146,7 +146,7 @@ export const blogPosts: BlogPost[] = [
     title: "متى تحتاج شركتك لنظام إدارة موارد بشرية مخصص؟",
     desc: "علامات تدل على حاجتك للتحول من الجداول اليدوية.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/images/data.png",
     date: "2025-04-08",
     author: "فريق مسار",
     content: [
@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
     title: "لماذا تحتاج متجرك الإلكتروني إلى لوحة تحكم مخصصة؟",
     desc: "إدارة أذكى لمنتجاتك وطلباتك من مكان واحد.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/project-1.png",
+    image: "/Website/images/project-2.png",
     date: "2025-04-01",
     author: "فريق مسار",
     content: [
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     title: "كيف تختار الألوان المناسبة لهوية علامتك التجارية؟",
     desc: "علم نفسي الألوان ودوره في قرارات عملائك.",
     readTime: "4 دقائق قراءة",
-    image: "/Website/images/project-2.png",
+    image: "/images/Design.png",
     date: "2025-03-25",
     author: "فريق مسار",
     content: [
@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
     title: "تكلفة تطبيق نظام ERP: ما الذي يجب أن تعرفه فعليًا؟",
     desc: "فهم التكاليف الحقيقية قبل اتخاذ قرار الاستثمار.",
     readTime: "7 دقائق قراءة",
-    image: "/Website/images/project-1.png",
+    image: "/images/data.png",
     date: "2025-03-18",
     author: "فريق مسار",
     content: [
@@ -202,7 +202,7 @@ export const blogPosts: BlogPost[] = [
     title: "أدوات الأتمتة التي يجب أن تعرفها كل شركة ناشئة",
     desc: "حلول بسيطة توفر عليك ساعات من العمل اليدوي أسبوعيًا.",
     readTime: "6 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/images/AI.png",
     date: "2025-03-11",
     author: "فريق مسار",
     content: [
@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
     title: "كيف تقيس نجاح نظامك الإداري بعد التطبيق؟",
     desc: "مؤشرات الأداء التي يجب متابعتها بعد أي تحول رقمي.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/images/data.png",
     date: "2025-03-04",
     author: "فريق مسار",
     content: [
