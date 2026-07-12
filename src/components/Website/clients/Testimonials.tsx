@@ -107,7 +107,7 @@ export const Testimonials = () => {
 
               {/* الاقتباس */}
               <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-6 relative z-10">
-                "{testimonial.quote}"
+                {testimonial.quote}
               </p>
 
               {/* خط فاصل */}

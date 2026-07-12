@@ -29,12 +29,12 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="relative  overflow-hidden  ">
-      <div className="website-container text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-6 py-2 mb-5 bg-[#f0f4ff] text-[#3b5998] rounded-full text-sm font-bold border border-[#e0e7ff]">
+    <section className="bg-[#f8fbff] py-20 sm:py-24">
+      <div className="website-container relative z-10 text-center">
+        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#dfe8ff] bg-white px-5 py-2 text-sm font-bold text-[#3b5998] shadow-sm">
           <span>آراء العملاء</span>
           <svg
-            className="w-5 h-5"
+            className="h-5 w-5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -47,67 +47,60 @@ export const Testimonials = () => {
             <path d="M8 13h4"></path>
           </svg>
         </div>
-        <h2 className="text-4xl font-bold text-[#00116e] mb-16">
+
+        <h2 className="mt-6 text-3xl font-extrabold tracking-[-0.02em] text-[#071b4e] sm:text-4xl">
           ثقة عملائنا تصنع فرقاً
         </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600">
+          نتائج حقيقية، تعاون واضح، وتقدير من فرق عمل اختارتنا كمspartner طويل الأمد.
+        </p>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
+          className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3"
         >
-          
           {testimonials.map((t, index) => (
-            <motion.div
+            <motion.article
               key={index}
               variants={{
-                hidden: { opacity: 0, y: 50 },
+                hidden: { opacity: 0, y: 30 },
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { delay: index * 0.2, duration: 0.5 },
+                  transition: { delay: index * 0.12, duration: 0.45 },
                 },
               }}
-              whileHover={{ y: -10 }}
-              className={`p-10 rounded-3xl transition-shadow duration-300 ${
+              whileHover={{ y: -6, scale: 1.01 }}
+              className={`flex h-full flex-col rounded-[1.5rem] border p-7 text-right shadow-sm transition-all duration-300 sm:p-8 ${
                 t.isFeatured
-                  ? "bg-[#002D72] text-white shadow-2xl md:scale-110 z-10"
-                  : "bg-white text-gray-800 shadow-lg hover:shadow-xl"
+                  ? "border-[#0b4bbd] bg-[#071b4e] text-white shadow-[0_20px_60px_rgba(7,27,78,0.16)]"
+                  : "border-slate-200/80 bg-white text-slate-800 shadow-[0_15px_35px_rgba(15,23,42,0.04)]"
               }`}
             >
-              
-              <div
-                className={`text-4xl mb-8 ${t.isFeatured ? "text-blue-300" : "text-[#002D72]"}`}
-              >
-                ❝
-              </div>
-              <p className="text-lg leading-relaxed mb-10">{t.text}</p>
-              <div
-                className={`w-1/5 mx-auto mb-6 border-t ${t.isFeatured ? "border-white/25" : "border-gray-200"}`}
-              ></div>
+              <div className={`text-4xl ${t.isFeatured ? "text-blue-200" : "text-[#075dc7]"}`}>❝</div>
+              <p className="mt-5 flex-1 text-[15px] leading-8">{t.text}</p>
 
-              <div className="flex items-center justify-center gap-4">
+              <div className={`mt-7 h-px w-16 ${t.isFeatured ? "bg-white/20" : "bg-slate-200"}`} />
+
+              <div className="mt-6 flex items-center justify-between gap-4">
                 <div className="text-right">
-                  <h4 className="font-bold">{t.name}</h4>
-                  <p
-                    className={`text-sm ${t.isFeatured ? "text-blue-200" : "text-gray-500"}`}
-                  >
-                    {t.role}
-                  </p>
-                  <p className="text-xs opacity-70">{t.company}</p>
+                  <h4 className="text-base font-extrabold">{t.name}</h4>
+                  <p className={`mt-1 text-sm ${t.isFeatured ? "text-blue-100" : "text-slate-500"}`}>{t.role}</p>
+                  <p className={`mt-1 text-xs ${t.isFeatured ? "text-blue-100/80" : "text-slate-400"}`}>{t.company}</p>
                 </div>
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/10">
                   <Image
                     src={t.image}
                     alt={t.name}
-                    width={64}
-                    height={64}
-                    className="object-cover"
+                    width={56}
+                    height={56}
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>

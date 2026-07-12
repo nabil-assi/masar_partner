@@ -39,11 +39,11 @@ export const Hero = ({
         { label: "اطلب عرض سعر", href: "/contact", variant: "secondary" },
       ]}
     >
-      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-3">
         {stats.map((stat) => (
-          <div key={stat.label} className="border-b border-white/12 pb-4 last:border-b-0 last:pb-0">
-            <div className="text-3xl font-extrabold text-white">{stat.value}</div>
-            <div className="mt-1 text-sm font-bold text-blue-50/70">{stat.label}</div>
+          <div key={stat.label} className="border-b border-slate-100 pb-4 last:border-b-0 last:pb-0">
+            <div className="text-3xl font-extrabold text-[#071b4e]">{stat.value}</div>
+            <div className="mt-1 text-sm font-bold text-slate-600">{stat.label}</div>
           </div>
         ))}
       </div>

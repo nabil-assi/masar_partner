@@ -48,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl" className={`${almarai.variable}`}>
-      <body className="min-h-screen bg-white text-slate-950 vc-init">
+    <html lang="ar" dir="rtl" className={`${almarai.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen bg-white text-slate-950 vc-init" suppressHydrationWarning>
         {children}
       </body>
     </html>
