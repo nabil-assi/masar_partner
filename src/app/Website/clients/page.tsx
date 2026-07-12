@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Website/clients/Hero";
- 
+
 import Image from "next/image";
- import { Blog } from "@/components/Website/blog/Blog";
+import { Blog } from "@/components/Website/blog/Blog";
 import { OurClients } from "@/components/Website/clients/OurClients";
 import { SectorsWeServe } from "@/components/Website/clients/SectorsWeServe";
 import { Testimonials } from "@/components/Website/clients/Testimonials";
@@ -23,9 +23,9 @@ export default function Home() {
         />
       </div>
       <Hero />
- 
-        <OurClients />
-        <SectorsWeServe />
+
+      <OurClients />
+      <SectorsWeServe />
       <Testimonials />
       <HowWeWork />
       <CTA />

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUp, MessageCircle } from "lucide-react";
 
 // أيقونات السوشيال ميديا كـ SVG مخصص (lucide-react شال أيقونات العلامات التجارية)
 const InstagramIcon = ({ size = 15 }: { size?: number }) => (
@@ -172,7 +172,7 @@ export const Footer = () => {
                 ))}
               </ul>
             </div>
-   {/* الشركة */}
+            {/* الشركة */}
             <div>
               <h4 className="text-white font-bold text-base mb-6">الشركة</h4>
               <ul className="space-y-4">
@@ -216,9 +216,6 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
-
-         
-            
           </div>
 
           {/* خط فاصل */}
@@ -246,8 +243,24 @@ export const Footer = () => {
 
       {/* زر الرجوع لفوق */}
       <AnimatePresence>
+           <motion.a
+           key="whatsapp-button"
+          href="https://wa.me/970590000000" // ضع رقمك هنا
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, scale: 0.5, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          exit={{ opacity: 0, scale: 0.5, x: 20 }}
+          whileHover={{ scale: 1.1, rotate: 10 }}
+          whileTap={{ scale: 0.9 }}
+          className="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-green-500/30 cursor-pointer"
+          aria-label="تواصل معنا عبر واتساب"
+        >
+          <MessageCircle size={24} />
+        </motion.a>
         {showScrollTop && (
           <motion.button
+          key="scroll-top-button"
             initial={{ opacity: 0, scale: 0.5, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}
@@ -270,6 +283,7 @@ export const Footer = () => {
             </motion.div>
           </motion.button>
         )}
+     
       </AnimatePresence>
     </>
   );
