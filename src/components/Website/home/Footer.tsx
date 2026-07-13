@@ -68,107 +68,99 @@ export const Footer = () => {
 
   return (
     <>
-      <footer className="relative mt-24 overflow-hidden border-t border-slate-200/80 bg-[linear-gradient(135deg,_#f8fbff_0%,_#eef5ff_45%,_#f7faff_100%)] text-slate-700" dir="rtl">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/60 to-transparent" />
+      <footer className="relative mt-24 overflow-hidden bg-[#06112f] text-slate-100" dir="rtl">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/50 to-transparent" />
+        <div className="absolute -left-16 -top-16 h-44 w-44 rounded-full bg-sky-400/15 blur-3xl" />
+        <div className="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-blue-950/25 blur-3xl" />
 
-        <div className="relative website-container py-10 sm:py-12">
-          <div className="flex flex-col gap-8 pb-8 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-            <div className="max-w-md">
-              <Link href="/" className="relative mb-4 flex h-14 w-40 transition-transform duration-300 hover:scale-[1.02]">
+        <div className="relative website-container py-16">
+          <div className="grid gap-10 lg:grid-cols-4">
+            <div className="space-y-4 text-right">
+              <Link href="/" className="inline-flex items-center rounded-3xl bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
                 <Image
                   src="/icons/logo-web.png"
                   alt="مسار للحلول الرقمية"
-                  width={160}
-                  height={56}
-                  sizes="160px"
-                  className="object-contain object-right"
+                  width={176}
+                  height={64}
+                  sizes="176px"
+                  className="h-10 w-auto object-contain"
                 />
               </Link>
-
-              <p className="text-sm leading-7 text-slate-600">
-                نبني حلولاً رقمية موثوقة تساعد الشركات على التطور والازدهار عبر خبرات عملية ومصممة وفق احتياجاتهم الفعلية.
+              <p className="max-w-xs text-sm leading-7 text-slate-300">
+                نساعدك تبني تجربة رقمية حديثة وواضحة، بدون تعقيد وبطابع عربي محترف.
               </p>
             </div>
 
-            <div className="flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-14">
-              <div>
-                <h3 className="mb-4 text-sm font-extrabold text-slate-900">حلولنا</h3>
-                <ul className="space-y-2.5">
-                  {servicesLinks.map((link, i) => (
-                    <li key={i}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-slate-600 transition-colors hover:text-sky-700"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="text-right">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">حلولنا</h3>
+              <ul className="space-y-3 text-sm text-slate-200/90">
+                {servicesLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="transition hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <div>
-                <h3 className="mb-4 text-sm font-extrabold text-slate-900">الشركة</h3>
-                <ul className="space-y-2.5">
-                  {companyLinks.map((link, i) => (
-                    <li key={i}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-slate-600 transition-colors hover:text-sky-700"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="text-right">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">الشركة</h3>
+              <ul className="space-y-3 text-sm text-slate-200/90">
+                {companyLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="transition hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <div>
-                <h3 className="mb-4 text-sm font-extrabold text-slate-900">تواصل معنا</h3>
-                <ul className="space-y-2.5">
-                  {contactItems.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="flex items-center gap-3 rounded-xl px-2 py-1.5 text-sm text-slate-600 transition-all duration-300 hover:bg-sky-50 hover:text-sky-700"
-                        dir={item.dir}
-                      >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700">
-                          <item.icon className="h-4 w-4" />
-                        </span>
-                        <span className="break-words text-right" dir={item.dir}>
-                          {item.label}
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="text-right space-y-4">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">تواصل معنا</h3>
+              <ul className="space-y-3 text-sm text-slate-200/90">
+                {contactItems.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white"
+                      dir={item.dir ?? "rtl"}
+                    >
+                      <span className="max-w-[70%] text-right break-words">{item.label}</span>
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-300/10 text-sky-200">
+                        <item.icon className="h-4 w-4" />
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          <div className="mt-2 rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)] sm:px-6">
-            <div className="flex flex-col gap-4 text-sm sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-slate-500">
-                © مسار {new Date().getFullYear()}. جميع الحقوق محفوظة.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-                {bottomLinks.map((link, i) => (
-                  <Link
-                    key={i}
-                    href={link.href}
-                    className="text-slate-500 transition-colors hover:text-sky-700"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
+          <div className="mt-12 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex sm:items-center sm:justify-between">
+            <p>© مسار {new Date().getFullYear()}. جميع الحقوق محفوظة.</p>
+            <div className="mt-3 flex flex-wrap items-center gap-4 sm:mt-0">
+              {bottomLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="transition hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </footer>
 
-      {/* أزرار التواصل والرجوع للأعلى */}
       <AnimatePresence>
         <motion.a
           key="whatsapp-button"
@@ -210,7 +202,6 @@ export const Footer = () => {
             </motion.div>
           </motion.button>
         )}
-     
       </AnimatePresence>
     </>
   );

@@ -1,5 +1,6 @@
 // src/app/layout.tsx
 import "./globals.css";
+import RevealProvider from "../components/ui/RevealProvider";
 import { Almarai } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${almarai.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-white text-slate-950 vc-init" suppressHydrationWarning>
+        <RevealProvider />
         {children}
       </body>
     </html>

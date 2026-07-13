@@ -138,6 +138,32 @@ html {
   }
 }
 
+/* Reveal on scroll utilities */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 700ms cubic-bezier(.2,.9,.2,1), transform 700ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* small stagger helper when used via inline style -- optional */
+.reveal[data-reveal-delay] {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal-visible {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0%);
