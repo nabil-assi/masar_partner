@@ -3,14 +3,16 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ExternalLink,
-  Calendar,
-  Clock,
-  FolderOpen,
-  User,
-  ChevronLeft,
-  ChevronRight,
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  ExternalLink, 
+  Calendar, 
+  Clock, 
+  FolderOpen, 
+  User, 
+  ChevronLeft, 
+  ChevronRight, 
+  Code2 
 } from "lucide-react";
 
 interface ProjectInfoProps {
@@ -24,8 +26,28 @@ interface ProjectInfoProps {
   link: string;
 }
 
-const AUTOPLAY_INTERVAL = 5000; // 5 ثواني
+import { Variants } from "framer-motion";
 
+
+const AUTOPLAY_INTERVAL = 5000;
+
+// إعدادات الحركة
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+};
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" as const // هنا يكمن الحل
+    } 
+  }
+};
+ 
 export const ProjectInfo = ({
   image,
   gallery,
@@ -48,18 +70,12 @@ export const ProjectInfo = ({
     setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   }, [slides.length]);
 
-  // التشغيل التلقائي كل 5 ثواني
   useEffect(() => {
     if (slides.length <= 1 || isPaused) return;
-
-    const timer = setInterval(() => {
-      goToNext();
-    }, AUTOPLAY_INTERVAL);
-
+    const timer = setInterval(goToNext, AUTOPLAY_INTERVAL);
     return () => clearInterval(timer);
   }, [goToNext, slides.length, isPaused]);
 
-  // عند أي تفاعل يدوي، نوقف التشغيل التلقائي مؤقتًا (10 ثواني) ثم نعيد تفعيله
   const handleManualInteraction = (action: () => void) => {
     action();
     setIsPaused(true);
@@ -67,144 +83,119 @@ export const ProjectInfo = ({
   };
 
   return (
-    <section className="bg-white px-4 py-10 sm:px-6 sm:py-12" dir="rtl">
-      <div className="website-container-narrow relative">
-        <div className="rounded-[1.6rem] border border-blue-100 bg-[linear-gradient(135deg,#ffffff_0%,#f7fbff_52%,#eef8ff_100%)] p-3 shadow-[0_24px_70px_rgba(31,78,132,0.10)] sm:p-4 lg:p-5">
-          <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-[minmax(0,1.72fr)_minmax(292px,.78fr)] lg:gap-5">
-       
-            {/* معرض الصور - كاروسيل */}
-            <div className="relative min-w-0">
-              <div className="relative h-[270px] w-full overflow-hidden rounded-[1.25rem] bg-slate-50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.75)] sm:h-[350px] lg:h-[405px]">
-              <Image
-                key={activeSlide}
-                src={slides[activeSlide]}
-                alt={`${client} - عرض ${activeSlide + 1}`}
-                fill
-                sizes="(min-width: 1024px) 1024px, calc(100vw - 32px)"
-                className="object-cover transition-opacity duration-500"
-              />
-
-              {slides.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/60 bg-white/80 px-3 py-2 shadow-sm backdrop-blur">
-                  {slides.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() =>
-                        handleManualInteraction(() => setActiveSlide(i))
-                      }
-                      aria-label={`الانتقال للصورة ${i + 1}`}
-                      className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-                        i === activeSlide ? "bg-[#075dc7]" : "bg-slate-300"
-                      }`}
+    <motion.section 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+      className="bg-white px-4 py-10 sm:px-6 sm:py-12" 
+      dir="rtl"
+    >
+      <div className="website-container-narrow">
+        <motion.div 
+          variants={itemVariants}
+          className="rounded-[2rem] border border-blue-100 bg-white p-4 shadow-[0_24px_70px_rgba(31,78,132,0.05)] lg:p-6"
+        >
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
+            {/* معرض الصور */}
+            <div className="space-y-6">
+              <div className="relative h-[280px] w-full overflow-hidden rounded-[1.5rem] bg-slate-100 sm:h-[400px]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeSlide}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={slides[activeSlide]}
+                      alt={`${client} - عرض ${activeSlide + 1}`}
+                      fill
+                      className="object-cover"
                     />
+                  </motion.div>
+                </AnimatePresence>
+
+                {slides.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => handleManualInteraction(goToPrev)}
+                      className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur hover:bg-white"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={() => handleManualInteraction(goToNext)}
+                      className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur hover:bg-white"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {/* التقنيات المستخدمة */}
+              <div className="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                <div className="mb-4 flex items-center gap-2 text-[#071b4e]">
+                  <Code2 className="h-5 w-5" />
+                  <h3 className="font-bold">التقنيات المستخدمة</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag, i) => (
+                    <motion.span
+                      key={i}
+                      whileHover={{ scale: 1.05 }}
+                      className="rounded-lg bg-white px-3 py-1 text-xs font-bold text-[#075dc7] shadow-sm border border-blue-100"
+                    >
+                      {tag}
+                    </motion.span>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
 
-            {slides.length > 1 && (
-              <button
-                onClick={() => handleManualInteraction(goToPrev)}
-                aria-label="الصورة السابقة"
-                className="absolute right-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-blue-100 bg-white/90 text-[#071b4e] shadow-md transition hover:-translate-x-0.5 hover:bg-blue-50 lg:flex"
-              >
-                <ChevronRight className="w-5 h-5 text-[#0F172A]" />
-              </button>
-            )}
-
-            {slides.length > 1 && (
-              <button
-                onClick={() => handleManualInteraction(goToNext)}
-                aria-label="الصورة التالية"
-                className="absolute left-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-blue-100 bg-white/90 text-[#071b4e] shadow-md transition hover:translate-x-0.5 hover:bg-blue-50 lg:flex"
-              >
-                <ChevronLeft className="w-5 h-5 text-[#0F172A]" />
-              </button>
-            )}
-            </div>
-
-            {/* بطاقة معلومات المشروع - فاتحة */}
-            <aside className="flex rounded-[1.25rem] border border-blue-100 bg-white/95 p-5 shadow-[0_16px_45px_rgba(31,78,132,0.08)] backdrop-blur lg:min-h-[405px]">
-              <div className="flex w-full flex-col">
-                <div className="mb-5 flex items-center justify-between gap-4 border-b border-blue-100 pb-4">
-                  <h3 className="text-lg font-extrabold text-[#071b4e] sm:text-xl">
-                    معلومات المشروع
-                  </h3>
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-[11px] font-extrabold text-[#075dc7]">
-                    دراسة مشروع
-                  </span>
+            {/* القائمة الجانبية */}
+            <aside className="flex flex-col gap-4">
+              <div className="rounded-2xl border border-blue-50 bg-blue-50/30 p-5">
+                <h3 className="mb-6 font-extrabold text-[#071b4e]">تفاصيل المشروع</h3>
+                <div className="space-y-4">
+                  {[
+                    { label: "العميل", value: client, icon: User },
+                    { label: "التصنيف", value: category, icon: FolderOpen },
+                    { label: "المدة", value: duration, icon: Clock },
+                    { label: "السنة", value: year, icon: Calendar },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm border border-blue-100">
+                        <item.icon className="h-4 w-4 text-[#075dc7]" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] uppercase text-slate-400 font-bold">{item.label}</p>
+                        <p className="text-sm font-bold text-[#071b4e]">{item.value}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
+              </div>
 
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
-                    <div className="mb-2 flex items-center justify-between gap-4">
-                      <p className="text-xs font-bold text-slate-400">العميل</p>
-                      <User className="h-4 w-4 shrink-0 text-[#075dc7]" />
-                    </div>
-                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">{client}</p>
-                  </div>
-
-                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
-                    <div className="mb-2 flex items-center justify-between gap-4">
-                      <p className="text-xs font-bold text-slate-400">التصنيف</p>
-                      <FolderOpen className="h-4 w-4 shrink-0 text-[#075dc7]" />
-                    </div>
-                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">
-                      {category}
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
-                    <div className="mb-2 flex items-center justify-between gap-4">
-                      <p className="text-xs font-bold text-slate-400">المدة</p>
-                      <Clock className="h-4 w-4 shrink-0 text-[#075dc7]" />
-                    </div>
-                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">
-                      {duration}
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
-                    <div className="mb-2 flex items-center justify-between gap-4">
-                      <p className="text-xs font-bold text-slate-400">السنة</p>
-                      <Calendar className="h-4 w-4 shrink-0 text-[#075dc7]" />
-                    </div>
-                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">{year}</p>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <p className="mb-3 text-sm font-extrabold text-[#071b4e]">
-                    التقنيات المستخدمة
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="rounded-full border border-blue-100 bg-blue-50 px-3.5 py-1.5 text-xs font-extrabold text-[#075dc7]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {link && (
+              {link && (
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Link
                     href={link}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#075dc7] px-5 py-3 text-sm font-extrabold text-white shadow-lg shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-[#064fa8] lg:mt-auto"
+                    className="flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-[#071b4e] text-white font-bold transition hover:bg-[#075dc7]"
                   >
-                    <span>زيارة المشروع</span>
-                    <ExternalLink size={14} />
+                    زيارة الموقع
+                    <ExternalLink size={16} />
                   </Link>
-                )}
-              </div>
+                </motion.div>
+              )}
             </aside>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
