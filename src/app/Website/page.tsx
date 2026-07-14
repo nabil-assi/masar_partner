@@ -187,9 +187,11 @@ export default function Home() {
           <div className="order-1 text-right lg:col-start-1 lg:row-start-1">
             <p className="mb-5 text-sm font-extrabold text-[#075dc7]">مسار للحلول الرقمية</p>
 
-            <h1 className="max-w-3xl text-[2.4rem] font-extrabold leading-[1.35] text-[#071b4e] sm:text-5xl lg:text-[3.45rem] lg:leading-[1.25]">
-              حلول رقمية تنظّم أعمالك
-              <span className="block text-[#075dc7]">وتدعم نموّك</span>
+            <h1 className="max-w-3xl text-balance text-[2.55rem] font-extrabold leading-[1.18] tracking-normal text-[#071b4e] sm:text-5xl sm:leading-[1.16] lg:text-[3.65rem] lg:leading-[1.12]">
+              <span className="block">حلول رقمية تنظّم أعمالك</span>
+              <span className="mt-3 block bg-gradient-to-l from-[#075dc7] via-[#0a79d8] to-[#17a9c8] bg-clip-text text-transparent sm:mt-4">
+                وتدعم نموّك
+              </span>
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
