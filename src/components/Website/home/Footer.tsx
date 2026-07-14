@@ -70,30 +70,7 @@ export const Footer = () => {
         <div className="pointer-events-none absolute -right-36 -top-48 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#075dc7]/20 blur-[120px]" />
         <div className="pointer-events-none absolute -bottom-56 -left-40 -z-10 h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-[120px]" />
 
-        <div className="border-y border-white/10">
-          <div className="website-container grid gap-7 py-9 sm:py-10 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div className="max-w-2xl text-right">
-              <div className="mb-3 flex items-center gap-2 text-xs font-bold text-sky-300 sm:text-sm">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-300 opacity-50" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-300" />
-                </span>
-                جاهزون لمشروع جديد
-              </div>
-              <h2 className="website-subsection-title !text-white">
-                لنحوّل فكرتك إلى خطوة رقمية واضحة ومؤثرة.
-              </h2>
-            </div>
-
-            <Link
-              href="/contact"
-              className="group inline-flex min-h-12 w-fit items-center justify-center gap-3 rounded-xl bg-white px-5 text-sm font-extrabold text-[#071b4e] shadow-[0_12px_35px_rgba(0,0,0,0.16)] transition hover:-translate-y-0.5 hover:bg-sky-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#06122f]"
-            >
-              تحدث معنا عن مشروعك
-              <ArrowLeft className="h-4 w-4 text-[#075dc7] transition-transform group-hover:-translate-x-1" />
-            </Link>
-          </div>
-        </div>
+         
 
         <div className="website-container py-12 sm:py-14 lg:py-16">
           <div className="grid gap-11 lg:grid-cols-12 lg:gap-8">

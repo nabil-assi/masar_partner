@@ -21,9 +21,10 @@ export default function Home() {
       <WhyMasar />
       <div className="py-20 sm:py-24 lg:py-28">
         <HowWeWork />
-      </div>
       <TeamSection />
       <CTA />
+            </div>
+
     </main>
   );
 }
