@@ -55,10 +55,7 @@ export default async function PortfolioProjectPage({
         category={project.category}
         duration={project.duration}
       />
-      <ProjectCTA
-        serviceTitle={project.title}
-        serviceSlug={project.slug}
-      />
+      <ProjectCTA serviceTitle={project.title} serviceSlug={project.slug} />
     </main>
   );
 }
