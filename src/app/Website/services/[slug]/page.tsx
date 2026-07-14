@@ -22,6 +22,7 @@ export default async function ServicePage({
   const service = getServiceBySlug(slug);
 
   if (!service) return notFound();
+  const isBusinessSystems = service.category === "أنظمة أعمال";
 
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
@@ -70,7 +71,18 @@ export default async function ServicePage({
         items={service.portfolioExamples.items}
       />
       <div className="website-section-stack bg-white">
-        <CTA />
+        <CTA
+          badgeText={isBusinessSystems ? "راجع نظامك قبل قرار التطوير" : "ابدأ بتصور واضح قبل التنفيذ"}
+          title={isBusinessSystems ? "نظامك الحالي يحتاج مراجعة؟" : `تفكر في ${service.title}؟`}
+          highlightedTitle={isBusinessSystems ? "راجع نظامك الحالي معنا" : "احصل على تصور أولي للحل"}
+          description={
+            isBusinessSystems
+              ? "نراجع سير العمل الحالي ونحدد أين يمكن تقليل العمل اليدوي وتحسين الربط والتقارير قبل أي تطوير جديد."
+              : "نساعدك على تحويل الاحتياج إلى نطاق واضح، مراحل تنفيذ واقعية، وتجربة مناسبة لطبيعة عملك."
+          }
+          primaryLabel={isBusinessSystems ? "راجع نظامك الحالي معنا" : "احصل على تصور أولي للحل"}
+          secondaryLabel="راسلنا عبر البريد"
+        />
       </div>
     </main>
   );

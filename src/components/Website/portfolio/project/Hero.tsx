@@ -21,6 +21,7 @@ export const Hero = ({ breadcrumbLabel, tag, title, description }: HeroProps) =>
         { label: "ابدأ مشروع مشابه", href: "/contact" },
         { label: "كل الأعمال", href: "/portfolio", variant: "secondary" },
       ]}
+      compact
     />
   );
 };

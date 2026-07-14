@@ -6,6 +6,7 @@ import {
 import { Hero } from "@/components/Website/portfolio/project/Hero";
 import { ProjectInfo } from "@/components/Website/portfolio/project/ProjectInfo";
 import { Overview } from "@/components/Website/portfolio/project/Overview";
+import { CaseStudy } from "@/components/Website/portfolio/project/CaseStudy";
 import { ProjectCTA } from "@/components/Website/portfolio/project/CTA";
 
 export function generateStaticParams() {
@@ -44,7 +45,16 @@ export default async function PortfolioProjectPage({
         title={project.title}
         overview={project.overview}
         highlights={project.highlights}
-      />{" "}
+      />
+      <CaseStudy
+        title={project.title}
+        description={project.description}
+        overview={project.overview}
+        highlights={project.highlights}
+        tags={project.tags}
+        category={project.category}
+        duration={project.duration}
+      />
       <ProjectCTA
         serviceTitle={project.title}
         serviceSlug={project.slug}

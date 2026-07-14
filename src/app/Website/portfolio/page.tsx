@@ -21,7 +21,14 @@ export default function Home() {
         <Services />
          <OutcomesSection />
       <PortfolioWithSectors />
-      <CTA />
+      <CTA
+        badgeText="من مشاهدة الأعمال إلى تنفيذ مشروعك"
+        title="أعجبك أسلوب تنفيذنا؟"
+        highlightedTitle="نفّذ مشروع مشابه"
+        description="شاركنا طبيعة مشروعك، وسنقترح لك تصوراً أولياً يساعدك على تحويل الفكرة إلى حل عملي واضح."
+        primaryLabel="نفّذ مشروع مشابه"
+        secondaryLabel="تواصل عبر البريد الإلكتروني"
+      />
        </div>
     </main>
   );

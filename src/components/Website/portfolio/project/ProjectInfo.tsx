@@ -67,13 +67,14 @@ export const ProjectInfo = ({
   };
 
   return (
-    <section className="py-16 px-6 bg-white" dir="rtl">
+    <section className="bg-white px-4 py-10 sm:px-6 sm:py-12" dir="rtl">
       <div className="website-container-narrow relative">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <div className="rounded-[1.6rem] border border-blue-100 bg-[linear-gradient(135deg,#ffffff_0%,#f7fbff_52%,#eef8ff_100%)] p-3 shadow-[0_24px_70px_rgba(31,78,132,0.10)] sm:p-4 lg:p-5">
+          <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-[minmax(0,1.72fr)_minmax(292px,.78fr)] lg:gap-5">
        
-          {/* معرض الصور - كاروسيل */}
-          <div className="lg:col-span-2 relative">
-            <div className="relative w-full h-[320px] lg:h-[420px] rounded-2xl overflow-hidden bg-gray-100">
+            {/* معرض الصور - كاروسيل */}
+            <div className="relative min-w-0">
+              <div className="relative h-[270px] w-full overflow-hidden rounded-[1.25rem] bg-slate-50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.75)] sm:h-[350px] lg:h-[405px]">
               <Image
                 key={activeSlide}
                 src={slides[activeSlide]}
@@ -84,7 +85,7 @@ export const ProjectInfo = ({
               />
 
               {slides.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/60 bg-white/80 px-3 py-2 shadow-sm backdrop-blur">
                   {slides.map((_, i) => (
                     <button
                       key={i}
@@ -92,8 +93,8 @@ export const ProjectInfo = ({
                         handleManualInteraction(() => setActiveSlide(i))
                       }
                       aria-label={`الانتقال للصورة ${i + 1}`}
-                      className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                        i === activeSlide ? "bg-cyan-400" : "bg-white/60"
+                      className={`h-2 w-2 rounded-full transition-colors duration-300 ${
+                        i === activeSlide ? "bg-[#075dc7]" : "bg-slate-300"
                       }`}
                     />
                   ))}
@@ -105,7 +106,7 @@ export const ProjectInfo = ({
               <button
                 onClick={() => handleManualInteraction(goToPrev)}
                 aria-label="الصورة السابقة"
-                className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-14 w-10 h-10 rounded-full bg-white shadow-md items-center justify-center hover:bg-gray-50 transition-colors z-10"
+                className="absolute right-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-blue-100 bg-white/90 text-[#071b4e] shadow-md transition hover:-translate-x-0.5 hover:bg-blue-50 lg:flex"
               >
                 <ChevronRight className="w-5 h-5 text-[#0F172A]" />
               </button>
@@ -115,79 +116,93 @@ export const ProjectInfo = ({
               <button
                 onClick={() => handleManualInteraction(goToNext)}
                 aria-label="الصورة التالية"
-                className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -left-14 w-10 h-10 rounded-full bg-white shadow-md items-center justify-center hover:bg-gray-50 transition-colors z-10"
+                className="absolute left-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-blue-100 bg-white/90 text-[#071b4e] shadow-md transition hover:translate-x-0.5 hover:bg-blue-50 lg:flex"
               >
                 <ChevronLeft className="w-5 h-5 text-[#0F172A]" />
               </button>
             )}
-          </div>
-
-             {/* بطاقة معلومات المشروع - فاتحة */}
-          <div className="lg:col-span-1 bg-white rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-              معلومات المشروع
-            </h3>
-            <div className="h-px bg-gray-200 mb-6" />
-
-            <div className="space-y-5">
-              <div>
-                <p className="text-xs text-gray-400 mb-1">العميل</p>
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-bold text-[#0F172A]">{client}</p>
-                  <User className="w-4 h-4 text-cyan-500 shrink-0" />
-                </div>
-              </div>
-
-              <div>
-                <p className="text-xs text-gray-400 mb-1">التصنيف</p>
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-bold text-[#0F172A]">
-                    {category}
-                  </p>
-                  <FolderOpen className="w-4 h-4 text-cyan-500 shrink-0" />
-                </div>
-              </div>
-
-              <div>
-                <p className="text-xs text-gray-400 mb-1">المدة</p>
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-bold text-[#0F172A]">
-                    {duration}
-                  </p>
-                  <Clock className="w-4 h-4 text-cyan-500 shrink-0" />
-                </div>
-              </div>
             </div>
 
-            <div className="mt-8">
-              <p className="text-base font-bold text-[#0F172A] mb-4">
-                التقنيات المستخدمة
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-4 py-1.5 text-xs font-bold rounded-full bg-gray-100 text-gray-600 border border-gray-200"
-                  >
-                    {tag}
+            {/* بطاقة معلومات المشروع - فاتحة */}
+            <aside className="flex rounded-[1.25rem] border border-blue-100 bg-white/95 p-5 shadow-[0_16px_45px_rgba(31,78,132,0.08)] backdrop-blur lg:min-h-[405px]">
+              <div className="flex w-full flex-col">
+                <div className="mb-5 flex items-center justify-between gap-4 border-b border-blue-100 pb-4">
+                  <h3 className="text-lg font-extrabold text-[#071b4e] sm:text-xl">
+                    معلومات المشروع
+                  </h3>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-[11px] font-extrabold text-[#075dc7]">
+                    دراسة مشروع
                   </span>
-                ))}
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <p className="text-xs font-bold text-slate-400">العميل</p>
+                      <User className="h-4 w-4 shrink-0 text-[#075dc7]" />
+                    </div>
+                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">{client}</p>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <p className="text-xs font-bold text-slate-400">التصنيف</p>
+                      <FolderOpen className="h-4 w-4 shrink-0 text-[#075dc7]" />
+                    </div>
+                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">
+                      {category}
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <p className="text-xs font-bold text-slate-400">المدة</p>
+                      <Clock className="h-4 w-4 shrink-0 text-[#075dc7]" />
+                    </div>
+                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">
+                      {duration}
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3.5">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <p className="text-xs font-bold text-slate-400">السنة</p>
+                      <Calendar className="h-4 w-4 shrink-0 text-[#075dc7]" />
+                    </div>
+                    <p className="text-sm font-extrabold leading-6 text-[#071b4e]">{year}</p>
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <p className="mb-3 text-sm font-extrabold text-[#071b4e]">
+                    التقنيات المستخدمة
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-blue-100 bg-blue-50 px-3.5 py-1.5 text-xs font-extrabold text-[#075dc7]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {link && (
+                  <Link
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#075dc7] px-5 py-3 text-sm font-extrabold text-white shadow-lg shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-[#064fa8] lg:mt-auto"
+                  >
+                    <span>زيارة المشروع</span>
+                    <ExternalLink size={14} />
+                  </Link>
+                )}
               </div>
-            </div>
-
-            {link && (
-              <Link
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 mt-8 bg-[#0047AB] hover:bg-[#003580] transition-colors text-white text-sm font-bold px-5 py-3 rounded-xl"
-              >
-                <span>زيارة المشروع</span>
-                <ExternalLink size={14} />
-              </Link>
-            )}
+            </aside>
           </div>
-
         </div>
       </div>
     </section>

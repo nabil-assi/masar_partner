@@ -12,40 +12,40 @@ export const Overview = ({
   highlights = [],
 }: OverviewProps) => {
   return (
-    <section className="py-8 px-6 bg-white" dir="rtl">
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl lg:text-3xl font-extrabold text-black mb-5">
+    <section className="bg-white px-6 pb-12 pt-2 sm:pb-14" dir="rtl" aria-label={`نبذة عن ${title}`}>
+      <div className="website-container-narrow">
+        <div className="rounded-[1.35rem] border border-blue-100 bg-white p-6 shadow-[0_14px_40px_rgba(31,78,132,0.06)] sm:p-8">
+          <h2 className="mb-5 text-2xl font-extrabold text-[#071b4e] lg:text-3xl">
           نبذة عن المشروع
-        </h2>
+          </h2>
 
-        <p className="text-gray-600 text-base leading-relaxed mb-10">
+          <p className="mb-8 max-w-4xl text-base leading-8 text-slate-600">
           {overview}
-        </p>
+          </p>
 
-        {highlights.length > 0 && (
+          {highlights.length > 0 && (
           <>
-            <h3 className="text-lg font-bold text-black mb-5">أهم الميزات</h3>
+            <h3 className="mb-4 text-lg font-extrabold text-[#071b4e]">أهم الميزات</h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               {highlights.map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-xl px-5 py-4"
+                  className="flex min-h-[76px] items-center gap-3 rounded-xl border border-blue-100 bg-blue-50/50 px-4 py-4"
                 >
-                  {/* الدائرة أصبحت هنا (في البداية) */}
-                  <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#075dc7]">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-white" />
                   </div>
 
-                  {/* النص أصبح هنا (بعد الدائرة) */}
-                  <span className="text-sm font-bold text-gray-900">
+                  <span className="text-sm font-extrabold leading-6 text-[#071b4e]">
                     {item}
                   </span>
                 </div>
               ))}
             </div>
           </>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

@@ -20,6 +20,7 @@ interface PageHeroProps {
   breadcrumbs?: BreadcrumbItem[];
   actions?: HeroAction[];
   children?: ReactNode;
+  compact?: boolean;
 }
 
 export const PageHero = ({
@@ -29,17 +30,18 @@ export const PageHero = ({
   breadcrumbs = [],
   actions = [],
   children,
+  compact = false,
 }: PageHeroProps) => {
   const allBreadcrumbs = [{ label: "الرئيسية", href: "/" }, ...breadcrumbs];
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#f8fbff] pb-20 pt-32 text-right sm:pb-24 sm:pt-36" dir="rtl">
+    <section className={`relative isolate overflow-hidden bg-[#f8fbff] text-right ${compact ? "pb-14 pt-28 sm:pb-16 sm:pt-32" : "pb-20 pt-32 sm:pb-24 sm:pt-36"}`} dir="rtl">
       <div className="masar-grid absolute inset-0 -z-20 opacity-60" />
       <div className="absolute -right-36 top-10 -z-10 h-96 w-96 rounded-full bg-blue-100/60 blur-[100px]" />
       <div className="absolute -left-36 bottom-0 -z-10 h-80 w-80 rounded-full bg-cyan-100/50 blur-[100px]" />
 
       <div className="website-container relative z-10">
-        <nav aria-label="مسار الصفحة" className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-slate-400 sm:text-sm">
+        <nav aria-label="مسار الصفحة" className={`${compact ? "mb-6" : "mb-8"} flex flex-wrap items-center gap-2 text-xs font-bold text-slate-400 sm:text-sm`}>
           {allBreadcrumbs.map((item, index) => {
             const isLast = index === allBreadcrumbs.length - 1;
             return (
@@ -55,23 +57,23 @@ export const PageHero = ({
           })}
         </nav>
 
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
+        <div className={`grid items-center ${compact ? "gap-8 lg:grid-cols-[1.05fr_.8fr] lg:gap-14" : "gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20"}`}>
           <div className="max-w-3xl">
             <span className="masar-eyebrow gap-2">
               <Sparkles className="h-4 w-4" />
               {eyebrow}
             </span>
 
-            <h1 className="mt-6 text-[2.35rem] font-extrabold leading-[1.35] tracking-[-0.035em] text-[#071b4e] sm:text-5xl lg:text-[3.35rem] [&_.text-\[\#6BB7FF\]]:text-[#075dc7]">
+            <h1 className={`${compact ? "mt-5 text-[2.15rem] leading-[1.28] sm:text-[2.8rem] lg:text-[3.05rem] lg:leading-[1.2]" : "mt-6 text-[2.35rem] leading-[1.35] sm:text-5xl lg:text-[3.35rem]"} font-extrabold tracking-normal text-[#071b4e] [&_.text-\[\#6BB7FF\]]:text-[#075dc7]`}>
               {title}
             </h1>
 
             {description ? (
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">{description}</p>
+              <p className={`${compact ? "mt-5" : "mt-6"} max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9`}>{description}</p>
             ) : null}
 
             {actions.length > 0 ? (
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className={`${compact ? "mt-7" : "mt-8"} flex flex-col gap-3 sm:flex-row`}>
                 {actions.map((action) => (
                   <Link key={action.label} href={action.href} className={action.variant === "secondary" ? "masar-button-secondary" : "masar-button-primary"}>
                     {action.label}
@@ -87,7 +89,7 @@ export const PageHero = ({
           ) : (
             <div className="relative mx-auto hidden w-full max-w-md lg:block" aria-hidden="true">
               <div className="absolute inset-8 rounded-full bg-blue-200/40 blur-3xl" />
-              <div className="relative rounded-[2rem] border border-white bg-white/75 p-5 shadow-[0_28px_75px_rgba(17,65,124,0.13)] backdrop-blur">
+              <div className="relative rounded-[1.75rem] border border-white bg-white/75 p-4 shadow-[0_22px_60px_rgba(17,65,124,0.11)] backdrop-blur">
                 <div className="rounded-[1.4rem] bg-gradient-to-br from-[#0a2b67] to-[#075dc7] p-6 text-white">
                   <div className="flex items-center justify-between">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/12"><Layers3 className="h-5 w-5" /></span>
