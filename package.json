@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "dev:webpack": "next dev --webpack",
+    "dev:polling": "WATCHPACK_POLLING=true WATCHPACK_POLLING_INTERVAL=1000 next dev --webpack"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.101.0",
