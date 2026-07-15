@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { User, Mail, Lock, Eye, X, ArrowRight } from "lucide-react";
 
 export const RegisterForm = ({ onClose }: { onClose: () => void }) => {
@@ -89,21 +91,23 @@ export const RegisterForm = ({ onClose }: { onClose: () => void }) => {
 
           <p className="text-center text-gray-500 text-sm">
             لديك حساب بالفعل؟{" "}
-            <a
+            <Link
               href="/login"
               className="text-blue-500 hover:underline font-bold"
             >
               تسجيل الدخول
-            </a>
+            </Link>
           </p>
         </div>
 
         {/* الجانب الأيسر: الصورة (تم وضع صورة خلفية وطبقة داكنة فوقها) */}
         <div className="hidden md:flex w-[40%] m-3 rounded-2xl relative overflow-hidden items-center justify-center p-8 text-center">
           {/* الصورة */}
-          <img
-            src="/images/auth/auth_bg.png"
+          <Image
+            src="/images/auth/auth_bg.webp"
             alt="Background"
+            fill
+            sizes="(min-width: 768px) 360px, 0px"
             className="absolute inset-0 w-full h-full object-cover"
           />
 

@@ -65,7 +65,7 @@ export const Hero = () => {
         <div className="hidden lg:flex flex-1 w-full justify-center">
           <div className="relative aspect-square w-full max-w-[480px]">
             <Image
-              src="/images/hero.png"
+              src="/images/hero.webp"
               alt="Hero Illustration"
               fill
               className="object-contain"

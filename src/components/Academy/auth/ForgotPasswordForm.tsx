@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Mail, X, ArrowRight } from "lucide-react";
 
 export const ForgotPasswordForm = ({ onClose }: { onClose: () => void }) => {
@@ -33,9 +34,9 @@ export const ForgotPasswordForm = ({ onClose }: { onClose: () => void }) => {
           </button>
 
           <p className="text-center text-gray-500 text-sm">
-            <a href="/login" className="flex items-center justify-center gap-2 text-blue-500 hover:underline font-bold">
+            <Link href="/login" className="flex items-center justify-center gap-2 text-blue-500 hover:underline font-bold">
                العودة لتسجيل الدخول <ArrowRight size={16} />
-            </a>
+            </Link>
           </p>
         </div>
 

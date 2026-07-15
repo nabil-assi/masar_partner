@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Mail, Lock, Eye, X, ArrowRight, ArrowLeft } from "lucide-react";
 
 export const LoginForm = ({ onClose }: { onClose: () => void }) => {
@@ -69,12 +70,12 @@ export const LoginForm = ({ onClose }: { onClose: () => void }) => {
                 تذكرني
               </label>
             </div>
-            <a
+            <Link
               href="/forgot-password"
               className="text-blue-500 text-xs hover:underline"
             >
               نسيت كلمة السر؟
-            </a>
+            </Link>
           </div>
 
           <button className="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-xl text-white font-bold transition-all text-sm mb-6 shadow-lg shadow-blue-900/20">
@@ -83,12 +84,12 @@ export const LoginForm = ({ onClose }: { onClose: () => void }) => {
 
           <p className="text-center text-gray-500 text-sm">
             ليس لديك حساب؟{" "}
-            <a
+            <Link
               href="/register"
               className="text-blue-500 hover:underline font-bold"
             >
               سجل الآن
-            </a>
+            </Link>
           </p>
         </div>
 
@@ -97,7 +98,7 @@ export const LoginForm = ({ onClose }: { onClose: () => void }) => {
           {/* هنا تم إضافة الصورة كـ Background */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/auth/auth_bg.png')" }}
+            style={{ backgroundImage: "url('/images/auth/auth_bg.webp')" }}
           />
 
           {/* طبقة التعتيم لضمان وضوح النص */}

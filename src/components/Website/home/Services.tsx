@@ -145,13 +145,13 @@ export const Services = () => {
           className={`services-cta ${isVisible ? "in-view" : ""} mt-16 flex justify-center group`}
         >
           
-            <a href="/services"
+            <Link href="/services"
             className="px-8 py-4 border-2 border-[#0047AB] text-[#0047AB] rounded-xl font-bold hover:bg-[#0047AB] hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-lg">
              <span>استكشف جميع الخدمات</span>
             <span className="transition-transform duration-300 group-hover:-translate-x-1">
               ←
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

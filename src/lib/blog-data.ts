@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     title: "كيف تساعد أتمتة الأعمال في تقليل الوقت والأخطاء؟",
     desc: "حلول ذكية ترفع الكفاءة وتقلل التكاليف التشغيلية.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/Website/images/automation.webp",
     date: "2025-06-05",
     author: "فريق مسار",
     content: [
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     title: "لماذا تحتاج متجرك الإلكتروني إلى لوحة تحكم مخصصة؟",
     desc: "إدارة أذكى لمنتجاتك وطلباتك من مكان واحد.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/project-2.png",
+    image: "/Website/images/project-2.webp",
     date: "2025-04-01",
     author: "فريق مسار",
     content: [

@@ -95,7 +95,7 @@ export const Hero = () => {
           <div className="hero-blob absolute inset-x-8 bottom-10 h-24 rounded-[50%] bg-[#0047AB]/12 blur-2xl" />
           <div className="hero-image-float relative h-full w-full">
             <Image
-              src="/Website/images/hero.png"
+              src="/Website/images/hero.webp"
               alt="لوحة تحكم منصة مسار"
               fill
               sizes="(min-width: 1024px) 50vw, 90vw"

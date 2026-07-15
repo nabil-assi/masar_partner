@@ -10,21 +10,21 @@ const projects = [
     category: "أتمتة العمليات • ERPNext",
     desc: "حل متكامل لإدارة العمليات والمبيعات والمخزون.",
     icon: Monitor,
-    image: "/Website/images/project-2.png",
+    image: "/Website/images/project-2.webp",
   },
   {
     title: "تطبيق خدمات ذكي",
     category: "تطبيق موبايل • UI/UX",
     desc: "تجربة سلسة لخدمات يومية بواجهة عصرية.",
     icon: Smartphone,
-    image: "/Website/images/project-1.png",
+    image: "/Website/images/project-1.webp",
   },
   {
     title: "منصة تعليمية رقمية",
     category: "منصة ويب • نظام اشتراكات",
     desc: "منصة تعليمية تفاعلية لإدارة الدورات والمحتوى.",
     icon: GraduationCap,
-    image: "/Website/images/project-1.png",
+    image: "/Website/images/project-1.webp",
   },
 ];
 

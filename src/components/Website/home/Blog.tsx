@@ -9,21 +9,21 @@ const posts = [
     title: "متى تحتاج شركتك إلى نظام ERP بدل ملفات Excel؟",
     desc: "دليلك لاتخاذ القرار الصحيح في الوقت المناسب.",
     readTime: "4 دقائق قراءة",
-    image: "/Website/images/project-1.png",
+    image: "/Website/images/project-1.webp",
   },
   {
     category: "أتمتة الأعمال",
     title: "كيف تساعد أتمتة الأعمال في تقليل الوقت والأخطاء؟",
     desc: "حلول ذكية ترفع الكفاءة وتقلل التكاليف التشغيلية.",
     readTime: "5 دقائق قراءة",
-    image: "/Website/images/automation.png",
+    image: "/Website/images/automation.webp",
   },
   {
     category: "تطوير المنتجات الرقمية",
     title: "كيف تختار بين موقع تعريفي ومنصة رقمية مخصصة؟",
     desc: "أهم الفروقات لمساعدتك في اختيار الأنسب.",
     readTime: "6 دقائق قراءة",
-    image: "/Website/images/project-2.png",
+    image: "/Website/images/project-2.webp",
   },
 ];
 

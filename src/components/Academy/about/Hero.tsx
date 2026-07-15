@@ -27,7 +27,7 @@ export const Hero = () => {
             
             <div className="flex-1 w-full relative h-[300px] md:h-[400px] lg:h-[450px]">
               <Image
-                src="/images/about/about-hero.png"
+                src="/images/about/about-hero.webp"
                 alt="Team working"
                 fill
                 className="object-cover rounded-[24px]"

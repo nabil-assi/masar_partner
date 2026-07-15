@@ -95,7 +95,7 @@ export const CTA = ({
             <div className="order-1 mx-auto w-full max-w-[500px] lg:order-2 lg:max-w-none">
               <div className="relative md:block hidden aspect-[1.35/1]">
                 <Image
-                  src="/Website/images/cta-digital-ecosystem.png"
+                  src="/Website/images/cta-digital-ecosystem.webp"
                   alt="منظومة رقمية مترابطة لتحليل الأعمال ودعم النمو"
                   fill
                   sizes="(min-width: 1280px) 510px, (min-width: 1024px) 42vw, (min-width: 640px) 500px, calc(100vw - 72px)"

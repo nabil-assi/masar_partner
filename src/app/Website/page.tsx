@@ -144,14 +144,14 @@ const caseStudies = [
   {
     title: "منصة إدارة أعمال",
     category: "أتمتة وERPNext",
-    image: "/Website/images/project-2.png",
+    image: "/Website/images/project-2.webp",
     challenge: "عمليات متفرقة بين المبيعات والمخزون والمهام.",
     result: "منصة تربط الفرق وتعرض مؤشرات التشغيل في مكان واحد.",
   },
   {
     title: "تطبيق خدمات ذكي",
     category: "Mobile App وUI/UX",
-    image: "/Website/images/project-1.png",
+    image: "/Website/images/project-1.webp",
     challenge: "خدمة يومية تحتاج تجربة أسرع وأسهل على الجوال.",
     result: "تدفق استخدام واضح مع واجهة مناسبة للحجز والمتابعة.",
   },
@@ -234,7 +234,7 @@ export default function Home() {
           <div className="relative order-2 lg:col-start-2 lg:row-start-1">
             <div className="absolute inset-[18%] -z-10 rounded-full bg-blue-100/35 blur-[70px]" />
             <Image
-              src="/Website/images/hero-dashboard-v2.png"
+              src="/Website/images/hero-dashboard-v2.webp"
               alt="منصة أعمال رقمية متكاملة تعمل على الحاسوب والجوال"
               width={1448}
               height={1086}
@@ -322,7 +322,7 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <div className="relative hidden overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5 p-3">
                   <Image
-                    src="/Website/images/project-2.png"
+                    src="/Website/images/project-2.webp"
                     alt="نموذج نظام لإدارة الأعمال والعمليات"
                     width={720}
                     height={520}

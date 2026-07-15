@@ -16,7 +16,7 @@ export const AboutIntro = () => {
           <div className="relative overflow-hidden rounded-[2rem] border border-white bg-[#0b234f] p-2.5 shadow-[0_28px_75px_rgba(15,55,108,0.18)] sm:p-3.5">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[1.45rem]">
               <Image
-                src="/images/about/about-hero.png"
+                src="/images/about/about-hero.webp"
                 alt="فريق يعمل على تطوير حلول رقمية"
                 fill
                 sizes="(min-width: 1024px) 48vw, 92vw"
