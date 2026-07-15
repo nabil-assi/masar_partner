@@ -240,7 +240,8 @@ export default function Home() {
               height={1086}
               priority
               sizes="(min-width: 1024px) 50vw, 92vw"
-className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain shadow-2xl shadow-blue-900/10"            />
+              className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain shadow-2xl shadow-blue-900/10"
+            />
           </div>
         </div>
       </section>
@@ -318,7 +319,7 @@ className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain sh
             <div className="absolute -left-20 -top-32 h-80 w-80 rounded-full bg-blue-500/20 blur-[90px]" />
             <div className="absolute -bottom-36 right-10 h-80 w-80 rounded-full bg-cyan-400/10 blur-[90px]" />
             <div className="relative grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
-              <div className="order-2 lg:order-1">
+              <div className="order-2 hidden md:block lg:order-1">
                 <div className="relative   overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5 p-3">
                   <Image
                     src="/Website/images/project-2.png"
@@ -445,7 +446,7 @@ className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain sh
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-5 xl:grid-cols-4">
               {trustStats.map((stat) => (
                 <div
                   key={stat.label}
@@ -472,7 +473,7 @@ className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain sh
             description="كل مشروع نعرضه كقصة عمل: تحدي واضح، حل مناسب، ونتيجة تساعد الفريق أو العميل."
           />
 
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          <div className="mt-14 grid gap-5   lg:grid-cols-3">
             {caseStudies.map((item) => (
               <Link
                 key={item.title}
@@ -523,8 +524,8 @@ className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain sh
             title="مسار واضح من التحدي إلى النتيجة"
             description="نعمل بشفافية وعلى مراحل قصيرة، حتى تظل الرؤية والميزانية والتقدم واضحة طوال المشروع."
           />
-          <div className="relative mt-16 grid gap-5 lg:grid-cols-4">
-            <div className="absolute left-[12%] right-[12%] top-8 hidden h-px bg-gradient-to-l from-transparent via-blue-200 to-transparent lg:block" />
+          <div className="relative mt-16   gap-5 lg:grid-cols-4 grid grid-cols-2">
+            <div className="absolute left-[12%] right-[12%]   top-8 hidden h-px bg-gradient-to-l from-transparent via-blue-200 to-transparent sm-col-2 lg:block" />
             {process.map((item) => (
               <article
                 key={item.number}
@@ -545,7 +546,7 @@ className="mx-auto hidden md:block h-auto w-full max-w-[700px] object-contain sh
         </div>
       </section>
 
-      <section className="py-24 sm:py-28">
+      <section className="pb-24 sm:py-28">
         <div className="website-container">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="text-right">
