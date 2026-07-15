@@ -4,7 +4,6 @@ import { FinalCTA } from "@/components/Academy/about/FinalCTA";
 import { PartnersSection } from "@/components/Academy/about/PartnersSection";
 import { TeamSection } from "@/components/Academy/about/TeamSection";
 import { VisionMission } from "@/components/Academy/about/VisionMission";
-import { Footer } from "@/components/Academy/home/Footer";
 import { Hero } from "@/components/Academy/about/Hero";
 
 export default function AboutPage() {

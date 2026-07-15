@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 export function Sidebar({ heading = "محتويات الصفحة", sections }: { heading?: string, sections: { title: string }[] }) {
   return (

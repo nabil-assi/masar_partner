@@ -52,7 +52,7 @@ export const Testimonials = () => (
                   <p className="text-sm text-[#FFB692]">{t.role}</p>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">"{t.quote}"</p>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">&ldquo;{t.quote}&rdquo;</p>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#f4a261] text-[#f4a261]" />)}
               </div>

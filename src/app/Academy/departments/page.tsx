@@ -1,4 +1,3 @@
-import { Footer } from "@/components/Academy/home/Footer";
 import { CoursesSection } from "@/components/Academy/departments/CoursesSection";
 import { Hero } from "@/components/Academy/departments/Hero";
 

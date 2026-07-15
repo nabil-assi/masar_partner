@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X, User } from "lucide-react";
 
 import { AuthModal } from "../auth/AuthModal";
-import { LoginForm } from "../auth/LoginForm";
 const navLinks = [
   { name: "الرئيسية", href: "/" },
   { name: "الأقسام التعليمية", href: "/departments" },
@@ -106,8 +105,10 @@ export const Navbar = () => {
             </Link>
             <AuthModal
               isOpen={isLoginOpen}
-              onClose={() => setIsLoginOpen(false)} children={undefined}            >
-             </AuthModal>
+              onClose={() => setIsLoginOpen(false)}
+            >
+              <div />
+            </AuthModal>
           </div>
         </div>
       )}

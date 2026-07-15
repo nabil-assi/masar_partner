@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import { Mail, Lock, Eye, X, ArrowRight, ArrowLeft } from "lucide-react";
+import { Mail, Lock, Eye, X, ArrowLeft } from "lucide-react";
 
 export const LoginForm = ({ onClose }: { onClose: () => void }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="relative w-full max-w-4xl bg-[#0d1424] rounded-3xl overflow-hidden border border-white/5 shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
         {/* أزرار التحكم: الرئيسية يسار، إغلاق يمين */}
-        <button className="absolute top-4 right-4 z-20 text-gray-400 hover:text-white flex items-center gap-1 text-sm font-medium">
+        <button onClick={onClose} className="absolute top-4 right-4 z-20 text-gray-400 hover:text-white flex items-center gap-1 text-sm font-medium">
           <X size={24} />
         </button>
          <button  className="absolute top-4 left-4 z-20 text-gray-400 hover:text-white flex items-center gap-1 text-sm font-medium">

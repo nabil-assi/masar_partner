@@ -1,13 +1,5 @@
 import Link from "next/link";
-import {
-  Palette,
-  Smartphone,
-  Globe,
-  Compass,
-  Cpu,
-  Megaphone,
-  ArrowLeft,
-} from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 import { services } from "@/lib/services-data";
 

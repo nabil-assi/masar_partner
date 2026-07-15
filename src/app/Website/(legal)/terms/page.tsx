@@ -3,7 +3,6 @@ import { Hero } from "@/components/Website/legal/Hero";
 import { Sidebar } from "@/components/Website/legal/Sidebar";
 import { Legal } from "@/components/Website/legal/Legal";
 import { ContactBox } from "@/components/Website/legal/ContactBox";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "الشروط والأحكام | مسار",

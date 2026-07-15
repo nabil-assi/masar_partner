@@ -231,7 +231,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative order-2 lg:col-start-2 lg:row-start-1">
+          <div className="relative order-2 hidden lg:col-start-2 lg:row-start-1 lg:block">
             <div className="absolute inset-[18%] -z-10 rounded-full bg-blue-100/35 blur-[70px]" />
             <Image
               src="/Website/images/hero-dashboard-v2.webp"
@@ -240,7 +240,7 @@ export default function Home() {
               height={1086}
               priority
               sizes="(min-width: 1024px) 50vw, 92vw"
-              className="mx-auto h-auto hidden w-full max-w-[700px] object-contain saturate-[0.72] contrast-[0.96] brightness-[1.02] drop-shadow-[0_26px_30px_rgba(18,67,129,0.12)]"
+              className="mx-auto h-auto w-full max-w-[700px] object-contain saturate-[0.72] contrast-[0.96] brightness-[1.02] drop-shadow-[0_26px_30px_rgba(18,67,129,0.12)]"
             />
           </div>
         </div>
@@ -319,13 +319,13 @@ export default function Home() {
             <div className="absolute -left-20 -top-32 h-80 w-80 rounded-full bg-blue-500/20 blur-[90px]" />
             <div className="absolute -bottom-36 right-10 h-80 w-80 rounded-full bg-cyan-400/10 blur-[90px]" />
             <div className="relative grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
-              <div className="order-2 lg:order-1">
-                <div className="relative hidden overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5 p-3">
+              <div className="order-2 hidden lg:order-1 lg:block">
+                <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5 p-3">
                   <Image
                     src="/Website/images/project-2.webp"
                     alt="نموذج نظام لإدارة الأعمال والعمليات"
                     width={720}
-                    height={520}
+                    height={720}
                     sizes="(min-width: 1024px) 44vw, 90vw"
                     className="h-auto w-full rounded-2xl object-cover"
                   />
@@ -373,6 +373,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <section className="py-24 sm:py-28">
         <div className="website-container">

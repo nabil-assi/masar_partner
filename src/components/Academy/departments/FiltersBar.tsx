@@ -1,7 +1,13 @@
+type CourseFilters = Partial<{
+  category: string;
+  level: string;
+  price: string;
+}>;
+
 export const FiltersBar = ({
   onFilterChange,
 }: {
-  onFilterChange: (filters: any) => void;
+  onFilterChange: (filters: CourseFilters) => void;
 }) => {
   // كلاس موحد مع إضافة padding إضافي جهة اليمين لتجنب تداخل النص مع السهم
   const selectClasses =

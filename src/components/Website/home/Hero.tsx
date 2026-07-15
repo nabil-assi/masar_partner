@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, CheckCircle2, Star } from "lucide-react";
+import { ArrowLeft, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

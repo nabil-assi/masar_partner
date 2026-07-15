@@ -6,10 +6,6 @@ import { sectors } from "@/lib/sectors-data";
 export const PortfolioWithSectors = () => {
   const [activeSectorId, setActiveSectorId] = useState<string | null>(null);
 
-  const activeCategories = activeSectorId
-    ? (sectors.find((s) => s.id === activeSectorId)?.matchCategories ?? null)
-    : null;
-
   const handleSectorClick = (sectorId: string) => {
     setActiveSectorId((prev) => (prev === sectorId ? null : sectorId));
     document

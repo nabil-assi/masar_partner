@@ -9,7 +9,6 @@ import { WhyUs } from "@/components/Academy/home/WhyUs";
 import { Partners } from "@/components/Academy/home/Partners";
 import { BlogSection } from "@/components/Academy/home/BlogSection";
 import { JoinCTA } from "@/components/Academy/home/JoinCTA";
-import { Footer } from "@/components/Academy/home/Footer";
 
 export default function Home() {
   return (

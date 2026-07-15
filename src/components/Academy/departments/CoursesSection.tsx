@@ -165,7 +165,7 @@ export const CoursesSection = () => {
         (filters.level === "" || course.level === filters.level)
       );
     });
-  }, [filters, coursesData]); // تمت إضافة coursesData للـ dependencies
+  }, [filters]);
 
   const totalCoursesCount = filteredCourses.length;
   const totalPages = Math.ceil(totalCoursesCount / itemsPerPage);
