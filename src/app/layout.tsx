@@ -50,8 +50,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl" className={`${almarai.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen bg-white text-slate-950 vc-init" suppressHydrationWarning>
+      
+      <body className="min-h-screen  p-0 text-slate-950    vc-init" suppressHydrationWarning>
+        
         <RevealProvider />
+        
         {children}
       </body>
     </html>
